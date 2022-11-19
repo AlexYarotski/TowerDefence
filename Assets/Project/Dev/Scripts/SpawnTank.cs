@@ -1,9 +1,7 @@
-using System;
 using System.Collections;
 using UnityEngine;
-using UnityEngine.Serialization;
 
-public class SpawnTanks : MonoBehaviour
+public class SpawnTanks : MonoBehaviour, ISpawnPrefab
 {
     [SerializeField] 
     private Tank _tankPrefab = null;
@@ -22,7 +20,7 @@ public class SpawnTanks : MonoBehaviour
         StartCoroutine(Spawn());
     }
 
-    private IEnumerator Spawn()
+    public IEnumerator Spawn()
     {
         for (int i = 0; i < _quantityTanks; i++)
         {

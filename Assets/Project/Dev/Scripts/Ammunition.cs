@@ -1,6 +1,6 @@
 using UnityEngine;
 
-internal abstract class Ammunition : MonoBehaviour
+public abstract class Ammunition : MonoBehaviour
 {
     public float Speed
     {

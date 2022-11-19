@@ -1,6 +1,7 @@
+using System;
 using UnityEngine;
 
-public class Tank : MonoBehaviour
+public class Tank : MonoBehaviour, IAttackable
 {
     [SerializeField]
     private int _helth = 0;
@@ -28,5 +29,12 @@ public class Tank : MonoBehaviour
     private void FixedUpdate()
     {
         transform.position += _tower.transform.position * _speed;
+        Attack();
+    }
+
+    public void Attack()
+    {
+        _warhead.transform.position += _tower.transform.position
+                                       * _warhead.Speed;
     }
 }

@@ -16,6 +16,8 @@ internal class Warhead : Ammunition
     [SerializeField]
     private CapsuleCollider _capsuleCollider = null;
     
+    private Renderer _renderer = null;
+    
     public Warhead(Color color, float speed, float damage)
         : base(speed, damage)
     {
@@ -27,5 +29,6 @@ internal class Warhead : Ammunition
     private void Awake()
     {
         _capsuleCollider.isTrigger = true;
+        _renderer = GetComponent<Renderer>();
     }
 }
