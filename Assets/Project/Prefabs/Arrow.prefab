@@ -110,5 +110,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speedArrow: 0
   _damageArrow: 0
-  Color: {r: 0, g: 0, b: 0, a: 0}
-  _boxCollider: {fileID: 0}
+  _boxCollider: {fileID: 7195802249258557958}

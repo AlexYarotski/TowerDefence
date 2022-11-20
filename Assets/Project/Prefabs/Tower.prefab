@@ -91,7 +91,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3405535167029965518}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 1.89
@@ -113,3 +113,5 @@ MonoBehaviour:
   _sphereCollider: {fileID: 3405535167029965516}
   _arrow: {fileID: 7518090990614563386, guid: 4a5f8bd27eaf98149a15a11d3f49bfef, type: 3}
   _transform: {fileID: 3405535167029965515}
+  _shootingSpeed: 0
+  _tank: {fileID: 7102585454480597950, guid: 979eb4ed7e1e1974cb84cefb04127c7c, type: 3}

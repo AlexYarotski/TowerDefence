@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class Tank : MonoBehaviour, IAttackable
+public class Tank : MonoBehaviour
 {
     [SerializeField]
     private int _helth = 0;
@@ -11,12 +11,15 @@ public class Tank : MonoBehaviour, IAttackable
     
     [SerializeField]
     private BoxCollider _boxCollider = null;
-
+    
     [SerializeField] 
-    private Warhead _warhead = null;
+    private Projectile _projectile = null;
 
     [SerializeField]
     private Tower _tower = null;
+
+    [SerializeField]
+    private Projectile _projectilePrefab = null;
     
     private Renderer _renderer = null;
     
@@ -28,13 +31,10 @@ public class Tank : MonoBehaviour, IAttackable
 
     private void FixedUpdate()
     {
-        transform.position += _tower.transform.position * _speed;
-        Attack();
+        float step = Time.deltaTime * _speed;
+        transform.position = Vector3.MoveTowards(transform.position, 
+            _tower.transform.position + new Vector3(0.4f, 1.6f), step);
     }
 
-    public void Attack()
-    {
-        _warhead.transform.position += _tower.transform.position
-                                       * _warhead.Speed;
-    }
+    
 }

@@ -20,16 +20,17 @@ public class Tower : MonoBehaviour
     [SerializeField] 
     private float _shootingSpeed = 0;
     
+    [SerializeField] 
+    private Tank _tank = null;
+
     private void Awake()
     {
         _sphereCollider.radius = _attackRadius;
         _sphereCollider.isTrigger = true;
     }
-
-    private void OnCollisionEnter()
-    {
-        
-    }
-
     
+    private void OnTriggerEnter(Collider other)
+    {
+        Destroy(_tank.gameObject);
+    }
 }

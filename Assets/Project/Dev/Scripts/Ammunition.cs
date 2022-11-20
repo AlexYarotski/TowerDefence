@@ -13,10 +13,4 @@ public abstract class Ammunition : MonoBehaviour
         get;
         private set;
     }
-
-    public Ammunition(float speed, float damage)
-    {
-        Speed = speed;
-        Damage = damage;
-    }
 }

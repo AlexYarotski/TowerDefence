@@ -1,19 +1,20 @@
 using System.Collections;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
-public class SpawnTanks : MonoBehaviour, ISpawnPrefab
+public class SpawnTank : MonoBehaviour
 {
     [SerializeField] 
     private Tank _tankPrefab = null;
 
     [SerializeField]
-    private int _quantityTanks = 0;
+    private int _spawmCount = 0;
 
     [SerializeField]
-    private float _tankSpawnDelay = 0;
+    private float _spawnDelay = 0;
 
     [SerializeField]
-    private Transform _StartSpawn = null;
+    private Transform _startSpawn = null;
 
     private void Start()
     {
@@ -22,11 +23,17 @@ public class SpawnTanks : MonoBehaviour, ISpawnPrefab
 
     public IEnumerator Spawn()
     {
-        for (int i = 0; i < _quantityTanks; i++)
+        var waiter = new WaitForSeconds(_spawnDelay);
+
+        for (int i = 0; i < _spawmCount; i++)
         {
+            int randomX = Random.Range(-5, 4);
+            int randomY = Random.Range(-4, 4);
+            
             Tank createdTank = Instantiate(_tankPrefab, transform);
-            createdTank.transform.position = new Vector3(-5, -3, 1);
-            yield return new WaitForSeconds(_tankSpawnDelay);
+            createdTank.transform.position = new Vector3(randomX, randomY, 1);
+           
+            yield return waiter;
         }
     }
 }

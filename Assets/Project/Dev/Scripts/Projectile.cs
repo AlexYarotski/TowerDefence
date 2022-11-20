@@ -1,9 +1,8 @@
 using System;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 [Serializable]
-internal class Arrow : Ammunition
+internal class Projectile : Ammunition
 {
     [SerializeField]
     private float _speed = 0;
@@ -12,13 +11,13 @@ internal class Arrow : Ammunition
     private float _damage = 0;
     
     [SerializeField]
-    private BoxCollider _boxCollider = null;
-
-    private Renderer _renderer = null;
+    private CapsuleCollider _capsuleCollider = null;
     
+    private Renderer _renderer = null;
+
     private void Awake()
     {
-        _boxCollider.isTrigger = true;
+        _capsuleCollider.isTrigger = true;
         _renderer = GetComponent<Renderer>();
     }
 }
