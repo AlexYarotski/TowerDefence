@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Tank : MonoBehaviour
 {
@@ -13,13 +14,10 @@ public class Tank : MonoBehaviour
     private BoxCollider _boxCollider = null;
     
     [SerializeField] 
-    private Projectile _projectile = null;
+    private Projectile _projectilePrefab = null;
 
     [SerializeField]
     private Tower _tower = null;
-
-    [SerializeField]
-    private Projectile _projectilePrefab = null;
     
     private Renderer _renderer = null;
     
@@ -36,5 +34,8 @@ public class Tank : MonoBehaviour
             _tower.transform.position + new Vector3(0.4f, 1.6f), step);
     }
 
-    
+    private void OnTriggerEnter(Collider other)
+    {
+        Instantiate(_projectilePrefab, transform);
+    }
 }

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3617852374776951403}
   - component: {fileID: 5893072306946581480}
   m_Layer: 0
-  m_Name: Warhead
+  m_Name: Projectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -110,9 +110,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 714ea327cc4ba13418229d2a72a3c0c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 0
+  _speed: 1.5
   _damage: 0
   _capsuleCollider: {fileID: 2221024807934349446}
+  _tower: {fileID: 3405535167029965519, guid: fb2e9cf6d8a10244184ba6a2d7d86941, type: 3}
 --- !u!54 &5893072306946581480
 Rigidbody:
   m_ObjectHideFlags: 0

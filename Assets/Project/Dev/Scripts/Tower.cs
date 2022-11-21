@@ -28,9 +28,4 @@ public class Tower : MonoBehaviour
         _sphereCollider.radius = _attackRadius;
         _sphereCollider.isTrigger = true;
     }
-    
-    private void OnTriggerEnter(Collider other)
-    {
-        Destroy(_tank.gameObject);
-    }
 }
