@@ -95,7 +95,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 6.88, y: 6.2, z: 1}
+  m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &7102585454480597950
 MonoBehaviour:
@@ -111,10 +111,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _helth: 5
   _speed: 1
+  _towerPrefab: {fileID: 3405535167029965519, guid: fb2e9cf6d8a10244184ba6a2d7d86941, type: 3}
+  _recharge: 5
   _boxCollider: {fileID: 8587949979999760169}
-  _projectile: {fileID: 0}
-  _tower: {fileID: 3405535167029965519, guid: fb2e9cf6d8a10244184ba6a2d7d86941, type: 3}
-  _projectilePrefab: {fileID: 3617852374776951403, guid: 4018aafffcd8c6840a098a7f04d03f2d, type: 3}
 --- !u!54 &-7017909796977586940
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -129,5 +128,5 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0

@@ -21,7 +21,7 @@ public class SpawnTank : MonoBehaviour
         StartCoroutine(Spawn());
     }
 
-    public IEnumerator Spawn()
+    private IEnumerator Spawn()
     {
         var waiter = new WaitForSeconds(_spawnDelay);
 

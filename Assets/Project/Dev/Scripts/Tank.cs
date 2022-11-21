@@ -1,6 +1,6 @@
 using System;
+using System.Collections;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class Tank : MonoBehaviour
 {
@@ -9,21 +9,21 @@ public class Tank : MonoBehaviour
 
     [SerializeField]
     private float _speed = 0;
+
+    [SerializeField]
+    private Tower _towerPrefab = null;
+
+    [SerializeField]
+    private int _recharge = 0;
     
     [SerializeField]
     private BoxCollider _boxCollider = null;
-    
-    [SerializeField] 
-    private Projectile _projectilePrefab = null;
 
-    [SerializeField]
-    private Tower _tower = null;
-    
     private Renderer _renderer = null;
     
     private void Awake()
     {
-        _boxCollider.isTrigger = true;
+        _boxCollider.isTrigger = false;
         _renderer = GetComponent<Renderer>();
     }
 
@@ -31,11 +31,14 @@ public class Tank : MonoBehaviour
     {
         float step = Time.deltaTime * _speed;
         transform.position = Vector3.MoveTowards(transform.position, 
-            _tower.transform.position + new Vector3(0.4f, 1.6f), step);
+            _towerPrefab.transform.position + new Vector3(0.4f, 1.6f), step);
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        Instantiate(_projectilePrefab, transform);
+        if (_boxCollider == collision.collider)
+        {
+            Destroy(this);
+        }
     }
 }
