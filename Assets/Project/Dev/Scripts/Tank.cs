@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class Tank : MonoBehaviour
@@ -32,6 +31,9 @@ public class Tank : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Destroy(this.gameObject, 0f);
+        if (collision.gameObject.TryGetComponent(out Tower tower))
+        {
+            Destroy(gameObject);
+        }
     }
 }

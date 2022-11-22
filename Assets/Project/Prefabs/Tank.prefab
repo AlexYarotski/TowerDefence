@@ -112,7 +112,6 @@ MonoBehaviour:
   _helth: 5
   _speed: 1
   _towerPrefab: {fileID: 3405535167029965519, guid: fb2e9cf6d8a10244184ba6a2d7d86941, type: 3}
-  _recharge: 5
   _boxCollider: {fileID: 8587949979999760169}
 --- !u!54 &-7017909796977586940
 Rigidbody:

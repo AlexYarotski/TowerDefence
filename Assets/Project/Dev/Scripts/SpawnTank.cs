@@ -28,10 +28,10 @@ public class SpawnTank : MonoBehaviour
         for (int i = 0; i < _spawmCount; i++)
         {
             int randomX = Random.Range(-5, 4);
-            int randomY = Random.Range(-4, 4);
+            int randomZ = Random.Range(-4, 4);
             
             Tank createdTank = Instantiate(_tankPrefab, transform);
-            createdTank.transform.position = new Vector3(randomX, randomY, 1);
+            createdTank.transform.position = new Vector3(randomX, 0.5f, randomZ);
            
             yield return waiter;
         }
