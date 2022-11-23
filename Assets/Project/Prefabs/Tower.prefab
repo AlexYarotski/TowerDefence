@@ -19,7 +19,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3405535167029965515
 Transform:
   m_ObjectHideFlags: 0
@@ -96,7 +96,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aea193cc29cc87f4d8690172956babf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _helth: 3
 --- !u!65 &6455166023702341823
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -169,3 +168,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _arrowPrefab: {fileID: 3462531660236727197, guid: 4a5f8bd27eaf98149a15a11d3f49bfef, type: 3}
   _attackRadius: 3
+  _rateFire: 0

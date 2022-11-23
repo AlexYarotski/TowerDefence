@@ -24,15 +24,22 @@ public class SpawnTank : MonoBehaviour
     private IEnumerator Spawn()
     {
         var waiter = new WaitForSeconds(_spawnDelay);
-
+        
         for (int i = 0; i < _spawmCount; i++)
         {
-            int randomX = Random.Range(-5, 4);
-            int randomZ = Random.Range(-4, 4);
-            
+            int randomNumberAxis = Random.Range(-9, 9);
             Tank createdTank = Instantiate(_tankPrefab, transform);
-            createdTank.transform.position = new Vector3(randomX, 0.5f, randomZ);
-           
+
+            if (randomNumberAxis % 2 == 0)
+            {
+                createdTank.transform.position = new Vector3(randomNumberAxis, 1, -9);
+            }
+
+            else
+            {
+                createdTank.transform.position = new Vector3(9, 1, randomNumberAxis);
+            }
+            
             yield return waiter;
         }
     }

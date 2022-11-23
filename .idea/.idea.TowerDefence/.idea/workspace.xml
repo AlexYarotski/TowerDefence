@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ad4583f7-5b28-4f3a-a172-8d069e3962a1" name="Changes" comment="">
+    <list default="true" id="02d69532-7ac7-4a36-bfa5-6898a2e5d453" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TowerDefence/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TowerDefence/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/Arrow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/Arrow.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/SpawnTank.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/SpawnTank.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/Tank.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/Tank.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/Tower.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/Tower.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Arrow.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Arrow.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/Weapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/Weapon.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Tank.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Tank.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Tower.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Tower.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,32 +16,34 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/92e8e151ac2247a491cb6ca42a1bead976b800/69/47a2f3c1/CompilationTask.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3079c9e75df24b898cb7616abd98321a3800/3c/cf63dd09/NativeInputSystem.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8eb9c2e8e9624db9adabe37771a551ef7000/b5/4fc62df3/SendMouseEvents.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d95181a5c71a4ad88c81e8fccee6b47113ce00/d9/edf5df58/UnitySynchronizationContext.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d95181a5c71a4ad88c81e8fccee6b47113ce00/f1/bb7640b4/SetupCoroutine.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2Hls77Bk3onlbQfw7wCWRJsLAFg" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectId" id="2HwpuyOoVpZj4tbyfYhjdG2yXs0" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Discover.Launch.Via.Unity&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.49542683&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Discover.Launch.Via.Unity": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "settings.editor.selected.configurable": "preferences.keymap",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="UnitTests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2020.3.40f1\Editor\Unity.exe" />
-      <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath C:\Users\Alex\Documents\TowerDefence -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
-      <option name="WORKING_DIRECTORY" value="C:\Users\Alex\Documents\TowerDefence" />
+      <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath C:\Users\alexy\Documents\TowerDefence -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
+      <option name="WORKING_DIRECTORY" value="C:\Users\alexy\Documents\TowerDefence" />
       <option name="PASS_PARENT_ENVS" value="1" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <method v="2" />
@@ -57,10 +58,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="14624">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="14624" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -71,20 +72,12 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="ad4583f7-5b28-4f3a-a172-8d069e3962a1" name="Changes" comment="" />
-      <created>1668870836617</created>
+      <changelist id="02d69532-7ac7-4a36-bfa5-6898a2e5d453" name="Changes" comment="" />
+      <created>1669206232362</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1668870836617</updated>
-      <workItem from="1668870850712" duration="341000" />
-      <workItem from="1668871239239" duration="1916000" />
-      <workItem from="1668873214836" duration="935000" />
-      <workItem from="1668946138915" duration="13020000" />
-      <workItem from="1668973936835" duration="1524000" />
-      <workItem from="1669034936314" duration="1833000" />
-      <workItem from="1669037359855" duration="158000" />
-      <workItem from="1669039242918" duration="7230000" />
-      <workItem from="1669123376126" duration="5389000" />
+      <updated>1669206232362</updated>
+      <workItem from="1669206250290" duration="10489000" />
     </task>
     <servers />
   </component>
@@ -105,7 +98,27 @@
       </map>
     </option>
   </component>
-  <component name="VcsManagerConfiguration">
-    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Project/Dev/Scripts/Tower.cs</url>
+          <line>8</line>
+          <properties documentPath="C:\Users\alexy\Documents\TowerDefence\Assets\Project\Dev\Scripts\Tower.cs" initialLine="8" containingFunctionPresentation="method 'HealthLevel'">
+            <startOffsets>
+              <option value="145" />
+            </startOffsets>
+            <endOffsets>
+              <option value="162" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
