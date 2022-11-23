@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="02d69532-7ac7-4a36-bfa5-6898a2e5d453" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/Tank.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/Tank.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Tower.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Tower.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.TowerDefence/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TowerDefence/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/Arrow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/Arrow.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/Weapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/Weapon.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Arrow.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Arrow.prefab" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +74,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1669206232362</updated>
-      <workItem from="1669206250290" duration="11292000" />
+      <workItem from="1669206250290" duration="13595000" />
     </task>
     <servers />
   </component>

@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(SphereCollider))]
@@ -11,7 +11,7 @@ public class Weapon : MonoBehaviour
     private float _attackRadius = 0;
 
     [SerializeField] 
-    private float _rateFire = 0;
+    private float _firingDelay = 0;
 
     private SphereCollider _sphereCollider = null;
     
@@ -26,7 +26,15 @@ public class Weapon : MonoBehaviour
     {
         if (other.TryGetComponent(out Tank tank))
         {
-            //StartCoroutine(Fire());
+            StartCoroutine(Fire());
         }
+    }
+
+    private IEnumerator Fire()
+    {
+        var firingDelay = new WaitForSeconds(_firingDelay);
+        Instantiate(_arrowPrefab, transform);
+
+        yield return firingDelay;
     }
 }
