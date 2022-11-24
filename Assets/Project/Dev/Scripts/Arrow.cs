@@ -15,9 +15,6 @@ public class Arrow : Ammunition
 
     [SerializeField] 
     private Tank _tankPrefab = null;
-
-    [SerializeField] 
-    private Tower _towerPrefab = null;
     
     private Renderer _renderer = null;
 
@@ -36,12 +33,12 @@ public class Arrow : Ammunition
         _boxCollider.isTrigger = false;
         _renderer = GetComponent<Renderer>();
     }
-    
+
     private void FixedUpdate()
     {
         float step = Time.deltaTime * _speed;
-        transform.position = Vector3.MoveTowards(transform.position, 
-             _tankPrefab.transform.position, step);
+          transform.position = Vector3.MoveTowards(transform.position,
+             _tankPrefab.transform.position , step);
     }
 
     private void OnCollisionEnter(Collision collision)

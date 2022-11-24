@@ -109,11 +109,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60c2b2a935441c64fb8c164a4d27ca86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 3
+  _speed: 4
   _damage: 2
   _boxCollider: {fileID: 7195802249258557958}
   _tankPrefab: {fileID: 7102585454480597950, guid: 979eb4ed7e1e1974cb84cefb04127c7c, type: 3}
-  _towerPrefab: {fileID: 3405535167029965519, guid: fb2e9cf6d8a10244184ba6a2d7d86941, type: 3}
 --- !u!54 &6043228127790612471
 Rigidbody:
   m_ObjectHideFlags: 0

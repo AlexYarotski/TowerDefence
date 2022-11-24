@@ -6,18 +6,21 @@ public class Tower : MonoBehaviour
     private BoxCollider _collider = null;
     
     [SerializeField]
-    private float _healtha = 10;
+    private float _health = 0;
 
     private void Awake()
     {
         _collider.isTrigger = false;
-        this.gameObject.SetActive(true);
+        gameObject.SetActive(true);
     }
 
-    public bool HealthLevel(float damage)
+    public void HealthLevel(float damage)
     {
-        _healtha -= damage;
+        _health -= damage;
 
-        return _healtha == 0 || _healtha < 0;
+        if (_health == 0 || _health < 0)
+        {
+            gameObject.SetActive(false);
+        }
     }
 }

@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _collider: {fileID: 6455166023702341823}
-  _healtha: -79
+  _health: 1000
 --- !u!65 &6455166023702341823
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -171,3 +171,4 @@ MonoBehaviour:
   _arrowPrefab: {fileID: 3462531660236727197, guid: 4a5f8bd27eaf98149a15a11d3f49bfef, type: 3}
   _attackRadius: 3
   _firingDelay: 0
+  _numberShellsPerTank: 0

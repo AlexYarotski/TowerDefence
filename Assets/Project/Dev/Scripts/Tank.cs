@@ -17,6 +17,7 @@ public class Tank : MonoBehaviour
     [SerializeField]
     private BoxCollider _boxCollider = null;
     
+    [SerializeField]
     private float _health = 3;
     
     private Renderer _renderer = null;
@@ -39,8 +40,7 @@ public class Tank : MonoBehaviour
     {
         if (collision.gameObject.TryGetComponent(out Tower tower))
         {
-            bool hasLife = _towerPrefab.HealthLevel(_damage);
-             _towerPrefab.gameObject.SetActive(hasLife);
+            _towerPrefab.HealthLevel(_damage);
             
             gameObject.SetActive(false);
         }

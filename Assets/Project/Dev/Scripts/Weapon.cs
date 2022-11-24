@@ -13,6 +13,9 @@ public class Weapon : MonoBehaviour
     [SerializeField] 
     private float _firingDelay = 0;
 
+    [SerializeField] 
+    private int _numberShellsPerTank = 0;
+
     private SphereCollider _sphereCollider = null;
 
     private void Awake()
@@ -33,10 +36,13 @@ public class Weapon : MonoBehaviour
     private IEnumerator Fire()
     {
         var firingDelay = new WaitForSeconds(_firingDelay);
-        
-        Arrow createdArrow = Instantiate(_arrowPrefab, transform);
-        createdArrow.transform.position = new Vector3(0, 0.5f, 0);
-        
-        yield return firingDelay;
+
+        for (int i = 0; i < _numberShellsPerTank; i++)
+        {
+            Arrow createdArrow = Instantiate(_arrowPrefab, transform);
+            createdArrow.transform.position = new Vector3(0, 1, 0);
+            
+            yield return firingDelay;
+        }
     }
 }
