@@ -2,22 +2,22 @@ using UnityEngine;
 
 public class Tower : MonoBehaviour
 {
-    private float _helth = 10;
+    [SerializeField]
+    private BoxCollider _collider = null;
+    
+    [SerializeField]
+    private float _healtha = 10;
+
+    private void Awake()
+    {
+        _collider.isTrigger = false;
+        this.gameObject.SetActive(true);
+    }
 
     public bool HealthLevel(float damage)
     {
-        _helth -= damage;
+        _healtha -= damage;
 
-        return LifeCheck();
-    }
-
-    private bool LifeCheck()
-    {
-        if (_helth == 0 || _helth < 0)
-        {
-            return false;
-        }
-
-        return true;
+        return _healtha == 0 || _healtha < 0;
     }
 }

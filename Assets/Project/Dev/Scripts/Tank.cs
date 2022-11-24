@@ -1,7 +1,10 @@
+using System;
 using UnityEngine;
 
 public class Tank : MonoBehaviour
 {
+    public static event Action<Tank> DamageTank = delegate { };
+
     [SerializeField]
     private float _speed = 0;
 
@@ -13,13 +16,16 @@ public class Tank : MonoBehaviour
 
     [SerializeField]
     private BoxCollider _boxCollider = null;
-
+    
+    private float _health = 3;
+    
     private Renderer _renderer = null;
     
     private void Awake()
     {
         _boxCollider.isTrigger = false;
         _renderer = GetComponent<Renderer>();
+        DamageTank(this);
     }
 
     private void FixedUpdate()
@@ -33,9 +39,17 @@ public class Tank : MonoBehaviour
     {
         if (collision.gameObject.TryGetComponent(out Tower tower))
         {
-            bool health = _towerPrefab.HealthLevel(_damage);
-            _towerPrefab.gameObject.SetActive(health);
-            Destroy(gameObject);
+            bool hasLife = _towerPrefab.HealthLevel(_damage);
+             _towerPrefab.gameObject.SetActive(hasLife);
+            
+            gameObject.SetActive(false);
         }
+    }
+    
+    public bool HealthLevel(float damage)
+    {
+        _health -= damage;
+
+        return _health == 0 || _health < 0;
     }
 }

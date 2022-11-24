@@ -14,7 +14,7 @@ public class Weapon : MonoBehaviour
     private float _firingDelay = 0;
 
     private SphereCollider _sphereCollider = null;
-    
+
     private void Awake()
     {
         _sphereCollider = GetComponent<SphereCollider>();
@@ -33,8 +33,10 @@ public class Weapon : MonoBehaviour
     private IEnumerator Fire()
     {
         var firingDelay = new WaitForSeconds(_firingDelay);
-        Instantiate(_arrowPrefab, transform);
-
+        
+        Arrow createdArrow = Instantiate(_arrowPrefab, transform);
+        createdArrow.transform.position = new Vector3(0, 0.5f, 0);
+        
         yield return firingDelay;
     }
 }
