@@ -394,6 +394,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1938975590 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9100099735968225446, guid: fb2e9cf6d8a10244184ba6a2d7d86941, type: 3}
+  m_PrefabInstance: {fileID: 3405535165330429318}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c573b50ca2c04ddead53a88c342e878c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2104200995
 GameObject:
   m_ObjectHideFlags: 0
@@ -425,8 +436,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _tankPrefab: {fileID: 7102585454480597950, guid: 979eb4ed7e1e1974cb84cefb04127c7c, type: 3}
   _spawmCount: 10
-  _spawnDelay: 1.5
+  _spawnDelay: 1
   _startSpawn: {fileID: 2104200997}
+  _weapon: {fileID: 1938975590}
 --- !u!4 &2104200997
 Transform:
   m_ObjectHideFlags: 0

@@ -58,7 +58,7 @@ public class Arrow : Ammunition
     
     private void HelthTank()
     {
-        bool hasLifeTank = _tankPrefab.HealthLevel(_damage);
+        bool hasLifeTank = _tankPrefab.GetDamage(_damage);
         _tankPrefab.gameObject.SetActive(hasLifeTank);
     }
 }

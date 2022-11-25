@@ -21,7 +21,7 @@ public class Weapon : MonoBehaviour
     private void Awake()
     {
         _sphereCollider = GetComponent<SphereCollider>();
-
+        
         _sphereCollider.radius = _attackRadius;
     }
 
@@ -44,5 +44,10 @@ public class Weapon : MonoBehaviour
             
             yield return firingDelay;
         }
+    }
+
+    public float GetRadiusCollider()
+    {
+        return _attackRadius;
     }
 }

@@ -40,16 +40,16 @@ public class Tank : MonoBehaviour
     {
         if (collision.gameObject.TryGetComponent(out Tower tower))
         {
-            _towerPrefab.HealthLevel(_damage);
+            _towerPrefab.GetDamage(_damage);
             
             gameObject.SetActive(false);
         }
     }
     
-    public bool HealthLevel(float damage)
+    public bool GetDamage(float damage)
     {
         _health -= damage;
 
-        return _health == 0 || _health < 0;
+        return _health <= 0;
     }
 }
