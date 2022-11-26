@@ -26,12 +26,13 @@ public class SpawnTank : MonoBehaviour
     private IEnumerator Spawn()
     {
         var waiter = new WaitForSeconds(_spawnDelay);
+        
         Vector3[] spawnPoints = PointsTanksOnCircle();
         
         for (int i = 0; i < spawnPoints.Length; i++)
         {
             Tank createTank = Instantiate(_tankPrefab, transform);
-            createTank.transform.position = spawnPoints[i];
+            createTank.transform.position = spawnPoints[i] * 3;
                 
             yield return waiter;
         }
@@ -45,17 +46,18 @@ public class SpawnTank : MonoBehaviour
         int numberTanksOnCircle = Mathf.RoundToInt(ringLength / _spawmCount);
         
         Vector3 point = _weapon.transform.position; 
-        Vector3[] pointsArray = new Vector3[_spawmCount];
         Vector3 originPoint = new Vector3(0, 0, 0);
+        Vector3[] pointsArray = new Vector3[_spawmCount];
         
         for (int i = 0; i < pointsArray.Length; i++)
         {
-            float z = originPoint.x+ Mathf.Cos(angle / numberTanksOnCircle * i) * radius;
-            float x = originPoint.z  + Mathf.Sin(angle / numberTanksOnCircle * i) * radius;
+            int randomAngle = Random.Range(0, 360);
+            float z = originPoint.x + Mathf.Cos(randomAngle / numberTanksOnCircle) * radius;
+            float x = originPoint.z + Mathf.Sin(randomAngle / numberTanksOnCircle) * radius;
             point.x = x;
             point.z = z;
             
-            pointsArray[i] = new Vector3(point.x + 4, 0, point.z + 4);
+            pointsArray[i] = new Vector3(point.x, 0, point.z);
         }
 
         return pointsArray;

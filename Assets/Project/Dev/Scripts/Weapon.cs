@@ -40,7 +40,7 @@ public class Weapon : MonoBehaviour
         for (int i = 0; i < _numberShellsPerTank; i++)
         {
             Arrow createdArrow = Instantiate(_arrowPrefab, transform);
-            createdArrow.transform.position = new Vector3(0, 1, 0);
+            createdArrow.transform.position = transform.position;
             
             yield return firingDelay;
         }

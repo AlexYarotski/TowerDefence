@@ -113,7 +113,7 @@ MonoBehaviour:
   _towerPrefab: {fileID: 3405535167029965519, guid: fb2e9cf6d8a10244184ba6a2d7d86941, type: 3}
   _damage: 3
   _boxCollider: {fileID: 8587949979999760169}
-  _health: -35
+  _health: -39
 --- !u!54 &-7017909796977586940
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -37,8 +37,8 @@ public class Arrow : Ammunition
     private void FixedUpdate()
     {
         float step = Time.deltaTime * _speed;
-          transform.position = Vector3.MoveTowards(transform.position,
-             _tankPrefab.transform.position , step);
+        transform.position = (_tankPrefab.transform.position - transform.position) * step;
+          
     }
 
     private void OnCollisionEnter(Collision collision)
