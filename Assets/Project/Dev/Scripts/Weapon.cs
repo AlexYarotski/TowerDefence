@@ -46,7 +46,7 @@ public class Weapon : MonoBehaviour
         }
     }
 
-    public float GetRadiusCollider()
+    public float GetRadius()
     {
         return _attackRadius;
     }

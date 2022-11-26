@@ -16,6 +16,7 @@ public class Arrow : Ammunition
     [SerializeField] 
     private Tank _tankPrefab = null;
     
+    
     private Renderer _renderer = null;
 
     private void OnEnable()
@@ -37,8 +38,8 @@ public class Arrow : Ammunition
     private void FixedUpdate()
     {
         float step = Time.deltaTime * _speed;
-        transform.position = (_tankPrefab.transform.position - transform.position) * step;
-          
+        transform.position = Vector3.MoveTowards(transform.position, _tankPrefab.transform.position, step);
+
     }
 
     private void OnCollisionEnter(Collision collision)

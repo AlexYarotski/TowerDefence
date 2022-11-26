@@ -40,7 +40,7 @@ public class SpawnTank : MonoBehaviour
 
     private Vector3[] PointsTanksOnCircle()
     {
-        float radius = _weapon.GetRadiusCollider();
+        float radius = _weapon.GetRadius();
         float ringLength = 2 * 3.14f * radius;
         float angle = 360 * Mathf.Deg2Rad;
         int numberTanksOnCircle = Mathf.RoundToInt(ringLength / _spawmCount);
