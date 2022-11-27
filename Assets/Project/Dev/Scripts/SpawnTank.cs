@@ -23,25 +23,16 @@ public class SpawnTank : MonoBehaviour
     private IEnumerator Spawn()
     {
         var waiter = new WaitForSeconds(_spawnDelay);
-        
-        //Vector3[] spawnPoints = PointsTanksOnCircle();
 
         while (true)
         {
             var spawnPosition = GetRandomPoint();
             
             Tank createTank = Instantiate(_tankPrefab, spawnPosition, Quaternion.identity, transform);
+            createTank.SetTargetPosition(_weapon.transform);
 
             yield return waiter;
         }
-        
-        // for (int i = 0; i < spawnPoints.Length; i++)
-        // {
-        //     Tank createTank = Instantiate(_tankPrefab, transform);
-        //     createTank.transform.position = spawnPoints[i] * 3;
-        //         
-        //     yield return waiter;
-        // }
     }
 
     private Vector3 GetRandomPoint()

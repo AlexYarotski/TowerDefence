@@ -5,20 +5,21 @@ public class Tank : MonoBehaviour
     [SerializeField]
     private float _speed = 0;
 
-    [SerializeField]
-    private Tower _towerPrefab = null;
-
     [SerializeField] 
     private float _damage = 0;
 
     [SerializeField]
-    private float _health = 3;
+    private float _health = 0;
+
+    private Transform _target = null;
 
     private void FixedUpdate()
     {
+        var finalPos = new Vector3(_target.position.x, 1, _target.position.z);
         float step = Time.deltaTime * _speed;
-        transform.position = Vector3.MoveTowards(transform.position, 
-            _towerPrefab.transform.position + new Vector3(0.2f, 1), step);
+
+        var moveDirection = (finalPos - transform.position).normalized * step;
+        transform.position += moveDirection;
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -29,6 +30,11 @@ public class Tank : MonoBehaviour
             
             OnDie();
         }
+    }
+
+    public void SetTargetPosition(Transform targetTransform)
+    {
+        _target = targetTransform;
     }
     
     public void GetDamage(float damage)
