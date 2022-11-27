@@ -11,10 +11,7 @@ public class SpawnTank : MonoBehaviour
 
     [SerializeField]
     private float _spawnDelay = 0;
-
-    [SerializeField]
-    private Transform _startSpawn = null;
-
+    
     [SerializeField] 
     private Weapon _weapon = null;
     
@@ -27,15 +24,36 @@ public class SpawnTank : MonoBehaviour
     {
         var waiter = new WaitForSeconds(_spawnDelay);
         
-        Vector3[] spawnPoints = PointsTanksOnCircle();
-        
-        for (int i = 0; i < spawnPoints.Length; i++)
+        //Vector3[] spawnPoints = PointsTanksOnCircle();
+
+        while (true)
         {
-            Tank createTank = Instantiate(_tankPrefab, transform);
-            createTank.transform.position = spawnPoints[i] * 3;
-                
+            var spawnPosition = GetRandomPoint();
+            
+            Tank createTank = Instantiate(_tankPrefab, spawnPosition, Quaternion.identity, transform);
+
             yield return waiter;
         }
+        
+        // for (int i = 0; i < spawnPoints.Length; i++)
+        // {
+        //     Tank createTank = Instantiate(_tankPrefab, transform);
+        //     createTank.transform.position = spawnPoints[i] * 3;
+        //         
+        //     yield return waiter;
+        // }
+    }
+
+    private Vector3 GetRandomPoint()
+    {
+        float randomAngleNewDeg = Random.Range(0, 360) * Mathf.Deg2Rad;
+        
+        var X = Mathf.Cos(randomAngleNewDeg);
+        var Z = Mathf.Sin(randomAngleNewDeg);
+
+        var spawnDirection = new Vector3(X, 0, Z);
+
+        return _weapon.transform.position + spawnDirection * (_weapon.GetRadius() * 2);
     }
 
     private Vector3[] PointsTanksOnCircle()

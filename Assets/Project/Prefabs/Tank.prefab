@@ -92,7 +92,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6499702647554613786}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -112,8 +112,7 @@ MonoBehaviour:
   _speed: 1
   _towerPrefab: {fileID: 3405535167029965519, guid: fb2e9cf6d8a10244184ba6a2d7d86941, type: 3}
   _damage: 3
-  _boxCollider: {fileID: 8587949979999760169}
-  _health: -53
+  _health: 3
 --- !u!54 &-7017909796977586940
 Rigidbody:
   m_ObjectHideFlags: 0
