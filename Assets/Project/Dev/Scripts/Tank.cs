@@ -1,5 +1,7 @@
 using UnityEngine;
 
+public delegate int NumKill();
+
 public class Tank : MonoBehaviour
 {
     [SerializeField]
@@ -11,7 +13,15 @@ public class Tank : MonoBehaviour
     [SerializeField]
     private float _health = 0;
 
+    public NumKill numKill = null;
+    
     private Transform _target = null;
+    private static int _numberKilled = 0;
+
+    private void Awake()
+    {
+        numKill = GetNumberKilled;
+    }
 
     private void FixedUpdate()
     {
@@ -50,5 +60,8 @@ public class Tank : MonoBehaviour
     private void OnDie()
     {
         gameObject.SetActive(false);
+        _numberKilled++;
     }
+
+    public static int GetNumberKilled() => _numberKilled;
 }
