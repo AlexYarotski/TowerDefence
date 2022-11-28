@@ -36,11 +36,6 @@ public class GameWindow : MonoBehaviour
         SceneManager.LoadScene(currentScene);
     }
 
-    private void FixedUpdate()
-    {
-       _counter.text = _nuberDead.ToString();
-    }
-
     private void Tank_Dead(Tank tank)
     {
         _nuberDead++;
