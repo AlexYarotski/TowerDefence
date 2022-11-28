@@ -13,8 +13,7 @@ public class Tank : MonoBehaviour
     [SerializeField]
     private float _health = 0;
 
-    public NumKill numKill = null;
-    
+    private NumKill numKill = null;
     private Transform _target = null;
     private static int _numberKilled = 0;
 
@@ -42,10 +41,7 @@ public class Tank : MonoBehaviour
         }
     }
 
-    public void SetTargetPosition(Transform targetTransform)
-    {
-        _target = targetTransform;
-    }
+    public void SetTargetPosition(Transform targetTransform) => _target = targetTransform;
     
     public void GetDamage(float damage)
     {

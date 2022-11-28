@@ -50,8 +50,5 @@ public class Weapon : MonoBehaviour
         }
     }
 
-    public float GetRadius()
-    {
-        return _attackRadius;
-    }
+    public float GetRadius() => _attackRadius;
 }

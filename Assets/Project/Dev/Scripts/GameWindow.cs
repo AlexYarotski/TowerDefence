@@ -11,8 +11,8 @@ public class GameWindow : MonoBehaviour
     [SerializeField]
     private Button _button = null;
 
-    private NumKill numKill = Tank.GetNumberKilled;
     private Text _text = null;
+    private readonly NumKill numKill = Tank.GetNumberKilled;
 
     private void Start()
     {
@@ -22,7 +22,7 @@ public class GameWindow : MonoBehaviour
 
     public void RestartGame()
     {
-        var currentScene = SceneManager.GetActiveScene().name;
+        string currentScene = SceneManager.GetActiveScene().name;
         SceneManager.LoadScene(currentScene);
     }
 
