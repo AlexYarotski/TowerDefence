@@ -21,7 +21,7 @@ public class GameWindow : MonoBehaviour
     
     private void OnDisable()
     {
-        Tank.Dead += Tank_Dead;
+        Tank.Dead -= Tank_Dead;
     }
 
     private void Start()
