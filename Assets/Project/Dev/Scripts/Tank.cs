@@ -1,9 +1,10 @@
+using System;
 using UnityEngine;
-
-public delegate int NumKill();
 
 public class Tank : MonoBehaviour
 {
+    public static event Action<Tank> Dead = delegate {  }; 
+
     [SerializeField]
     private float _speed = 0;
 
@@ -12,15 +13,8 @@ public class Tank : MonoBehaviour
 
     [SerializeField]
     private float _health = 0;
-
-    private NumKill numKill = null;
+    
     private Transform _target = null;
-    private static int _numberKilled = 0;
-
-    private void Awake()
-    {
-        numKill = GetNumberKilled;
-    }
 
     private void FixedUpdate()
     {
@@ -56,8 +50,6 @@ public class Tank : MonoBehaviour
     private void OnDie()
     {
         gameObject.SetActive(false);
-        _numberKilled++;
+        Dead(this);
     }
-
-    public static int GetNumberKilled() => _numberKilled;
 }

@@ -12,7 +12,17 @@ public class GameWindow : MonoBehaviour
     private Button _button = null;
 
     private Text _text = null;
-    private readonly NumKill numKill = Tank.GetNumberKilled;
+    private int _nuberDead = 0;
+
+    private void OnEnable()
+    {
+        Tank.Dead += SetDead;
+    }
+    
+    private void OnDisable()
+    {
+        Tank.Dead += SetDead;
+    }
 
     private void Start()
     {
@@ -23,11 +33,14 @@ public class GameWindow : MonoBehaviour
     public void RestartGame()
     {
         string currentScene = SceneManager.GetActiveScene().name;
+        
         SceneManager.LoadScene(currentScene);
     }
 
     private void FixedUpdate()
     {
-       _counter.text = numKill().ToString();
+       _counter.text = _nuberDead.ToString();
     }
+
+    private void SetDead(Tank tank) => _nuberDead++;
 }
