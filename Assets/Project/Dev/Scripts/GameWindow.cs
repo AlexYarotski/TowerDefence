@@ -16,18 +16,17 @@ public class GameWindow : MonoBehaviour
 
     private void OnEnable()
     {
-        Tank.Dead += SetDead;
+        Tank.Dead += Tank_Dead;
     }
     
     private void OnDisable()
     {
-        Tank.Dead += SetDead;
+        Tank.Dead += Tank_Dead;
     }
 
     private void Start()
     {
-        Button btn = _button.GetComponent<Button>();
-        btn.onClick.AddListener(RestartGame);
+        _button.onClick.AddListener(RestartGame);
     }
 
     public void RestartGame()
@@ -42,5 +41,9 @@ public class GameWindow : MonoBehaviour
        _counter.text = _nuberDead.ToString();
     }
 
-    private void SetDead(Tank tank) => _nuberDead++;
+    private void Tank_Dead(Tank tank)
+    {
+        _nuberDead++;
+        _counter.text = _nuberDead.ToString();
+    } 
 }

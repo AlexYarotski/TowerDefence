@@ -27,5 +27,8 @@ public class Arrow : Ammunition
         }
     }
 
-    public void SetTarget(Tank tank) => _target = tank;
+    public void SetTarget(Tank tank)
+    {
+      _target = tank;  
+    }
 }
