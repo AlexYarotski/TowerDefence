@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Target : MonoBehaviour
+public class SpawnPoint : MonoBehaviour
 {
     [SerializeField]
     private Camera _camera = null;
@@ -13,14 +13,12 @@ public class Target : MonoBehaviour
         if(Input.GetMouseButtonDown(0))
         {
             Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
-
+            
             if (Physics.Raycast(ray, out RaycastHit hitInfo))
             {
-                    
-                    Vector3 startPosition = new Vector3(5,5,5);
-                    Tank createTank = Instantiate(_tank, transform);
-                    createTank.transform.position = startPosition;
-                
+                Vector3 startPosition = hitInfo.transform.position;
+                Tank createTank = Instantiate(_tank, transform);
+                createTank.transform.position = startPosition;
             }
         }
     }
