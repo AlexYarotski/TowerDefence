@@ -16,7 +16,7 @@ public class SpawnPoint : MonoBehaviour
             
             if (Physics.Raycast(ray, out RaycastHit hitInfo))
             {
-                Vector3 startPosition = hitInfo.transform.position;
+                Vector3 startPosition = hitInfo.point;
                 Tank createTank = Instantiate(_tank, transform);
                 createTank.transform.position = startPosition;
             }

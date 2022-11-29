@@ -14,11 +14,13 @@ public class Tank : MonoBehaviour
     [SerializeField]
     private float _health = 0;
 
-    [SerializeField]
+    [SerializeField] 
     private Tower _tower = null;
+    
 
     private void FixedUpdate()
     {
+        
         var finalPos = new Vector3(_tower.transform.position.x, 1, _tower.transform.position.z);
         float step = Time.deltaTime * _speed;
 
