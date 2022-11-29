@@ -13,12 +13,13 @@ public class Tank : MonoBehaviour
 
     [SerializeField]
     private float _health = 0;
-    
-    private Transform _target = null;
+
+    [SerializeField]
+    private Tower _tower = null;
 
     private void FixedUpdate()
     {
-        var finalPos = new Vector3(_target.position.x, 1, _target.position.z);
+        var finalPos = new Vector3(_tower.transform.position.x, 1, _tower.transform.position.z);
         float step = Time.deltaTime * _speed;
 
         var moveDirection = (finalPos - transform.position).normalized * step;
@@ -35,7 +36,10 @@ public class Tank : MonoBehaviour
         }
     }
 
-    public void SetTargetPosition(Transform targetTransform) => _target = targetTransform;
+    // public void SetTargetPosition(Transform targetTransform)
+    // {
+    //     _target = targetTransform;
+    // } 
     
     public void GetDamage(float damage)
     {

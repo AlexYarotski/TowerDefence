@@ -12,9 +12,10 @@ public class Arrow : Ammunition
 
     private void FixedUpdate()
     {
+        float step = Time.deltaTime * _speed;
+        
         var moveDirection = (_target.transform.position - transform.position).normalized;
-
-        transform.position += moveDirection * (_speed * Time.deltaTime);
+        transform.position += moveDirection * step;
     }
 
     private void OnCollisionEnter(Collision collision)
