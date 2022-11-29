@@ -16,9 +16,11 @@ public class Target : MonoBehaviour
 
             if (Physics.Raycast(ray, out RaycastHit hitInfo))
             {
-                Vector3 startPosition = (hitInfo.point - transform.position).normalized;
-                Tank createTank = Instantiate(_tank, transform);
-                createTank.transform.position = startPosition;
+                    
+                    Vector3 startPosition = new Vector3(5,5,5);
+                    Tank createTank = Instantiate(_tank, transform);
+                    createTank.transform.position = startPosition;
+                
             }
         }
     }
