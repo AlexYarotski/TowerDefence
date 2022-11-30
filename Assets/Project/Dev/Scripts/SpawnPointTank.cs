@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class SpawnPoint : MonoBehaviour
+public class SpawnPointTank : MonoBehaviour
 {
     [SerializeField]
     private Camera _camera = null;

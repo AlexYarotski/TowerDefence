@@ -19,6 +19,7 @@ public class Tank : MonoBehaviour
 
     private Transform _target = null;
 
+    
 
     private void Start()
     {
@@ -60,13 +61,13 @@ public class Tank : MonoBehaviour
     public void GetDamage(float damage)
     {
         _health -= damage;
-
+    
         if (_health <= 0)
         {
             OnDie();
         }
     }
-
+    
     private void OnDie()
     {
         gameObject.SetActive(false);
