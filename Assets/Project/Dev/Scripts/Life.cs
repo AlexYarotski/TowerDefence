@@ -8,7 +8,7 @@ public abstract class Life : MonoBehaviour
         set;
     }
     
-    public virtual void GetDamage(float damage)
+    public void GetDamage(float damage)
     {
         Health -= damage;
         
@@ -18,7 +18,7 @@ public abstract class Life : MonoBehaviour
         }
     }
 
-    protected void OnDie()
+    public virtual void OnDie()
     {
         gameObject.SetActive(false);
     }

@@ -33,7 +33,6 @@ public class Tank : Life
             tower.GetDamage(_damage);
             
             OnDie();
-            Dead(this);
         }
     }
     
@@ -42,17 +41,18 @@ public class Tank : Life
          _target = targetTransform;
      } 
     
-    public override void GetDamage(float damage)
+    public void GetDamage(float damage)
     {
         Health = _health;
         
         base.GetDamage(damage);
 
         _health = Health;
+    }
 
-        if (_health <= 0)
-        {
-            Dead(this);
-        }
+    public override sealed void OnDie()
+    {
+        gameObject.SetActive(false);
+        Dead(this);
     }
 }

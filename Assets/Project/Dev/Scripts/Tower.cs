@@ -5,12 +5,17 @@ public class Tower : Life
     [SerializeField]
     private float _health = 0;
 
-    public override void GetDamage(float damage)
+    public void GetDamage(float damage)
     {
         Health = _health;
         
         base.GetDamage(damage);
 
         _health = Health;
+    }
+    
+    public override sealed void OnDie()
+    {
+        gameObject.SetActive(false);
     }
 }
