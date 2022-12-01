@@ -7,6 +7,9 @@ public class SpawnPointTank : MonoBehaviour
 
     [SerializeField]
     private Tank _tank = null;
+    
+    [SerializeField] 
+    private Weapon _weapon = null;
 
     private void FixedUpdate()
     {
@@ -17,8 +20,9 @@ public class SpawnPointTank : MonoBehaviour
             if (Physics.Raycast(ray, out RaycastHit hitInfo))
             {
                 Vector3 startPosition = hitInfo.point;
-                Tank createTank = Instantiate(_tank, transform);
-                createTank.transform.position = startPosition;
+                Tank createTank = Instantiate(_tank, startPosition, Quaternion.identity,
+                    transform);
+                createTank.SetTargetPosition(_weapon.transform); 
             }
         }
     }

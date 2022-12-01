@@ -14,17 +14,8 @@ public class Tank : MonoBehaviour
     [SerializeField]
     private float _health = 0;
 
-    [SerializeField] 
-    private Tower _tower = null;
-
     private Transform _target = null;
 
-    
-
-    private void Start()
-    {
-        CheckTarget();
-    }
 
     private void FixedUpdate()
     {
@@ -42,14 +33,6 @@ public class Tank : MonoBehaviour
             tower.GetDamage(_damage);
             
             OnDie();
-        }
-    }
-
-    private void CheckTarget()
-    {
-        if (_target == null)
-        {
-            _target = _tower.transform;
         }
     }
     

@@ -3,10 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="02d69532-7ac7-4a36-bfa5-6898a2e5d453" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TowerDefence/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TowerDefence/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/SpawnPoint.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/SpawnPoint.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/SpawnPointTank.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/SpawnPointTank.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/Tank.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/Tank.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/Tower.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/Tower.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,6 +101,7 @@
       <workItem from="1669747472426" duration="594000" />
       <workItem from="1669810597844" duration="1767000" />
       <workItem from="1669813493578" duration="2037000" />
+      <workItem from="1669898562026" duration="626000" />
     </task>
     <servers />
   </component>
