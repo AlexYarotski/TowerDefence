@@ -22,7 +22,7 @@ public class Arrow : Ammunition
     {
         if (collision.gameObject.TryGetComponent(out Tank tank))
         {
-            tank.DamageableObject(_damage);
+            tank.GetDamage(_damage);
             
             Destroy(gameObject);
         }

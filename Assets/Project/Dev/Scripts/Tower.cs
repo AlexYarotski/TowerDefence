@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Tower : Life
+public class Tower : DamageableObject
 {
     [SerializeField]
     private float _health = 0;

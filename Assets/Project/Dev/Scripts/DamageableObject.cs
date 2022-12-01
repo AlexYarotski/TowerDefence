@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public abstract class Life : MonoBehaviour
+public abstract class DamageableObject : MonoBehaviour
 {
     public float Health
     {
@@ -8,7 +8,7 @@ public abstract class Life : MonoBehaviour
         set;
     }
     
-    public void DamageableObject(float damage)
+    public void GetDamage(float damage)
     {
         Health -= damage;
         

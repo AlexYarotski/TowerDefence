@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class Tank : Life
+public class Tank : DamageableObject
 {
     public static event Action<Tank> Dead = delegate {  }; 
 
@@ -34,7 +34,7 @@ public class Tank : Life
     {
         if (collision.gameObject.TryGetComponent(out Tower tower))
         {
-            tower.DamageableObject(_damage);
+            tower.GetDamage(_damage);
             
             OnDie();
         }
