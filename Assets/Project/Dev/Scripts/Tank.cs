@@ -16,6 +16,10 @@ public class Tank : Life
 
     private Transform _target = null;
 
+    private void Start()
+    {
+        Health = _health;
+    }
 
     private void FixedUpdate()
     {
@@ -30,7 +34,7 @@ public class Tank : Life
     {
         if (collision.gameObject.TryGetComponent(out Tower tower))
         {
-            tower.GetDamage(_damage);
+            tower.DamageableObject(_damage);
             
             OnDie();
         }
@@ -40,19 +44,10 @@ public class Tank : Life
      {
          _target = targetTransform;
      } 
-    
-    public void GetDamage(float damage)
-    {
-        Health = _health;
-        
-        base.GetDamage(damage);
 
-        _health = Health;
-    }
-
-    public override sealed void OnDie()
+    public override void OnDie()
     {
-        gameObject.SetActive(false);
+        base.OnDie();
         Dead(this);
     }
 }

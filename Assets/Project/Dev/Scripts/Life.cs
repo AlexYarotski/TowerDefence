@@ -8,7 +8,7 @@ public abstract class Life : MonoBehaviour
         set;
     }
     
-    public void GetDamage(float damage)
+    public void DamageableObject(float damage)
     {
         Health -= damage;
         
