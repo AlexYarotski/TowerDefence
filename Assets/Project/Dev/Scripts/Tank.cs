@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class Tank : MonoBehaviour
+public class Tank : Life
 {
     public static event Action<Tank> Dead = delegate {  }; 
 
@@ -33,6 +33,7 @@ public class Tank : MonoBehaviour
             tower.GetDamage(_damage);
             
             OnDie();
+            Dead(this);
         }
     }
     
@@ -41,19 +42,17 @@ public class Tank : MonoBehaviour
          _target = targetTransform;
      } 
     
-    public void GetDamage(float damage)
+    public override void GetDamage(float damage)
     {
-        _health -= damage;
-    
+        Health = _health;
+        
+        base.GetDamage(damage);
+
+        _health = Health;
+
         if (_health <= 0)
         {
-            OnDie();
+            Dead(this);
         }
-    }
-    
-    private void OnDie()
-    {
-        gameObject.SetActive(false);
-        Dead(this);
     }
 }

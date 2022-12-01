@@ -1,22 +1,16 @@
 using UnityEngine;
 
-public class Tower : MonoBehaviour
+public class Tower : Life
 {
     [SerializeField]
     private float _health = 0;
 
-    public void GetDamage(float damage)
+    public override void GetDamage(float damage)
     {
-        _health -= damage;
-    
-        if (_health <= 0)
-        {
-            OnDie();
-        }
-    }
-    
-    private void OnDie()
-    {
-        gameObject.SetActive(false);
+        Health = _health;
+        
+        base.GetDamage(damage);
+
+        _health = Health;
     }
 }
