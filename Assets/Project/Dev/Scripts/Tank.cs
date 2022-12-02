@@ -11,15 +11,7 @@ public class Tank : DamageableObject
     [SerializeField] 
     private float _damage = 0;
 
-    [SerializeField]
-    private float _health = 0;
-
     private Transform _target = null;
-
-    private void Start()
-    {
-        Health = _health;
-    }
 
     private void FixedUpdate()
     {

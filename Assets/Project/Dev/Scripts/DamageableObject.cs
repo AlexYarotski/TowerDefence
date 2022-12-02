@@ -2,17 +2,14 @@ using UnityEngine;
 
 public abstract class DamageableObject : MonoBehaviour
 {
-    public float Health
-    {
-        get;
-        set;
-    }
+    [SerializeField]
+    private float _health = 0;
     
     public void GetDamage(float damage)
     {
-        Health -= damage;
+        _health -= damage;
         
-        if (Health <= 0)
+        if (_health <= 0)
         {
             OnDie();
         }
