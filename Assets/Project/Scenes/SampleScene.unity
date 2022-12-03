@@ -675,7 +675,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2104200995}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0d7ece1d5a5a6cf4f9c530a2606c2970, type: 3}
   m_Name: 
@@ -704,7 +704,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2104200995}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a82673c492e5e294091ad531cbdb6295, type: 3}
   m_Name: 
@@ -871,7 +871,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3405535167029965519, guid: fb2e9cf6d8a10244184ba6a2d7d86941, type: 3}
       propertyPath: _health
-      value: 5
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 3405535167029965519, guid: fb2e9cf6d8a10244184ba6a2d7d86941, type: 3}
       propertyPath: _tankPrefab
@@ -895,7 +895,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9100099735968225446, guid: fb2e9cf6d8a10244184ba6a2d7d86941, type: 3}
       propertyPath: _numberShellsPerTank
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb2e9cf6d8a10244184ba6a2d7d86941, type: 3}
