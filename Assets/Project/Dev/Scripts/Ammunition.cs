@@ -13,4 +13,9 @@ public abstract class Ammunition : MonoBehaviour
         get;
         private set;
     }
+    
+    public void OnDie()
+    {
+        gameObject.SetActive(false);
+    }
 }

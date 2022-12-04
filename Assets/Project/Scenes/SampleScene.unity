@@ -284,7 +284,7 @@ GameObject:
   - component: {fileID: 945482127}
   - component: {fileID: 945482126}
   - component: {fileID: 945482125}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Flore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -623,6 +623,50 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _counter: {fileID: 1204260599}
   _button: {fileID: 2063100085}
+--- !u!1 &1431598092
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1431598094}
+  - component: {fileID: 1431598093}
+  m_Layer: 0
+  m_Name: ParticleManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1431598093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1431598092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f19795a9f2964c05bf9778df0c91224c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _onDieTankParticlePrefab: {fileID: 6710939519897745771, guid: cf94652ed59543244a614b907122e0a6, type: 3}
+--- !u!4 &1431598094
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1431598092}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.5151124, y: 15.5060835, z: -2.0310605}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1938975590 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9100099735968225446, guid: fb2e9cf6d8a10244184ba6a2d7d86941, type: 3}
@@ -675,7 +719,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2104200995}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0d7ece1d5a5a6cf4f9c530a2606c2970, type: 3}
   m_Name: 
@@ -704,13 +748,16 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2104200995}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a82673c492e5e294091ad531cbdb6295, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _camera: {fileID: 519420031}
   _tank: {fileID: 7102585454480597950, guid: 979eb4ed7e1e1974cb84cefb04127c7c, type: 3}
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 64
   _weapon: {fileID: 1938975590}
 --- !u!1001 &2634608748553837207
 PrefabInstance:
@@ -785,7 +832,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2634608748901994003, guid: b20c9e8f08516be4c89dcd5528e481db, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.59962064
+      value: 38.7
       objectReference: {fileID: 0}
     - target: {fileID: 2634608748901994003, guid: b20c9e8f08516be4c89dcd5528e481db, type: 3}
       propertyPath: m_LocalRotation.w
@@ -805,11 +852,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2634608748901994003, guid: b20c9e8f08516be4c89dcd5528e481db, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 45.116455
+      value: 38
       objectReference: {fileID: 0}
     - target: {fileID: 2634608748901994003, guid: b20c9e8f08516be4c89dcd5528e481db, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 19
+      value: -2.3
       objectReference: {fileID: 0}
     - target: {fileID: 2634608748901994003, guid: b20c9e8f08516be4c89dcd5528e481db, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -895,7 +942,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9100099735968225446, guid: fb2e9cf6d8a10244184ba6a2d7d86941, type: 3}
       propertyPath: _numberShellsPerTank
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb2e9cf6d8a10244184ba6a2d7d86941, type: 3}
@@ -972,7 +1019,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4213681262866954726, guid: caef84bc891d77140b100c65d7267fa4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -33
+      value: -35.7
       objectReference: {fileID: 0}
     - target: {fileID: 4213681262866954726, guid: caef84bc891d77140b100c65d7267fa4, type: 3}
       propertyPath: m_LocalRotation.w
@@ -992,11 +1039,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4213681262866954726, guid: caef84bc891d77140b100c65d7267fa4, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -70
+      value: -32.2
       objectReference: {fileID: 0}
     - target: {fileID: 4213681262866954726, guid: caef84bc891d77140b100c65d7267fa4, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 2
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4213681262866954726, guid: caef84bc891d77140b100c65d7267fa4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

@@ -10,6 +10,16 @@ public class Arrow : Ammunition
 
     private Tank _target = null;
 
+    private void OnEnable()
+    {
+        Tank.Dead += Tank_Dead;
+    }
+    
+    private void OnDisable()
+    {
+        Tank.Dead -= Tank_Dead;
+    }
+    
     private void FixedUpdate()
     {
         float step = Time.deltaTime * _speed;
@@ -23,9 +33,14 @@ public class Arrow : Ammunition
         if (collision.gameObject.TryGetComponent(out Tank tank))
         {
             tank.GetDamage(_damage);
-            
-            Destroy(gameObject);
+
+            OnDie();
         }
+    }
+    
+    private void Tank_Dead(Tank obj)
+    {
+        OnDie();
     }
 
     public void SetTarget(Tank tank)

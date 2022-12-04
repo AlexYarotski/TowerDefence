@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="02d69532-7ac7-4a36-bfa5-6898a2e5d453" name="Changes" comment="" />
+    <list default="true" id="02d69532-7ac7-4a36-bfa5-6898a2e5d453" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/ParticleManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/ParticleManager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.TowerDefence/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TowerDefence/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/Ammunition.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/Ammunition.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/Arrow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/Arrow.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/SpawnPointTank.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/SpawnPointTank.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Arrow.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Arrow.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/VFX/Particle System.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/VFX/Particle System.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -101,7 +112,8 @@
       <workItem from="1669908644123" duration="12329000" />
       <workItem from="1669976895636" duration="60000" />
       <workItem from="1669977052537" duration="250000" />
-      <workItem from="1670059844896" duration="679000" />
+      <workItem from="1670059844896" duration="3556000" />
+      <workItem from="1670152393874" duration="1315000" />
     </task>
     <servers />
   </component>
