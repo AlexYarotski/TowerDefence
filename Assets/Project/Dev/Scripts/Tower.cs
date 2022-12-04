@@ -4,7 +4,7 @@ public class Tower : DamageableObject
 {
     public static event Action<Tower> Dead = delegate { };
     
-    public override void OnDie()
+    protected override void OnDie()
     {
         base.OnDie();
         Dead(this);

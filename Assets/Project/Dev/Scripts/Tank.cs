@@ -37,7 +37,7 @@ public class Tank : DamageableObject
          _target = targetTransform;
      } 
 
-    public override void OnDie()
+    protected override void OnDie()
     {
         base.OnDie();
         Dead(this);

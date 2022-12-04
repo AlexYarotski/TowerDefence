@@ -15,7 +15,7 @@ public abstract class DamageableObject : MonoBehaviour
         }
     }
 
-    public virtual void OnDie()
+    protected virtual void OnDie()
     {
         gameObject.SetActive(false);
     }
