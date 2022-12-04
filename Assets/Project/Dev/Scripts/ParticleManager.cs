@@ -21,7 +21,7 @@ namespace Project.Dev.Scripts
 
         private void OnDisable()
         {
-            Tank.Dead += Tank_Dead;
+            Tank.Dead -= Tank_Dead;
         }
 
         private void Tank_Dead(Tank obj)

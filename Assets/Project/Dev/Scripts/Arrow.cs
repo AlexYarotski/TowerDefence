@@ -12,12 +12,12 @@ public class Arrow : Ammunition
 
     private void OnEnable()
     {
-        Tank.Dead += Tank_Dead;
+        Tank.Dead += Tanks_Dead;
     }
     
     private void OnDisable()
     {
-        Tank.Dead -= Tank_Dead;
+        Tank.Dead -= Tanks_Dead;
     }
     
     private void FixedUpdate()
@@ -26,6 +26,11 @@ public class Arrow : Ammunition
         
         var moveDirection = (_target.transform.position - transform.position).normalized;
         transform.position += moveDirection * step;
+    }
+
+    private void Tanks_Dead(Tank obj)
+    {
+        OnDie();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -38,11 +43,6 @@ public class Arrow : Ammunition
         }
     }
     
-    private void Tank_Dead(Tank obj)
-    {
-        OnDie();
-    }
-
     public void SetTarget(Tank tank)
     {
       _target = tank;  
