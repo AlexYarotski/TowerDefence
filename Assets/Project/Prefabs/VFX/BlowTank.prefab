@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6710939519897745771}
   - component: {fileID: 6710939519897745770}
   m_Layer: 0
-  m_Name: Blow
+  m_Name: BlowTank
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -115,7 +115,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1.5
+      scalar: 1
       minScalar: 5
       maxCurve:
         serializedVersion: 2

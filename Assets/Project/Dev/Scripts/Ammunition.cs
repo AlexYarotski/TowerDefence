@@ -2,17 +2,11 @@ using UnityEngine;
 
 public abstract class Ammunition : MonoBehaviour
 {
-    public float Speed
-    {
-        get;
-        private set;
-    }
-
-    public float Damage
-    {
-        get;
-        private set;
-    }
+    [SerializeField]
+    protected float _speed = 0;
+    
+    [SerializeField]
+    protected float _damage = 0;
     
     public void OnDie()
     {

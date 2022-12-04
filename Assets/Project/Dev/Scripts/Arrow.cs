@@ -2,12 +2,6 @@ using UnityEngine;
 
 public class Arrow : Ammunition
 {
-    [SerializeField]
-    private float _speed = 0;
-    
-    [SerializeField]
-    private float _damage = 0;
-
     private Tank _target = null;
 
     private void OnEnable()
@@ -22,7 +16,7 @@ public class Arrow : Ammunition
     
     private void FixedUpdate()
     {
-        float step = Time.deltaTime * _speed;
+        float step = Time.deltaTime * base._speed;
         
         var moveDirection = (_target.transform.position - transform.position).normalized;
         transform.position += moveDirection * step;
