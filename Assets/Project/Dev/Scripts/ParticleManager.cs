@@ -6,13 +6,12 @@ namespace Project.Dev.Scripts
     {
         [SerializeField]
         private ParticleSystem _onDieTankParticlePrefab = null;
-
-        private ParticleSystem _onDieTank = null;
         
         [SerializeField]
         private ParticleSystem _onDieTowerParticlePrefab = null;
 
         private ParticleSystem _onDieTower = null;
+        private ParticleSystem _onDieTank = null;
 
         private void Start()
         {

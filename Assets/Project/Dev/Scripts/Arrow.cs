@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Arrow : Ammunition
@@ -6,27 +7,30 @@ public class Arrow : Ammunition
 
     private void OnEnable()
     {
-        Tank.Dead += Tanks_Dead;
+        Tank.Dead += Check_Target;
     }
-    
+
     private void OnDisable()
     {
-        Tank.Dead -= Tanks_Dead;
+        Tank.Dead -= Check_Target;
     }
     
     private void FixedUpdate()
     {
-        float step = Time.deltaTime * base._speed;
+        float step = Time.deltaTime * _speed;
         
         var moveDirection = (_target.transform.position - transform.position).normalized;
         transform.position += moveDirection * step;
     }
-
-    private void Tanks_Dead(Tank obj)
+    
+    private void Check_Target(Tank target)
     {
-        OnDie();
+        if (_target == target)
+        {
+            OnDie();
+        }
     }
-
+    
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.TryGetComponent(out Tank tank))

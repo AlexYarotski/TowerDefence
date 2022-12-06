@@ -323,7 +323,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: cec4d317c6e2ab0469feca4af645aac6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -553,13 +553,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1092579063}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalRotation: {x: 0.4999245, y: 0, z: 0, w: 0.866069}
+  m_LocalPosition: {x: 0, y: 10, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 59.99, y: 0, z: 0}
 --- !u!224 &1129725859 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4213681262866954726, guid: caef84bc891d77140b100c65d7267fa4, type: 3}
@@ -653,6 +653,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _onDieTankParticlePrefab: {fileID: 6710939519897745771, guid: cf94652ed59543244a614b907122e0a6, type: 3}
+  _onDieTowerParticlePrefab: {fileID: 5205857130948843268, guid: 61843fd77a55d964e94710ae5052a7b8, type: 3}
 --- !u!4 &1431598094
 Transform:
   m_ObjectHideFlags: 0
@@ -904,6 +905,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3405535167029965517, guid: fb2e9cf6d8a10244184ba6a2d7d86941, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 66dc753ae78261745a099f129c3a7d73, type: 2}
     - target: {fileID: 3405535167029965518, guid: fb2e9cf6d8a10244184ba6a2d7d86941, type: 3}
       propertyPath: m_Name
       value: Tower
@@ -918,12 +923,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3405535167029965519, guid: fb2e9cf6d8a10244184ba6a2d7d86941, type: 3}
       propertyPath: _health
-      value: 1000
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3405535167029965519, guid: fb2e9cf6d8a10244184ba6a2d7d86941, type: 3}
       propertyPath: _tankPrefab
       value: 
       objectReference: {fileID: 7102585454480597950, guid: 979eb4ed7e1e1974cb84cefb04127c7c, type: 3}
+    - target: {fileID: 3405535167029965519, guid: fb2e9cf6d8a10244184ba6a2d7d86941, type: 3}
+      propertyPath: _onDieTowerParticlePrefab
+      value: 
+      objectReference: {fileID: 5205857130948843268, guid: 61843fd77a55d964e94710ae5052a7b8, type: 3}
     - target: {fileID: 6455166023702341823, guid: fb2e9cf6d8a10244184ba6a2d7d86941, type: 3}
       propertyPath: m_Enabled
       value: 1
