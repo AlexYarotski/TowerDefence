@@ -22,8 +22,7 @@ public class Weapon : MonoBehaviour
     private Transform _arrowSpawnPoint = null;
 
     private SphereCollider _sphereCollider = null;
-    private Tank _tankPrefab = null;
-    private Stack<Tank> tankDead = new Stack<Tank>();
+    private Queue<Tank> tankDead = new Queue<Tank>();
 
     private void OnEnable()
     {
@@ -37,27 +36,23 @@ public class Weapon : MonoBehaviour
 
     private void Tank_Dead(Tank tank)
     {
-        _tankPrefab = tank;
+        tankDead.Dequeue();
+        if (tankDead.Count >= 1)
+        {
+            StartCoroutine(Fire(tankDead.Peek()));    
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.TryGetComponent(out Tank tank))
         {
-            tankDead.Push(tank);
+            tankDead.Enqueue(tank);
             
             if (tankDead.Count == 1)
             {
                 StartCoroutine(Fire(tankDead.Peek()));
             }
-        }
-    }
-    
-    private void Update()
-    {
-        if (tankDead.Peek() == _tankPrefab)
-        {
-            StartCoroutine(Fire(tankDead.Pop()));
         }
     }
 
