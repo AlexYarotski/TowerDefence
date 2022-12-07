@@ -7,12 +7,12 @@ public class Arrow : Ammunition
 
     private void OnEnable()
     {
-        Tank.Dead += Check_Target;
+        Tank.Dead += Tank_Dead;
     }
 
     private void OnDisable()
     {
-        Tank.Dead -= Check_Target;
+        Tank.Dead -= Tank_Dead;
     }
     
     private void FixedUpdate()
@@ -23,7 +23,7 @@ public class Arrow : Ammunition
         transform.position += moveDirection * step;
     }
     
-    private void Check_Target(Tank target)
+    private void Tank_Dead(Tank target)
     {
         if (_target == target)
         {

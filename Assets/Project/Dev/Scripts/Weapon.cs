@@ -25,23 +25,39 @@ public class Weapon : MonoBehaviour
     private Tank _tankPrefab = null;
     private Stack<Tank> tankDead = new Stack<Tank>();
 
+    private void OnEnable()
+    {
+        Tank.Dead += Tank_Dead;
+    }
+
+    private void OnDisable()
+    {
+        Tank.Dead -= Tank_Dead;
+    }
+
+    private void Tank_Dead(Tank tank)
+    {
+        _tankPrefab = tank;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.TryGetComponent(out Tank tank))
         {
             tankDead.Push(tank);
-            if (tankDead.Count <= 1)
+            
+            if (tankDead.Count == 1)
             {
                 StartCoroutine(Fire(tankDead.Peek()));
             }
         }
     }
-
-    private void OnTriggerExit(Collider other)
+    
+    private void Update()
     {
-        if (other.TryGetComponent(out Tank tank))
+        if (tankDead.Peek() == _tankPrefab)
         {
-            tankDead.Pop();
+            StartCoroutine(Fire(tankDead.Pop()));
         }
     }
 

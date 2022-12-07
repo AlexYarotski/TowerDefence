@@ -362,7 +362,7 @@ Transform:
   m_GameObject: {fileID: 945482124}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 20, y: 1, z: 20}
+  m_LocalScale: {x: 25, y: 1, z: 25}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -943,15 +943,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8128544247513989698, guid: fb2e9cf6d8a10244184ba6a2d7d86941, type: 3}
       propertyPath: m_Radius
-      value: 2.5
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 9100099735968225446, guid: fb2e9cf6d8a10244184ba6a2d7d86941, type: 3}
       propertyPath: _rateFire
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9100099735968225446, guid: fb2e9cf6d8a10244184ba6a2d7d86941, type: 3}
+      propertyPath: _firingDelay
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9100099735968225446, guid: fb2e9cf6d8a10244184ba6a2d7d86941, type: 3}
+      propertyPath: _attackRadius
+      value: 3.58
+      objectReference: {fileID: 0}
+    - target: {fileID: 9100099735968225446, guid: fb2e9cf6d8a10244184ba6a2d7d86941, type: 3}
       propertyPath: _numberShellsPerTank
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb2e9cf6d8a10244184ba6a2d7d86941, type: 3}
