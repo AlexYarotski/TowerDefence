@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5398603183670103009}
   - component: {fileID: 726749584676957825}
   - component: {fileID: 301196182490689330}
-  - component: {fileID: 3226840336816085006}
+  - component: {fileID: 2157755847993571349}
   m_Layer: 0
   m_Name: Bitcoin
   m_TagString: Untagged
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 2595775597089803703}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 8.76, y: 4.5, z: -6.37}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -97,7 +97,7 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
---- !u!114 &3226840336816085006
+--- !u!114 &2157755847993571349
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -106,10 +106,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2595775597089803703}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a95b98b9a165114cbca44074b37ffbe, type: 3}
+  m_Script: {fileID: 11500000, guid: 8366552953c064b4ba7e7d53b2ce1da2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rotation: 3
-  _flightDelay: 0
+  _angle: 3
   _flightSpeed: 0
-  _tower: {fileID: 0}
+  _weapon: {fileID: 0}

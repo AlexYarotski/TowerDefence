@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 [RequireComponent(typeof(SphereCollider))]
@@ -22,7 +23,7 @@ public class Weapon : MonoBehaviour
     private Transform _arrowSpawnPoint = null;
 
     private SphereCollider _sphereCollider = null;
-    private Queue<Tank> tankDead = new Queue<Tank>();
+    private List<Tank> tankDead = new List<Tank>();
 
     private void OnEnable()
     {
@@ -36,10 +37,10 @@ public class Weapon : MonoBehaviour
 
     private void Tank_Dead(Tank tank)
     {
-        tankDead.Dequeue();
+        tankDead.RemoveAt(0);
         if (tankDead.Count >= 1)
         {
-            StartCoroutine(Fire(tankDead.Peek()));    
+            StartCoroutine(Fire(tankDead.First()));    
         }
     }
 
@@ -47,11 +48,11 @@ public class Weapon : MonoBehaviour
     {
         if (other.TryGetComponent(out Tank tank))
         {
-            tankDead.Enqueue(tank);
+            tankDead.Add(tank);
             
             if (tankDead.Count == 1)
             {
-                StartCoroutine(Fire(tankDead.Peek()));
+                StartCoroutine(Fire(tankDead.First()));
             }
         }
     }

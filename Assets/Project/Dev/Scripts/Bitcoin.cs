@@ -1,51 +1,34 @@
-using System.Collections;
 using UnityEngine;
 
 public class Bitcoin : MonoBehaviour
 {
     [SerializeField] 
-    private float _rotation = 0;
-
-    [SerializeField] 
-    private float _flightDelay = 0;
-
-    [SerializeField] 
-    private float _flightSpeed = 0;
+    private float _angle = 0;
     
     [SerializeField] 
-    private Tower _tower = null;
+    private float _flightSpeed = 0;
 
-    private void OnEnable()
+    private Transform _target = null;
+    
+    void FixedUpdate()
     {
-        Tank.Dead += Tank_Dead;
-    }
-
-    private void Tank_Dead(Tank tank)
-    {
-        transform.position = tank.transform.position ;
-        StartCoroutine(FlightDelay());
-    }
-
-    private void FixedUpdate()
-    {
-        transform.Rotate(0, _rotation, 0);
+        Rotation();
         
-        var finalPos = new Vector3(_tower.transform.position.x, 1, _tower.transform.position.z);
+        var finalPos = new Vector3(_target.transform.position.x, 1, _target.transform.position.z);
         float step = Time.deltaTime * _flightSpeed;
-        
+
         var moveDirection = (finalPos - transform.position).normalized * step;
         transform.position += moveDirection;
     }
 
-    private IEnumerator FlightDelay()
+    private void Rotation()
     {
-        var waiter = new WaitForSeconds(_flightDelay);
-
-        for (int i = 0; i < 2; i++)
-        {
-            
-
-            yield return waiter;
-        }
+        Quaternion rotationZ = Quaternion.AngleAxis(_angle, new Vector3(0, 0, 1));
+        transform.rotation *= rotationZ;
     }
+    
+    public void SetTargetPosition(Transform targetTransform)
+    {
+        _target = targetTransform;
+    } 
 }

@@ -3,9 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="02d69532-7ac7-4a36-bfa5-6898a2e5d453" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TowerDefence/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TowerDefence/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/Arrow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/Arrow.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/Bitcoin.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/Bitcoin.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/Bitcoin.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/Bitcoin.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/Weapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/Weapon.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Tower.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Tower.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Bitcoin.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Bitcoin.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/SampleScene.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -26,6 +27,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d95181a5c71a4ad88c81e8fccee6b47113ce00/d8/0a2c38e4/Mathf.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d95181a5c71a4ad88c81e8fccee6b47113ce00/d9/edf5df58/UnitySynchronizationContext.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d95181a5c71a4ad88c81e8fccee6b47113ce00/f1/bb7640b4/SetupCoroutine.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Project/Dev/Scripts/Bitcoin.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://D:/alexy/Repos/Memory/Assets/Project/Dev/Scripts/Pressing.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -66,10 +68,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="9992">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="9992" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -116,7 +118,10 @@
       <workItem from="1670349290435" duration="244000" />
       <workItem from="1670349581042" duration="4283000" />
       <workItem from="1670415117978" duration="7530000" />
-      <workItem from="1670433084825" duration="5830000" />
+      <workItem from="1670433084825" duration="7543000" />
+      <workItem from="1670500401396" duration="4995000" />
+      <workItem from="1670507770717" duration="618000" />
+      <workItem from="1670531415707" duration="118000" />
     </task>
     <servers />
   </component>
@@ -136,6 +141,25 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Project/Dev/Scripts/Bitcoin.cs</url>
+          <line>16</line>
+          <properties documentPath="C:\Users\alexy\Documents\TowerDefence\Assets\Project\Dev\Scripts\Bitcoin.cs" initialLine="16" containingFunctionPresentation="method 'FixedUpdate'">
+            <startOffsets>
+              <option value="284" />
+            </startOffsets>
+            <endOffsets>
+              <option value="374" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
