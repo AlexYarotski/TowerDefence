@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 726749584676957825}
   - component: {fileID: 301196182490689330}
   - component: {fileID: 2157755847993571349}
+  - component: {fileID: 2812917834101448797}
   m_Layer: 0
   m_Name: Bitcoin
   m_TagString: Untagged
@@ -29,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 2595775597089803703}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 8.76, y: 4.5, z: -6.37}
-  m_LocalScale: {x: 1, y: 0.1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.2, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -41,7 +42,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2595775597089803703}
-  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: -2818119484085043418, guid: 7e9e3b901d9ca9c429e892d06b0a0890, type: 3}
 --- !u!23 &726749584676957825
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -61,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e7e0a40587646a548b01204c9b27d1c7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -109,6 +110,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8366552953c064b4ba7e7d53b2ce1da2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _health: 0
   _angle: 3
-  _flightSpeed: 0
-  _weapon: {fileID: 0}
+  _flightSpeed: 2
+--- !u!54 &2812917834101448797
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2595775597089803703}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0

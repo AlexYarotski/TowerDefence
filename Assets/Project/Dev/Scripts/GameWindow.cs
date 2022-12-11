@@ -9,19 +9,24 @@ public class GameWindow : MonoBehaviour
     private TextMeshProUGUI _counter = null;
 
     [SerializeField]
+    private TextMeshProUGUI _mining = null;
+    
+    [SerializeField]
     private Button _button = null;
 
-    private Text _text = null;
-    private int _nuberDead = 0;
+    private int _numberDead = 0;
+    private int _numberMining = 0;
 
     private void OnEnable()
     {
         Tank.Dead += Tank_Dead;
+        Bitcoin.Mining += Bitcoin_Mining;
     }
-    
+
     private void OnDisable()
     {
         Tank.Dead -= Tank_Dead;
+        Bitcoin.Mining -= Bitcoin_Mining;
     }
 
     private void Start()
@@ -38,7 +43,13 @@ public class GameWindow : MonoBehaviour
 
     private void Tank_Dead(Tank tank)
     {
-        _nuberDead++;
-        _counter.text = _nuberDead.ToString();
-    } 
+        _numberDead++;
+        _counter.text = _numberDead.ToString();
+    }
+
+    private void Bitcoin_Mining(Bitcoin obj)
+    {
+        _numberMining++;
+        _mining.text = _numberMining.ToString();
+    }
 }

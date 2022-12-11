@@ -1,7 +1,10 @@
 using UnityEngine;
+using System;
 
-public class Bitcoin : MonoBehaviour
+public class Bitcoin : DamageableObject
 {
+    public static event Action<Bitcoin> Mining = delegate {  }; 
+    
     [SerializeField] 
     private float _angle = 0;
     
@@ -14,7 +17,7 @@ public class Bitcoin : MonoBehaviour
     {
         Rotation();
         
-        var finalPos = new Vector3(_target.transform.position.x, 1, _target.transform.position.z);
+        var finalPos = new Vector3(_target.transform.position.x, 1.5f, _target.transform.position.z);
         float step = Time.deltaTime * _flightSpeed;
 
         var moveDirection = (finalPos - transform.position).normalized * step;
@@ -31,4 +34,18 @@ public class Bitcoin : MonoBehaviour
     {
         _target = targetTransform;
     } 
+    
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.TryGetComponent(out Tower tower))
+        {
+            OnDie();
+        }
+    }
+
+    protected override void OnDie()
+    {
+        base.OnDie();
+        Mining(this);
+    }
 }
