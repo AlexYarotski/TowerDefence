@@ -23,6 +23,7 @@ public class Weapon : MonoBehaviour
 
     private SphereCollider _sphereCollider = null;
     private List<Tank> tankDead = new List<Tank>();
+    private Tank _target = null;
     private bool _firsDead = true;
 
     public float GetRadius()
@@ -64,6 +65,8 @@ public class Weapon : MonoBehaviour
 
     private void Tank_Dead(Tank tank)
     {
+        _target = tank;
+        
         SearchNearestTank();
         
         if (tankDead.Count >= 1)
@@ -95,18 +98,21 @@ public class Weapon : MonoBehaviour
             }
         }
     }
-    
+
     private IEnumerator Fire(Tank tank)
     {
         var firingDelay = new WaitForSeconds(_firingDelay);
-
+        
         for (int i = 0; i < _numberShellsPerTank; i++)
         {
+            if (_target != tank)
+            {
             Arrow createdArrow = Instantiate(_arrowPrefab, _arrowSpawnPoint.position, Quaternion.identity, transform);
-
+            
             createdArrow.SetTarget(tank);
             
             yield return firingDelay;
+            }
         }
     }
 }
