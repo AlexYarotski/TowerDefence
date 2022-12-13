@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4213681262866954726}
   - component: {fileID: 4213681262866954723}
   - component: {fileID: 4213681262866954720}
-  - component: {fileID: 4213681262866954721}
   m_Layer: 5
   m_Name: CointKill
   m_TagString: Untagged
@@ -135,17 +134,3 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &4213681262866954721
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4213681262866954727}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1249ef4abbc71ca4b9814cf71755da99, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _counter: {fileID: 4213681262866954720}
-  _button: {fileID: 0}
