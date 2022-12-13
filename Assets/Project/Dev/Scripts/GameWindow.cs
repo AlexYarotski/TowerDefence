@@ -21,14 +21,21 @@ public class GameWindow : MonoBehaviour
     {
         Tank.Dead += Tank_Dead;
         Bitcoin.Mining += Bitcoin_Mining;
+        Tower.Dead += Tower_Dead;
     }
-
+    
     private void OnDisable()
     {
         Tank.Dead -= Tank_Dead;
         Bitcoin.Mining -= Bitcoin_Mining;
+        Tower.Dead -= Tower_Dead;
     }
 
+    private void Tower_Dead(Tower obj)
+    {
+        
+    }
+    
     private void Start()
     {
         _button.onClick.AddListener(RestartGame);

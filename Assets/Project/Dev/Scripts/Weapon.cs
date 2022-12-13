@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -24,7 +23,20 @@ public class Weapon : MonoBehaviour
 
     private SphereCollider _sphereCollider = null;
     private List<Tank> tankDead = new List<Tank>();
+    private bool _firsDead = true;
 
+    public float GetRadius()
+    {
+        return _attackRadius;
+    }
+    
+    private void Awake()
+    {
+        _sphereCollider = GetComponent<SphereCollider>();
+        
+        _sphereCollider.radius = _attackRadius;
+    }
+    
     private void OnEnable()
     {
         Tank.Dead += Tank_Dead;
@@ -34,36 +46,56 @@ public class Weapon : MonoBehaviour
     {
         Tank.Dead -= Tank_Dead;
     }
-
-    private void Tank_Dead(Tank tank)
-    {
-        tankDead.RemoveAt(0);
-        if (tankDead.Count >= 1)
-        {
-            StartCoroutine(Fire(tankDead.First()));    
-        }
-    }
-
+    
     private void OnTriggerEnter(Collider other)
     {
         if (other.TryGetComponent(out Tank tank))
         {
             tankDead.Add(tank);
             
-            if (tankDead.Count == 1)
+            if (_firsDead)
             {
                 StartCoroutine(Fire(tankDead.First()));
+                tankDead.Remove(tank);
+                _firsDead = false;
             }
         }
     }
 
-    private void Awake()
+    private void Tank_Dead(Tank tank)
     {
-        _sphereCollider = GetComponent<SphereCollider>();
+        SearchNearestTank();
         
-        _sphereCollider.radius = _attackRadius;
+        if (tankDead.Count >= 1)
+        {
+            StartCoroutine(Fire(tankDead.First()));
+            tankDead.RemoveAt(0);
+            return;
+        }
+
+        _firsDead = true;
     }
 
+    private void SearchNearestTank()
+    {
+        for (int i = 0; i < tankDead.Count - 1; i++)
+        {
+            for (int j = 0; j < tankDead.Count - 1 -i; j++)
+            {
+                float distanceFirstTank = (tankDead[j].transform.position - transform.position).sqrMagnitude;
+                float distanceNextTank = (tankDead[j + 1].transform.position - transform.position).sqrMagnitude;
+                
+                if (distanceFirstTank > distanceNextTank)
+                {
+                    Tank sort = tankDead[i + 1];
+                    tankDead[j + 1] = tankDead[j];
+                    tankDead[j] = sort;
+                }
+                
+            }
+        }
+    }
+    
     private IEnumerator Fire(Tank tank)
     {
         var firingDelay = new WaitForSeconds(_firingDelay);
@@ -76,10 +108,5 @@ public class Weapon : MonoBehaviour
             
             yield return firingDelay;
         }
-    }
-
-    public float GetRadius()
-    {
-        return _attackRadius;
     }
 }
