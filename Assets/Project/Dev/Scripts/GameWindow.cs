@@ -33,7 +33,7 @@ public class GameWindow : MonoBehaviour
 
     private void Tower_Dead(Tower obj)
     {
-        
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
     
     private void Start()
@@ -51,12 +51,14 @@ public class GameWindow : MonoBehaviour
     private void Tank_Dead(Tank tank)
     {
         _numberDead++;
-        _counter.text = _numberDead.ToString();
+        string kill = "Kill ";
+        _counter.text = kill + _numberDead;
     }
 
     private void Bitcoin_Mining(Bitcoin obj)
     {
         _numberMining++;
-        _mining.text = _numberMining.ToString();
+        string mining = "Mining ";
+        _mining.text = mining + _numberMining;
     }
 }

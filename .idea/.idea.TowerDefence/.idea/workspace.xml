@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="02d69532-7ac7-4a36-bfa5-6898a2e5d453" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.TowerDefence/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TowerDefence/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/GameWindow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/GameWindow.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/Weapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/Weapon.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/UI/GameWindow.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/UI/GameWindow.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/SampleScene.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +118,7 @@
       <workItem from="1670788871968" duration="2365000" />
       <workItem from="1670795917115" duration="706000" />
       <workItem from="1670841135588" duration="4040000" />
-      <workItem from="1670943687662" duration="12135000" />
+      <workItem from="1670943687662" duration="14032000" />
     </task>
     <servers />
   </component>
@@ -134,25 +138,6 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Project/Dev/Scripts/Arrow.cs</url>
-          <line>26</line>
-          <properties documentPath="C:\Users\alexy\Documents\TowerDefence\Assets\Project\Dev\Scripts\Arrow.cs" initialLine="26" containingFunctionPresentation="method 'Tank_Dead'">
-            <startOffsets>
-              <option value="542" />
-            </startOffsets>
-            <endOffsets>
-              <option value="564" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

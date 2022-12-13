@@ -105,14 +105,11 @@ public class Weapon : MonoBehaviour
         
         for (int i = 0; i < _numberShellsPerTank; i++)
         {
-            if (_target != tank)
-            {
             Arrow createdArrow = Instantiate(_arrowPrefab, _arrowSpawnPoint.position, Quaternion.identity, transform);
             
             createdArrow.SetTarget(tank);
             
             yield return firingDelay;
-            }
         }
     }
 }
