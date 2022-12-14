@@ -5,9 +5,11 @@ public class Tank : DamageableObject
 {
     public static event Action<Tank> Dead = delegate { };
 
-    [SerializeField] private float _speed = 0;
+    [SerializeField]
+    private float _speed = 0;
 
-    [SerializeField] private float _damage = 0;
+    [SerializeField]
+    private float _damage = 0;
 
     private Transform _target = null;
 

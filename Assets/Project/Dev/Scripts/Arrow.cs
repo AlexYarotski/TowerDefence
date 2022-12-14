@@ -3,6 +3,7 @@ using UnityEngine;
 public class Arrow : Ammunition
 {
     private Tank _target = null;
+    private bool _isDeadTank = false;
     
     private void OnEnable()
     {
@@ -16,6 +17,8 @@ public class Arrow : Ammunition
     
     private void FixedUpdate()
     {
+        CheckTarget();
+        
         float step = Time.deltaTime * _speed;
         
         var moveDirection = (_target.transform.position - transform.position).normalized;
@@ -26,8 +29,17 @@ public class Arrow : Ammunition
     {
         if (_target == target)
         {
+            _isDeadTank = true;
+        }
+    }
+
+    private void CheckTarget()
+    {
+        if (_isDeadTank)
+        {
             OnDie();
         }
+        
     }
     
     private void OnCollisionEnter(Collision collision)

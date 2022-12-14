@@ -33,7 +33,7 @@ public class GameWindow : MonoBehaviour
 
     private void Tower_Dead(Tower obj)
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        RestartGame();
     }
     
     private void Start()

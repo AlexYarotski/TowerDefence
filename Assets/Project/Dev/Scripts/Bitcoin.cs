@@ -11,13 +11,13 @@ public class Bitcoin : DamageableObject
     [SerializeField] 
     private float _flightSpeed = 0;
 
-    private Transform _target = null;
-    
-    void FixedUpdate()
+    private Transform _tower = null;
+
+    private void FixedUpdate()
     {
         Rotation();
         
-        var finalPos = new Vector3(_target.transform.position.x, 1.5f, _target.transform.position.z);
+        var finalPos = new Vector3(_tower.transform.position.x, 1.5f, _tower.transform.position.z);
         float step = Time.deltaTime * _flightSpeed;
 
         var moveDirection = (finalPos - transform.position).normalized * step;
@@ -32,7 +32,7 @@ public class Bitcoin : DamageableObject
     
     public void SetTargetPosition(Transform targetTransform)
     {
-        _target = targetTransform;
+        _tower = targetTransform;
     } 
     
     private void OnCollisionEnter(Collision collision)

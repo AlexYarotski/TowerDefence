@@ -24,7 +24,7 @@ public class Weapon : MonoBehaviour
     private SphereCollider _sphereCollider = null;
     private List<Tank> tankDead = new List<Tank>();
     private Tank _target = null;
-    private bool _firsDead = true;
+    private bool _firstDead = true;
 
     public float GetRadius()
     {
@@ -54,11 +54,11 @@ public class Weapon : MonoBehaviour
         {
             tankDead.Add(tank);
             
-            if (_firsDead)
+            if (_firstDead)
             {
                 StartCoroutine(Fire(tankDead.First()));
                 tankDead.Remove(tank);
-                _firsDead = false;
+                _firstDead = false;
             }
         }
     }
@@ -67,48 +67,60 @@ public class Weapon : MonoBehaviour
     {
         _target = tank;
         
-        SearchNearestTank();
-        
-        if (tankDead.Count >= 1)
+        if(tankDead.Count > 0)
         {
-            StartCoroutine(Fire(tankDead.First()));
-            tankDead.RemoveAt(0);
+            int minTankDistance = SearchNearestTank();
+            
+            StartCoroutine(Fire(tankDead[minTankDistance]));
+            tankDead.RemoveAt(minTankDistance);
             return;
         }
 
-        _firsDead = true;
+        _firstDead = true;
     }
 
-    private void SearchNearestTank()
+    private int SearchNearestTank()
     {
-        for (int i = 0; i < tankDead.Count - 1; i++)
+        int minTankDistance = 0;
+        
+        if (tankDead.Count == 1)
         {
-            for (int j = 0; j < tankDead.Count - 1 -i; j++)
+            return minTankDistance;
+        }
+        
+        for (int i = 1; i < tankDead.Count; i++)
+        {
+            float distanceFirstTank = (tankDead[0].transform.position - transform.position).sqrMagnitude;
+            float distanceNextTank = (tankDead[i].transform.position - transform.position).sqrMagnitude;
+
+            if (distanceFirstTank < distanceNextTank);
             {
-                float distanceFirstTank = (tankDead[j].transform.position - transform.position).sqrMagnitude;
-                float distanceNextTank = (tankDead[j + 1].transform.position - transform.position).sqrMagnitude;
-                
-                if (distanceFirstTank > distanceNextTank)
-                {
-                    Tank sort = tankDead[i + 1];
-                    tankDead[j + 1] = tankDead[j];
-                    tankDead[j] = sort;
-                }
-                
+                minTankDistance = i;
             }
         }
+        
+        return minTankDistance; 
     }
 
     private IEnumerator Fire(Tank tank)
     {
         var firingDelay = new WaitForSeconds(_firingDelay);
-        
-        for (int i = 0; i < _numberShellsPerTank; i++)
-        {
-            Arrow createdArrow = Instantiate(_arrowPrefab, _arrowSpawnPoint.position, Quaternion.identity, transform);
+        float healthTank = tank.health; 
             
+        for (int i = 0; i < _numberShellsPerTank; i++)
+        { 
+            Arrow createdArrow = Instantiate(_arrowPrefab, _arrowSpawnPoint.position, Quaternion.identity, transform);
             createdArrow.SetTarget(tank);
             
+            healthTank =- createdArrow.damage;
+
+            if (healthTank <= 0)
+            {
+                yield return firingDelay;
+                
+                break;
+            }
+
             yield return firingDelay;
         }
     }

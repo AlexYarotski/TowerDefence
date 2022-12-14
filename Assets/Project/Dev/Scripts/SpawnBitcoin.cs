@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class SpawnBitcoin : MonoBehaviour
@@ -8,7 +7,7 @@ public class SpawnBitcoin : MonoBehaviour
     
     [SerializeField] 
     private Weapon _weapon = null;
-    
+
     private void OnEnable()
     {
         Tank.Dead += Tank_Dead;

@@ -716,6 +716,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _onDieTankParticlePrefab: {fileID: 6710939519897745771, guid: cf94652ed59543244a614b907122e0a6, type: 3}
   _onDieTowerParticlePrefab: {fileID: 5205857130948843268, guid: 61843fd77a55d964e94710ae5052a7b8, type: 3}
+  _onSpawmCoinsParticlePrefab: {fileID: 3371147462424882627, guid: 9344fcd659dcb204da85d1b0af113f7b, type: 3}
+  _spawnCoinsDelay: 3
 --- !u!4 &1431598094
 Transform:
   m_ObjectHideFlags: 0

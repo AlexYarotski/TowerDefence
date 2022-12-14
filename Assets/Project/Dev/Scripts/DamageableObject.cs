@@ -4,6 +4,13 @@ public abstract class DamageableObject : MonoBehaviour
 {
     [SerializeField]
     private float _health = 0;
+
+    public float health = 0;
+
+    private void FixedUpdate()
+    {
+        health = _health;
+    }
     
     public void GetDamage(float damage)
     {

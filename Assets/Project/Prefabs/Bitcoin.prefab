@@ -111,8 +111,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 0
+  health: 0
   _angle: 3
   _flightSpeed: 2
+  _spawmParticlePrefab: {fileID: 3371147462424882627, guid: 9344fcd659dcb204da85d1b0af113f7b, type: 3}
 --- !u!54 &2812917834101448797
 Rigidbody:
   m_ObjectHideFlags: 0
