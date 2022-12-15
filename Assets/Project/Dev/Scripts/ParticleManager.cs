@@ -11,21 +11,15 @@ namespace Project.Dev.Scripts
         [SerializeField]
         private ParticleSystem _onDieTowerParticlePrefab = null;
         
-        [SerializeField] 
-        private ParticleSystem _onSpawmCoinsParticlePrefab = null;
-    
-        [SerializeField] 
-        private float _spawnCoinsDelay = 0;
         
         private ParticleSystem _onDieTower = null;
         private ParticleSystem _onDieTank = null;
-        private ParticleSystem _onSpawnCoins = null;
+        
         
         private void Start()
         {
             _onDieTank = Instantiate(_onDieTankParticlePrefab, transform);
             _onDieTower = Instantiate(_onDieTowerParticlePrefab, transform);
-            _onSpawnCoins = Instantiate(_onSpawmCoinsParticlePrefab, transform);
         }
 
         private void OnEnable()
@@ -44,9 +38,6 @@ namespace Project.Dev.Scripts
         {
             _onDieTank.transform.position = tank.transform.position;
             _onDieTank.Play();
-
-            _onSpawnCoins.transform.position = tank.transform.position;
-            _onSpawnCoins.Play();
         }
         
         private void Tower_Dead(Tower tower)

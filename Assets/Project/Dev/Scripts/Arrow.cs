@@ -39,7 +39,6 @@ public class Arrow : Ammunition
         {
             OnDie();
         }
-        
     }
     
     private void OnCollisionEnter(Collision collision)
