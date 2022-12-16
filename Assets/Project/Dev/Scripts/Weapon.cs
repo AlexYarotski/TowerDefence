@@ -57,6 +57,7 @@ public class Weapon : MonoBehaviour
             {
                 StartCoroutine(Fire(tankDead.First()));
                 tankDead.Remove(tank);
+                
                 _firstDead = false;
             }
         }
@@ -72,6 +73,7 @@ public class Weapon : MonoBehaviour
             
             StartCoroutine(Fire(tankDead[minTankDistance]));
             tankDead.RemoveAt(minTankDistance);
+            
             return;
         }
 

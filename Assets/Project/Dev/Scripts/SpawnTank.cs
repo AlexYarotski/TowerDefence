@@ -25,8 +25,7 @@ public class SpawnTank : MonoBehaviour
         {
             Vector3 spawnPosition = GetRandomPoint();
             
-            Tank createTank = Instantiate(_tankPrefab, spawnPosition, Quaternion.identity,
-                transform);
+            Tank createTank = Instantiate(_tankPrefab, spawnPosition, Quaternion.identity, transform);
             
             createTank.SetTargetPosition(_weapon.transform);
             

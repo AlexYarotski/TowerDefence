@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Project.Dev.Scripts
 {
@@ -10,7 +9,6 @@ namespace Project.Dev.Scripts
         
         [SerializeField]
         private ParticleSystem _onDieTowerParticlePrefab = null;
-        
         
         private ParticleSystem _onDieTower = null;
         private ParticleSystem _onDieTank = null;

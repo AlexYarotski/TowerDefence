@@ -25,8 +25,7 @@ public class SpawnPointTank : MonoBehaviour
             {
                 Vector3 startPosition = hitInfo.point;
 
-                Tank createTank = Instantiate(_tank, startPosition, Quaternion.identity,
-                    transform);
+                Tank createTank = Instantiate(_tank, startPosition, Quaternion.identity, transform);
 
                 createTank.SetTargetPosition(_weapon.transform);
             }

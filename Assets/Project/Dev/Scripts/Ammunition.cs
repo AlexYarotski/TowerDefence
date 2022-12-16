@@ -8,11 +8,6 @@ public abstract class Ammunition : MonoBehaviour
     [SerializeField] 
     protected float _damage = 0;
 
-    public float Damage
-    {
-        get => _damage;
-    }
-    
     protected void OnDie()
     {
         gameObject.SetActive(false);

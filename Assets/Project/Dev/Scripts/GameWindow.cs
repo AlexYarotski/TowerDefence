@@ -16,6 +16,7 @@ public class GameWindow : MonoBehaviour
 
     private int _numberDead = 0;
     private int _numberMining = 0;
+    private string _text = string.Empty;
 
     private void OnEnable()
     {
@@ -31,14 +32,14 @@ public class GameWindow : MonoBehaviour
         Tower.Dead -= Tower_Dead;
     }
 
-    private void Tower_Dead(Tower obj)
-    {
-        RestartGame();
-    }
-    
     private void Start()
     {
         _button.onClick.AddListener(RestartGame);
+    }
+    
+    private void Tower_Dead(Tower obj)
+    {
+        RestartGame();
     }
 
     public void RestartGame()
@@ -51,14 +52,14 @@ public class GameWindow : MonoBehaviour
     private void Tank_Dead(Tank tank)
     {
         _numberDead++;
-        string kill = "Kill ";
-        _counter.text = kill + _numberDead;
+        _text = "Kill ";
+        _counter.text = _text + _numberDead;
     }
 
     private void Bitcoin_Mining(Bitcoin obj)
     {
         _numberMining++;
-        string mining = "Mining ";
-        _mining.text = mining + _numberMining;
+        _text = "Mining ";
+        _mining.text = _text + _numberMining;
     }
 }
