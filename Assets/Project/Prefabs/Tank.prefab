@@ -46,7 +46,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 100, y: 120, z: 120}
+  m_Size: {x: 94, y: 108, z: 120}
   m_Center: {x: 0, y: 0, z: -11.78}
 --- !u!114 &7102585454480597950
 MonoBehaviour:
@@ -61,6 +61,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 2
+  health: 0
   _speed: 2
   _damage: 1
 --- !u!54 &-7017909796977586940

@@ -23,7 +23,6 @@ public class Weapon : MonoBehaviour
 
     private SphereCollider _sphereCollider = null;
     private List<Tank> tankDead = new List<Tank>();
-    private Tank _target = null;
     private bool _firstDead = true;
 
     public float GetRadius()
@@ -65,11 +64,11 @@ public class Weapon : MonoBehaviour
 
     private void Tank_Dead(Tank tank)
     {
-        _target = tank;
+        tankDead.Remove(tank);
         
         if(tankDead.Count > 0)
         {
-            int minTankDistance = SearchNearestTank();
+            int minTankDistance = SearchNearestTankByIndex();
             
             StartCoroutine(Fire(tankDead[minTankDistance]));
             tankDead.RemoveAt(minTankDistance);
@@ -79,7 +78,7 @@ public class Weapon : MonoBehaviour
         _firstDead = true;
     }
 
-    private int SearchNearestTank()
+    private int SearchNearestTankByIndex()
     {
         int minTankDistance = 0;
         
@@ -93,8 +92,9 @@ public class Weapon : MonoBehaviour
             float distanceFirstTank = (tankDead[0].transform.position - transform.position).sqrMagnitude;
             float distanceNextTank = (tankDead[i].transform.position - transform.position).sqrMagnitude;
 
-            if (distanceFirstTank < distanceNextTank);
+            if (distanceFirstTank > distanceNextTank);
             {
+                distanceFirstTank = distanceNextTank;
                 minTankDistance = i;
             }
         }
@@ -105,23 +105,18 @@ public class Weapon : MonoBehaviour
     private IEnumerator Fire(Tank tank)
     {
         var firingDelay = new WaitForSeconds(_firingDelay);
-        float healthTank = tank.health; 
             
         for (int i = 0; i < _numberShellsPerTank; i++)
         { 
-            Arrow createdArrow = Instantiate(_arrowPrefab, _arrowSpawnPoint.position, Quaternion.identity, transform);
-            createdArrow.SetTarget(tank);
-            
-            healthTank =- createdArrow.damage;
-
-            if (healthTank <= 0)
+            if (!tank.IsDead)
             {
-                yield return firingDelay;
-                
-                break;
-            }
+                Arrow createdArrow = Instantiate(_arrowPrefab, _arrowSpawnPoint.position, Quaternion.identity, transform);
+                createdArrow.SetTarget(tank);
 
-            yield return firingDelay;
+                yield return firingDelay;
+            }
+            
+            break;
         }
     }
 }

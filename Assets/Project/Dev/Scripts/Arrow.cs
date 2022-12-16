@@ -17,8 +17,6 @@ public class Arrow : Ammunition
     
     private void FixedUpdate()
     {
-        CheckTarget();
-        
         float step = Time.deltaTime * _speed;
         
         var moveDirection = (_target.transform.position - transform.position).normalized;
@@ -28,14 +26,6 @@ public class Arrow : Ammunition
     private void Tank_Dead(Tank target)
     {
         if (_target == target)
-        {
-            _isDeadTank = true;
-        }
-    }
-
-    private void CheckTarget()
-    {
-        if (_isDeadTank)
         {
             OnDie();
         }
