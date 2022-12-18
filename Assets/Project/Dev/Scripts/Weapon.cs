@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 [RequireComponent(typeof(SphereCollider))]
@@ -23,7 +22,7 @@ public class Weapon : MonoBehaviour
 
     private SphereCollider _sphereCollider = null;
     private List<Tank> tankDead = new List<Tank>();
-    private bool _firstDead = true;
+    private Coroutine _fire = null;
 
     public float GetRadius()
     {
@@ -53,12 +52,9 @@ public class Weapon : MonoBehaviour
         {
             tankDead.Add(tank);
             
-            if (_firstDead)
+            if (_fire == null || tankDead.Count == 1)
             {
-                StartCoroutine(Fire(tankDead.First()));
-                tankDead.Remove(tank);
-                
-                _firstDead = false;
+                _fire = StartCoroutine(Fire(tank));
             }
         }
     }
@@ -66,32 +62,38 @@ public class Weapon : MonoBehaviour
     private void Tank_Dead(Tank tank)
     {
         tankDead.Remove(tank);
-        
-        if(tankDead.Count > 0)
-        {
-            int minTankDistance = SearchNearestTankByIndex();
-            
-            StartCoroutine(Fire(tankDead[minTankDistance]));
-            tankDead.RemoveAt(minTankDistance);
-            
-            return;
-        }
 
-        _firstDead = true;
+        if (tankDead.Count > 0)
+        {
+            int minTankDistance = SearchNearestTankIndex();
+
+            StopCurrentCoroutine();
+
+            _fire = StartCoroutine(Fire(tankDead[minTankDistance]));
+        }
     }
 
-    private int SearchNearestTankByIndex()
+    private void StopCurrentCoroutine()
+    {
+        if (_fire != null)
+        {
+            StopCoroutine(_fire);
+            _fire = null;
+        }
+    }
+
+    private int SearchNearestTankIndex()
     {
         int minTankDistance = 0;
+        float distanceFirstTank = (tankDead[0].transform.position - transform.position).sqrMagnitude;
         
         if (tankDead.Count == 1)
         {
             return minTankDistance;
         }
-        
+
         for (int i = 1; i < tankDead.Count; i++)
         {
-            float distanceFirstTank = (tankDead[0].transform.position - transform.position).sqrMagnitude;
             float distanceNextTank = (tankDead[i].transform.position - transform.position).sqrMagnitude;
 
             if (distanceFirstTank > distanceNextTank);
