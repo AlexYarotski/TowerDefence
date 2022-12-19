@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c4afff80-7dce-403b-9561-defff42f18d7" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/L_monet.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/L_monet.prefab" afterDir="false" />
-    </list>
+    <list default="true" id="c4afff80-7dce-403b-9561-defff42f18d7" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -45,10 +43,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="3280">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="3280" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -65,7 +63,7 @@
       <option name="presentableId" value="Default" />
       <updated>1671478429645</updated>
       <workItem from="1671478430380" duration="414000" />
-      <workItem from="1671480601173" duration="321000" />
+      <workItem from="1671480601173" duration="707000" />
     </task>
     <servers />
   </component>

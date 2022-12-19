@@ -978,7 +978,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d7ece1d5a5a6cf4f9c530a2606c2970, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tankPrefab: {fileID: -4143792312911316793, guid: 65620b9bb482dd3489cba0f1334f3f6d, type: 3}
+  _tankPrefab: {fileID: 7102585454480597950, guid: be23ec72cb0d637448c8d4abefc9c4da, type: 3}
   _spawnDelay: 1
   _weapon: {fileID: 1569463486}
 --- !u!4 &2104200997
@@ -1008,7 +1008,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _camera: {fileID: 519420031}
-  _tank: {fileID: -4143792312911316793, guid: 65620b9bb482dd3489cba0f1334f3f6d, type: 3}
+  _tank: {fileID: 7102585454480597950, guid: be23ec72cb0d637448c8d4abefc9c4da, type: 3}
   _layerMask:
     serializedVersion: 2
     m_Bits: 64
