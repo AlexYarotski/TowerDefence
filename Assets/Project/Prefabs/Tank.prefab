@@ -61,7 +61,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 2
-  health: 0
   _speed: 2
   _damage: 1
 --- !u!54 &-7017909796977586940
