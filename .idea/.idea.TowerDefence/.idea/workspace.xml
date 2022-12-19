@@ -1,9 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="02d69532-7ac7-4a36-bfa5-6898a2e5d453" name="Changes" comment="">
+    <list default="true" id="c4afff80-7dce-403b-9561-defff42f18d7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TowerDefence/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TowerDefence/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/Weapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/Weapon.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Art/Materials/Brick.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Art/Materials/Brick.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Art/Materials/Texture/BrickMaterial.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Art/Materials/Texture/BrickMaterial.jpg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Bitcoin.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Bitcoin.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Models/Tank.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Models/Tank.obj.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Models/Tower.obj.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Models/Tower.obj.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Tank.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Tank.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Tower.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Tower.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Small Tank/SmallTank.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Small Tank/SmallTank.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -11,32 +25,28 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/92e8e151ac2247a491cb6ca42a1bead976b800/f9/94d48a64/BuildPipelineInterfaces.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d95181a5c71a4ad88c81e8fccee6b47113ce00/5c/f3cca287/MonoBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d95181a5c71a4ad88c81e8fccee6b47113ce00/73/50df92e3/Object.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d95181a5c71a4ad88c81e8fccee6b47113ce00/f1/bb7640b4/SetupCoroutine.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Project/Dev/Scripts/Bitcoin.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2HwpuyOoVpZj4tbyfYhjdG2yXs0" />
+  <component name="ProjectId" id="2J97PcvmT8BBYBAk8BUvhLESQcG" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Discover.Launch.Via.Unity&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.11952862&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Discover.Launch.Via.Unity": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="UnitTests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2020.3.40f1\Editor\Unity.exe" />
@@ -56,10 +66,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="16960">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="8272">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="16960" />
+      <option name="pid" value="8272" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -70,64 +80,12 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="02d69532-7ac7-4a36-bfa5-6898a2e5d453" name="Changes" comment="" />
-      <created>1669206232362</created>
+      <changelist id="c4afff80-7dce-403b-9561-defff42f18d7" name="Changes" comment="" />
+      <created>1671478429645</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1669206232362</updated>
-      <workItem from="1669206250290" duration="40490000" />
-      <workItem from="1669386550724" duration="9293000" />
-      <workItem from="1669408010074" duration="4200000" />
-      <workItem from="1669412447222" duration="2000" />
-      <workItem from="1669414763631" duration="2352000" />
-      <workItem from="1669460015867" duration="3477000" />
-      <workItem from="1669477334506" duration="1381000" />
-      <workItem from="1669479592134" duration="106000" />
-      <workItem from="1669501869982" duration="1419000" />
-      <workItem from="1669548331375" duration="2186000" />
-      <workItem from="1669644609630" duration="3380000" />
-      <workItem from="1669648419692" duration="1037000" />
-      <workItem from="1669650888845" duration="1348000" />
-      <workItem from="1669657046180" duration="11098000" />
-      <workItem from="1669670828201" duration="1750000" />
-      <workItem from="1669725484593" duration="12475000" />
-      <workItem from="1669747472426" duration="594000" />
-      <workItem from="1669810597844" duration="1767000" />
-      <workItem from="1669813493578" duration="2037000" />
-      <workItem from="1669898562026" duration="964000" />
-      <workItem from="1669908644123" duration="12329000" />
-      <workItem from="1669976895636" duration="60000" />
-      <workItem from="1669977052537" duration="250000" />
-      <workItem from="1670059844896" duration="3556000" />
-      <workItem from="1670152393874" duration="9196000" />
-      <workItem from="1670234784361" duration="933000" />
-      <workItem from="1670266188742" duration="2554000" />
-      <workItem from="1670341571094" duration="5918000" />
-      <workItem from="1670349290435" duration="244000" />
-      <workItem from="1670349581042" duration="4283000" />
-      <workItem from="1670415117978" duration="7530000" />
-      <workItem from="1670433084825" duration="7543000" />
-      <workItem from="1670500401396" duration="4995000" />
-      <workItem from="1670507770717" duration="618000" />
-      <workItem from="1670531415707" duration="118000" />
-      <workItem from="1670753737678" duration="6173000" />
-      <workItem from="1670765460684" duration="377000" />
-      <workItem from="1670765885570" duration="883000" />
-      <workItem from="1670788871968" duration="2365000" />
-      <workItem from="1670795917115" duration="706000" />
-      <workItem from="1670841135588" duration="4040000" />
-      <workItem from="1670943687662" duration="14032000" />
-      <workItem from="1671031992734" duration="10602000" />
-      <workItem from="1671045507699" duration="506000" />
-      <workItem from="1671046113472" duration="177000" />
-      <workItem from="1671046528965" duration="892000" />
-      <workItem from="1671047748448" duration="253000" />
-      <workItem from="1671048056131" duration="1154000" />
-      <workItem from="1671096387331" duration="2771000" />
-      <workItem from="1671182839017" duration="6980000" />
-      <workItem from="1671203777015" duration="3814000" />
-      <workItem from="1671375827992" duration="8774000" />
-      <workItem from="1671393872483" duration="2944000" />
+      <updated>1671478429645</updated>
+      <workItem from="1671478430380" duration="414000" />
     </task>
     <servers />
   </component>
@@ -147,9 +105,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XSLT-Support.FileAssociations.UIState">
-    <expand />
-    <select />
   </component>
 </project>
