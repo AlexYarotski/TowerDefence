@@ -1,5 +1,6 @@
 using UnityEngine;
 using System;
+using System.Collections;
 
 public class Bitcoin : DamageableObject
 {
@@ -13,15 +14,9 @@ public class Bitcoin : DamageableObject
 
     private Transform _tower = null;
 
-    private void FixedUpdate()
+    private void Start()
     {
-        Rotation();
-        
-        var finalPos = new Vector3(_tower.transform.position.x, 1.5f, _tower.transform.position.z);
-        float step = Time.deltaTime * _flightSpeed;
-
-        var moveDirection = (finalPos - transform.position).normalized * step;
-        transform.position += moveDirection;
+        StartCoroutine(MovementToTower());
     }
 
     private void Rotation()
@@ -34,18 +29,35 @@ public class Bitcoin : DamageableObject
     {
         _tower = targetTransform;
     } 
-    
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.TryGetComponent(out Tower tower))
-        {
-            OnDie();
-        }
-    }
 
     protected override void OnDie()
     {
         base.OnDie();
         Mining(this);
+    }
+
+    private IEnumerator MovementToTower()
+    {
+        var finalPos = new Vector3(_tower.transform.position.x, 1.5f, _tower.transform.position.z);
+        
+        float currentTime = 0;
+        float towerDistance = (finalPos  - transform.position).magnitude;
+        float towerMoveTime = towerDistance / _flightSpeed;
+        var position = transform.position;
+
+        while (currentTime < towerMoveTime)
+        {
+            Rotation();
+
+            float progress = currentTime / towerMoveTime;
+
+            transform.position = Vector3.Lerp(position, finalPos, progress);
+
+            yield return null;
+
+            currentTime += Time.deltaTime;
+        }
+        
+        OnDie();
     }
 }

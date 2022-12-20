@@ -65,6 +65,11 @@ public class Weapon : MonoBehaviour
     {
         targetList.Remove(tank);
 
+        if (targetList.Count == 0)
+        {
+            StopCurrentCoroutine();
+        }
+        
         if (targetList.Count > 0)
         {
             var minTankDistance = SearchNearestTank();
@@ -88,7 +93,7 @@ public class Weapon : MonoBehaviour
     {
         int minTankDistanceIndex = 0;
         float minDistanceTank = (targetList[0].transform.position - transform.position).sqrMagnitude;
-        
+
         if (targetList.Count == 1)
         {
             return targetList.First();
