@@ -684,7 +684,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _btc: {fileID: 2455803075149998521, guid: 6bcd1d50a1aa0b942adf651abe538b72, type: 3}
-  _weapon: {fileID: 1569463486}
+  _tower: {fileID: 1505642679}
   _onSpawmCoinsParticlePrefab: {fileID: 3371147462424882627, guid: 9344fcd659dcb204da85d1b0af113f7b, type: 3}
   _spawnCoinsDelay: 1.1
 --- !u!1 &1431598092
@@ -732,6 +732,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1505642679 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3405535167029965519, guid: fb2e9cf6d8a10244184ba6a2d7d86941, type: 3}
+  m_PrefabInstance: {fileID: 3405535165330429318}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aea193cc29cc87f4d8690172956babf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1569463484
 GameObject:
   m_ObjectHideFlags: 0

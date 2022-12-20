@@ -7,7 +7,7 @@ public class SpawnBitcoin : MonoBehaviour
     private Bitcoin _btc = null;
     
     [SerializeField] 
-    private Weapon _weapon = null;
+    private Tower _tower = null;
     
     [SerializeField] 
     private ParticleSystem _onSpawmCoinsParticlePrefab = null;
@@ -48,6 +48,6 @@ public class SpawnBitcoin : MonoBehaviour
         
         Bitcoin createBtc = Instantiate(_btc, transform);
         createBtc.transform.position = tank.transform.position;
-        createBtc.SetTargetPosition(_weapon.transform);
+        createBtc.SetTargetPosition(_tower.transform);
     }
 }

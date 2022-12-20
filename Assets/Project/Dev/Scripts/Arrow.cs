@@ -1,7 +1,10 @@
+using System;
 using UnityEngine;
 
 public class Arrow : Ammunition
 {
+    public static Action<bool> _callback = delegate {  };
+
     private Tank _target = null;
     private bool _isDeadTank = false;
     
@@ -36,13 +39,16 @@ public class Arrow : Ammunition
         if (collision.gameObject.TryGetComponent(out Tank tank))
         {
             tank.GetDamage(_damage);
+            
+            _callback.Invoke(tank.IsDead);
 
             OnDie();
         }
     }
     
-    public void SetTarget(Tank tank)
+    public void SetTarget(Tank tank, Action<bool> callback)
     {
-      _target = tank;  
+      _target = tank;
+      _callback = callback;
     }
 }
