@@ -23,7 +23,7 @@ public class SpawnPointTank : MonoBehaviour
 
             if (Physics.Raycast(ray, out RaycastHit hitInfo, Int32.MaxValue, _layerMask))
             {
-                Vector3 startPosition = hitInfo.point;
+                Vector3 startPosition = new Vector3(hitInfo.point.x, 1.5f, hitInfo.point.z);
 
                 Tank createTank = Instantiate(_tank, startPosition, Quaternion.identity, transform);
 

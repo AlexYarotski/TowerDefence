@@ -15,11 +15,11 @@ public class Tank : DamageableObject
 
     private void FixedUpdate()
     {
-        var finalPos = new Vector3(_target.transform.position.x, 5, _target.transform.position.z);
+        var finalPos = new Vector3(_target.transform.position.x, 1.5f, _target.transform.position.z);
         float step = Time.deltaTime * _speed;
 
         var moveDirection = (finalPos - transform.position).normalized * step;
-        transform.position += moveDirection;
+        transform.position += new Vector3 (moveDirection.x, 0, moveDirection.z);
     }
 
     private void OnCollisionEnter(Collision collision)
