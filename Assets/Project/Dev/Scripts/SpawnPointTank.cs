@@ -4,14 +4,14 @@ using UnityEngine;
 public class SpawnPointTank : MonoBehaviour
 {
     [SerializeField]
+    private LayerMask _layerMask = default;
+    
+    [SerializeField]
     private Camera _camera = null;
 
     [SerializeField]
     private Tank _tank = null;
-
-    [SerializeField]
-    private LayerMask _layerMask = default;
-
+    
     [SerializeField]
     private Weapon _weapon = null;
 

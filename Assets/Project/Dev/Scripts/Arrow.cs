@@ -5,7 +5,7 @@ public class Arrow : Ammunition
 {
     public static Action<bool> _callback = delegate {  };
 
-    private Tank _target = null;
+    private DamageableObject _target = null;
     private bool _isDeadTank = false;
     
     private void OnEnable()

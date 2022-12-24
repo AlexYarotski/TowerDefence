@@ -8,9 +8,6 @@ using UnityEngine;
 public class Weapon : MonoBehaviour
 {
     [SerializeField]
-    private Arrow _arrowPrefab = null;
-
-    [SerializeField]
     private float _attackRadius = 0;
 
     [SerializeField] 
@@ -18,6 +15,9 @@ public class Weapon : MonoBehaviour
 
     [SerializeField] 
     private int _numberShellsPerTank = 0;
+    
+    [SerializeField]
+    private Arrow _arrowPrefab = null;
 
     [SerializeField]
     private Transform _arrowSpawnPoint = null;

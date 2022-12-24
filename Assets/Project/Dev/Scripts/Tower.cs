@@ -7,6 +7,7 @@ public class Tower : DamageableObject
     protected override void OnDie()
     {
         base.OnDie();
+        
         Dead(this);
     }
 }
