@@ -1,12 +1,14 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using UnityEditorInternal;
 using UnityEngine;
 
 [RequireComponent(typeof(SphereCollider))]
 public class Weapon : MonoBehaviour
 {
+    public static event Action<Tank> ShotTank = delegate {  };
+    
     [SerializeField]
     private float _attackRadius = 0;
 
@@ -22,6 +24,9 @@ public class Weapon : MonoBehaviour
     [SerializeField]
     private Transform _arrowSpawnPoint = null;
 
+    [SerializeField]
+    private Animator _animator = null;
+    
     private SphereCollider _sphereCollider = null;
     private List<Tank> targetList = new List<Tank>();
     private Coroutine _fire = null;
@@ -52,6 +57,8 @@ public class Weapon : MonoBehaviour
     {
         if (other.TryGetComponent(out Tank tank))
         {
+            ShotTank(tank);
+            
             targetList.Add(tank);
 
             if (_fire == null)
@@ -119,7 +126,9 @@ public class Weapon : MonoBehaviour
 
         for (int i = 0; i < _numberShellsPerTank; i++)
         {
+            _animator.SetBool("IsShot", true);
             Arrow createdArrow = Instantiate(_arrowPrefab, _arrowSpawnPoint.position, Quaternion.identity, transform);
+            
             createdArrow.SetTarget(tank, isTankDead =>
             {
                 if (isTankDead)
@@ -128,7 +137,9 @@ public class Weapon : MonoBehaviour
                 }
             });
 
+            _animator.SetBool("IsShot", false);
             yield return firingDelay;
+            
         }
     }
 }
