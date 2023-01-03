@@ -4,6 +4,9 @@ using UnityEngine;
 public class Tower : DamageableObject
 {
     public static event Action<Tower> Dead = delegate { };
+    
+    [SerializeField]
+    private float _speed = 0;
 
     private Transform _target = null;
 
@@ -24,10 +27,11 @@ public class Tower : DamageableObject
     
     public void SetTargetPosition(Transform targetTransform)
     {
-        _target = targetTransform;
+        var _target = targetTransform;
 
-        var rotation = Quaternion.LookRotation((_target.position - transform.position).normalized, Vector3.up).normalized;
-        transform.Rotate(0, 0, rotation.eulerAngles.z);
+        var rotation = Quaternion.LookRotation((_target.position - transform.position).normalized, 
+            Vector3.up).normalized;
+        transform.rotation = rotation;
     }
 
     protected override void OnDie()

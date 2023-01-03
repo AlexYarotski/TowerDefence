@@ -57,8 +57,6 @@ public class Weapon : MonoBehaviour
     {
         if (other.TryGetComponent(out Tank tank))
         {
-            ShotTank(tank);
-            
             targetList.Add(tank);
 
             if (_fire == null)
@@ -124,9 +122,12 @@ public class Weapon : MonoBehaviour
     {
         var firingDelay = new WaitForSeconds(_firingDelay);
 
+        ShotTank(tank);
+        
         for (int i = 0; i < _numberShellsPerTank; i++)
         {
             _animator.SetBool("IsShot", true);
+            
             Arrow createdArrow = Instantiate(_arrowPrefab, _arrowSpawnPoint.position, Quaternion.identity, transform);
             
             createdArrow.SetTarget(tank, isTankDead =>
@@ -138,8 +139,8 @@ public class Weapon : MonoBehaviour
             });
 
             _animator.SetBool("IsShot", false);
-            yield return firingDelay;
             
+            yield return firingDelay;
         }
     }
 }
