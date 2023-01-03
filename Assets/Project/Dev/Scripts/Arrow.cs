@@ -26,7 +26,7 @@ public class Arrow : Ammunition
         transform.position += moveDirection * step;
     }
     
-    private void Tank_Dead(Tank target)
+    private void Tank_Dead(DamageableObject target)
     {
         if (_target == target)
         {
@@ -36,17 +36,17 @@ public class Arrow : Ammunition
     
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.TryGetComponent(out Tank tank))
+        if (collision.gameObject.TryGetComponent(out DamageableObject target))
         {
-            tank.GetDamage(_damage);
+            target.GetDamage(_damage);
             
-            _callback.Invoke(tank.IsDead);
+            _callback.Invoke(target.IsDead);
 
             OnDie();
         }
     }
     
-    public void SetTarget(Tank tank, Action<bool> callback)
+    public void SetTarget(DamageableObject tank, Action<bool> callback)
     {
       _target = tank;
       _callback = callback;

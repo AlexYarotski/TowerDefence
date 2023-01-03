@@ -7,7 +7,7 @@ using UnityEngine;
 [RequireComponent(typeof(SphereCollider))]
 public class Weapon : MonoBehaviour
 {
-    public static event Action<Tank> ShotTank = delegate {  };
+    public static event Action<DamageableObject> ShotTank = delegate {  };
     
     [SerializeField]
     private float _attackRadius = 0;
@@ -28,7 +28,7 @@ public class Weapon : MonoBehaviour
     private Animator _animator = null;
     
     private SphereCollider _sphereCollider = null;
-    private List<Tank> targetList = new List<Tank>();
+    private List<DamageableObject> targetList = new List<DamageableObject>();
     private Coroutine _fire = null;
 
     public float GetRadius()
@@ -55,7 +55,7 @@ public class Weapon : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
-        if (other.TryGetComponent(out Tank tank))
+        if (other.TryGetComponent(out DamageableObject tank))
         {
             targetList.Add(tank);
 
@@ -94,7 +94,7 @@ public class Weapon : MonoBehaviour
         }
     }
 
-    private Tank SearchNearestTank()
+    private DamageableObject SearchNearestTank()
     {
         int minTankDistanceIndex = 0;
         float minDistanceTank = (targetList[0].transform.position - transform.position).sqrMagnitude;
@@ -118,16 +118,16 @@ public class Weapon : MonoBehaviour
         return targetList[minTankDistanceIndex]; 
     }
 
-    private IEnumerator Fire(Tank tank)
+    public IEnumerator Fire(DamageableObject tank)
     {
         var firingDelay = new WaitForSeconds(_firingDelay);
 
         ShotTank(tank);
         
+        _animator.SetBool("IsShot", true);
+        
         for (int i = 0; i < _numberShellsPerTank; i++)
         {
-            _animator.SetBool("IsShot", true);
-            
             Arrow createdArrow = Instantiate(_arrowPrefab, _arrowSpawnPoint.position, Quaternion.identity, transform);
             
             createdArrow.SetTarget(tank, isTankDead =>
@@ -138,9 +138,9 @@ public class Weapon : MonoBehaviour
                 }
             });
 
-            _animator.SetBool("IsShot", false);
-            
             yield return firingDelay;
+            
+            _animator.SetBool("IsShot", false);
         }
     }
 }
