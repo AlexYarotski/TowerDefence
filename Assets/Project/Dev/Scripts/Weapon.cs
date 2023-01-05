@@ -61,7 +61,9 @@ public class Weapon : MonoBehaviour
 
             if (_fire == null)
             {
-                _fire = StartCoroutine(Fire(tank));
+                _animator.SetBool("IsShot", true);
+                ShotTank(tank);
+                // _fire = StartCoroutine(Fire(tank));
             }
         }
     }
@@ -77,11 +79,13 @@ public class Weapon : MonoBehaviour
         
         if (targetList.Count > 0)
         {
-            var minTankDistance = SearchNearestTank();
-
+            //var minTankDistance = SearchNearestTank();
+            ShotTank(SearchNearestTank());
+            
             StopCurrentCoroutine();
 
-            _fire = StartCoroutine(Fire(minTankDistance));
+            _animator.SetBool("IsShot", true);
+            //_fire = StartCoroutine(Fire(minTankDistance));
         }
     }
 
@@ -122,10 +126,6 @@ public class Weapon : MonoBehaviour
     {
         var firingDelay = new WaitForSeconds(_firingDelay);
 
-        ShotTank(tank);
-        
-        _animator.SetBool("IsShot", true);
-        
         for (int i = 0; i < _numberShellsPerTank; i++)
         {
             Arrow createdArrow = Instantiate(_arrowPrefab, _arrowSpawnPoint.position, Quaternion.identity, transform);
