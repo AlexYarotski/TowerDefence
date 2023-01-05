@@ -45,27 +45,47 @@ public class Weapon : MonoBehaviour
     
     private void OnEnable()
     {
+        SpawnPointTank.Spawn += Spawn_Tank;
         Tank.Dead += Tank_Dead;
     }
 
     private void OnDisable()
     {
+        SpawnPointTank.Spawn -= Spawn_Tank;
         Tank.Dead -= Tank_Dead;
     }
     
-    private void OnTriggerEnter(Collider other)
+    private void FixedUpdate()
     {
-        if (other.TryGetComponent(out DamageableObject tank))
+        if (CanShoot())
         {
-            targetList.Add(tank);
+            _animator.SetBool("IsShot", true);
+            
+            ShotTank(SearchNearestTank());
 
-            if (_fire == null)
+            targetList.Remove(SearchNearestTank());
+        }
+    }
+    
+    private void Spawn_Tank(Tank tank)
+    {
+        targetList.Add(tank);
+    }
+
+    private bool CanShoot()
+    {
+        if (targetList.Count != 0)
+        {
+            var distation = (transform.position + new Vector3 (10, 0, 10)).sqrMagnitude;
+            var targetPosition = (SearchNearestTank().transform.position).sqrMagnitude;
+
+            if (targetPosition <= distation)
             {
-                _animator.SetBool("IsShot", true);
-                ShotTank(tank);
-                // _fire = StartCoroutine(Fire(tank));
+                return true;
             }
         }
+
+        return false;
     }
 
     private void Tank_Dead(Tank tank)
@@ -79,13 +99,9 @@ public class Weapon : MonoBehaviour
         
         if (targetList.Count > 0)
         {
-            //var minTankDistance = SearchNearestTank();
-            ShotTank(SearchNearestTank());
-            
             StopCurrentCoroutine();
 
             _animator.SetBool("IsShot", true);
-            //_fire = StartCoroutine(Fire(minTankDistance));
         }
     }
 

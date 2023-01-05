@@ -28,7 +28,7 @@ public class Tower : DamageableObject
         var rotation = Quaternion.LookRotation((transform.position - _target.position).normalized, 
             Vector3.up).normalized;
         
-        transform.rotation = rotation;
+        transform.Rotate(0, rotation.eulerAngles.y, 0);
     }
 
     protected override void OnDie()

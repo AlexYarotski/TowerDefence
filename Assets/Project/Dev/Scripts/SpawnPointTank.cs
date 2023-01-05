@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class SpawnPointTank : MonoBehaviour
 {
+    public static event Action<Tank> Spawn = delegate { };
+    
     [SerializeField]
     private LayerMask _layerMask = default;
     
@@ -27,6 +29,8 @@ public class SpawnPointTank : MonoBehaviour
 
                 Tank createTank = Instantiate(_tank, startPosition, Quaternion.identity, transform);
 
+                Spawn(createTank);
+                
                 createTank.SetTargetPosition(_weapon.transform);
             }
         }
