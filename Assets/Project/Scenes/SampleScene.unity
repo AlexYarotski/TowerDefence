@@ -263,6 +263,11 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!4 &502902730 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1091063061265685630, guid: 6ade6d35c92e53a43870b453819f3f25, type: 3}
+  m_PrefabInstance: {fileID: 8281344142813617606}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -566,15 +571,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _attackRadius: 10
   _firingDelay: 1
-  _numberShellsPerTank: 0
+  _numberShellsPerTank: 3
   _arrowPrefab: {fileID: 3462531660236727197, guid: 4a5f8bd27eaf98149a15a11d3f49bfef, type: 3}
-  _arrowSpawnPoint: {fileID: 1070023440}
+  _arrowSpawnPoint: {fileID: 502902730}
   _animator: {fileID: 8281344142813617608}
---- !u!4 &1070023440 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 941889387128698319, guid: 6ade6d35c92e53a43870b453819f3f25, type: 3}
-  m_PrefabInstance: {fileID: 8281344142813617606}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1092579063
 GameObject:
   m_ObjectHideFlags: 0
@@ -1205,15 +1205,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 941889387128698319, guid: 6ade6d35c92e53a43870b453819f3f25, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.068
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 941889387128698319, guid: 6ade6d35c92e53a43870b453819f3f25, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.251
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 941889387128698319, guid: 6ade6d35c92e53a43870b453819f3f25, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.304
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1091063061265685630, guid: 6ade6d35c92e53a43870b453819f3f25, type: 3}
       propertyPath: m_RootOrder
@@ -1271,6 +1271,10 @@ PrefabInstance:
       propertyPath: _target
       value: 
       objectReference: {fileID: 4976220885302181644, guid: be23ec72cb0d637448c8d4abefc9c4da, type: 3}
+    - target: {fileID: 6608044987251158718, guid: 6ade6d35c92e53a43870b453819f3f25, type: 3}
+      propertyPath: _weapon
+      value: 
+      objectReference: {fileID: 1070023438}
     - target: {fileID: 7568203681551741953, guid: 6ade6d35c92e53a43870b453819f3f25, type: 3}
       propertyPath: m_RootOrder
       value: 1

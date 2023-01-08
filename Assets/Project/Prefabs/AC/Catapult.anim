@@ -236,7 +236,7 @@ AnimationClip:
   - time: 0.5
     functionName: EventFire
     data: 
-    objectReferenceParameter: {fileID: 0}
+    objectReferenceParameter: {fileID: 6368410617408255157, guid: 4a5f8bd27eaf98149a15a11d3f49bfef, type: 3}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0

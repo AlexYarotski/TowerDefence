@@ -59,9 +59,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1766f654dc8704f479adc03126646c44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 2
+  _health: 3
   _speed: 2
   _damage: 1
+  _tankHeightFromZeroPoint: 0
 --- !u!54 &-1312198251515900264
 Rigidbody:
   m_ObjectHideFlags: 0

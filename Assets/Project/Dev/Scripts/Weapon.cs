@@ -59,10 +59,10 @@ public class Weapon : MonoBehaviour
     {
         if (CanShoot())
         {
-            _animator.SetBool("IsShot", true);
-            
             ShotTank(SearchNearestTank());
 
+            _animator.SetBool("IsShot", true);
+            
             targetList.Remove(SearchNearestTank());
         }
     }
@@ -90,6 +90,8 @@ public class Weapon : MonoBehaviour
 
     private void Tank_Dead(Tank tank)
     {
+        _animator.SetBool("IsShot", false);
+        
         targetList.Remove(tank);
 
         if (targetList.Count == 0)
@@ -100,8 +102,6 @@ public class Weapon : MonoBehaviour
         if (targetList.Count > 0)
         {
             StopCurrentCoroutine();
-
-            _animator.SetBool("IsShot", true);
         }
     }
 
@@ -155,8 +155,6 @@ public class Weapon : MonoBehaviour
             });
 
             yield return firingDelay;
-            
-            _animator.SetBool("IsShot", false);
         }
     }
 }
