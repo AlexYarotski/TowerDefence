@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 [RequireComponent(typeof(SphereCollider))]
 public class Weapon : MonoBehaviour
 {
-    public static event Action<DamageableObject> ShotTank = delegate {  };
-    
     [SerializeField]
     private float _attackRadius = 0;
 
@@ -20,6 +16,9 @@ public class Weapon : MonoBehaviour
     
     [SerializeField]
     private Arrow _arrowPrefab = null;
+
+    [SerializeField]
+    private TargetFinder _targetFinder = null;
 
     [SerializeField]
     private Transform _arrowSpawnPoint = null;
@@ -35,7 +34,12 @@ public class Weapon : MonoBehaviour
     {
         return _attackRadius;
     }
-    
+
+    public List<DamageableObject> GetTarget()
+    {
+        return targetList;
+    }
+
     private void Awake()
     {
         _sphereCollider = GetComponent<SphereCollider>();
@@ -57,35 +61,12 @@ public class Weapon : MonoBehaviour
     
     private void FixedUpdate()
     {
-        if (CanShoot())
-        {
-            ShotTank(SearchNearestTank());
-
-            _animator.SetBool("IsShot", true);
-            
-            targetList.Remove(SearchNearestTank());
-        }
+        _targetFinder.Shot();
     }
     
     private void Spawn_Tank(Tank tank)
     {
         targetList.Add(tank);
-    }
-
-    private bool CanShoot()
-    {
-        if (targetList.Count != 0)
-        {
-            var distation = (transform.position + new Vector3 (10, 0, 10)).sqrMagnitude;
-            var targetPosition = (SearchNearestTank().transform.position).sqrMagnitude;
-
-            if (targetPosition <= distation)
-            {
-                return true;
-            }
-        }
-
-        return false;
     }
 
     private void Tank_Dead(Tank tank)
@@ -113,31 +94,7 @@ public class Weapon : MonoBehaviour
             _fire = null;
         }
     }
-
-    private DamageableObject SearchNearestTank()
-    {
-        int minTankDistanceIndex = 0;
-        float minDistanceTank = (targetList[0].transform.position - transform.position).sqrMagnitude;
-
-        if (targetList.Count == 1)
-        {
-            return targetList.First();
-        }
-
-        for (int i = 1; i < targetList.Count; i++)
-        {
-            float distanceTank = (targetList[i].transform.position - transform.position).sqrMagnitude;
-
-            if (minDistanceTank > distanceTank);
-            {
-                minDistanceTank = distanceTank;
-                minTankDistanceIndex = i;
-            }
-        }
-        
-        return targetList[minTankDistanceIndex]; 
-    }
-
+    
     public IEnumerator Fire(DamageableObject tank)
     {
         var firingDelay = new WaitForSeconds(_firingDelay);
