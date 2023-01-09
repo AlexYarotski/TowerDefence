@@ -9,12 +9,12 @@ public class Tower : DamageableObject
 
     private void OnEnable()
     {
-        TargetFinder.ShotTank += Shot_Tank;
+        Weapon.ShotTank += Shot_Tank;
     }
 
     private void OnDisable()
     {
-        TargetFinder.ShotTank -= Shot_Tank;
+        Weapon.ShotTank -= Shot_Tank;
     }
 
     private void Shot_Tank(DamageableObject tank)

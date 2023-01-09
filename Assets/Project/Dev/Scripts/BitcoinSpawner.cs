@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class SpawnBitcoin : MonoBehaviour
+public class BitcoinSpawner : MonoBehaviour
 {
     [SerializeField]
     private Bitcoin _btc = null;

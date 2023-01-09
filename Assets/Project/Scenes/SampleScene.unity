@@ -417,6 +417,22 @@ PrefabInstance:
       propertyPath: _weapon
       value: 
       objectReference: {fileID: 424678615}
+    - target: {fileID: 6608044987251158718, guid: 6ade6d35c92e53a43870b453819f3f25, type: 3}
+      propertyPath: _numberShellsPerTank
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8926242827727764065, guid: 6ade6d35c92e53a43870b453819f3f25, type: 3}
+      propertyPath: _finder
+      value: 
+      objectReference: {fileID: 765223568}
+    - target: {fileID: 8926242827727764065, guid: 6ade6d35c92e53a43870b453819f3f25, type: 3}
+      propertyPath: _speedAtack
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8926242827727764065, guid: 6ade6d35c92e53a43870b453819f3f25, type: 3}
+      propertyPath: _attackRadius
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 8926242827727764065, guid: 6ade6d35c92e53a43870b453819f3f25, type: 3}
       propertyPath: _arrowSpawnPoint
       value: 
@@ -427,6 +443,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ade6d35c92e53a43870b453819f3f25, type: 3}
+--- !u!114 &765223568 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4665508662327729172, guid: 6ade6d35c92e53a43870b453819f3f25, type: 3}
+  m_PrefabInstance: {fileID: 765223567}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17bf74667f68e56478015acbac69664d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &874177263 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3405535167029965515, guid: fb2e9cf6d8a10244184ba6a2d7d86941, type: 3}
@@ -869,8 +896,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _attackRadius: 10
-  _firingDelay: 1
-  _numberShellsPerTank: 3
+  _speedAtack: 0
   _arrowPrefab: {fileID: 3462531660236727197, guid: 4a5f8bd27eaf98149a15a11d3f49bfef, type: 3}
   _targetFinder: {fileID: 0}
   _arrowSpawnPoint: {fileID: 1569463485}

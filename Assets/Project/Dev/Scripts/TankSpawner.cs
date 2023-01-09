@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class SpawnTank : MonoBehaviour
+public class TankSpawner : MonoBehaviour
 {
     [SerializeField] 
     private Tank _tankPrefab = null;

@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class SpawnPointTank : MonoBehaviour
+public class TatnkPoinSpawner : MonoBehaviour
 {
     public static event Action<Tank> Spawn = delegate { };
     

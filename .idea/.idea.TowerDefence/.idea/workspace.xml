@@ -4,9 +4,18 @@
     <list default="true" id="c4afff80-7dce-403b-9561-defff42f18d7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TowerDefence/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TowerDefence/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/Fire.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/Fire.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/SpawnBitcoin.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/SpawnBitcoin.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/SpawnPointTank.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/SpawnPointTank.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/SpawnTank.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/SpawnTank.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/Tank.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/Tank.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/TargetFinder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/TargetFinder.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/Tower.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/Tower.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/Weapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/Weapon.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Catapult.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Catapult.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/SampleScene.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +25,11 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d95181a5c71a4ad88c81e8fccee6b47113ce00/5c/f3cca287/MonoBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d95181a5c71a4ad88c81e8fccee6b47113ce00/f1/bb7640b4/SetupCoroutine.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/alexy/Documents/TowerDefence/Assets/Project/Dev/Scripts/Fire.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/alexy/Documents/TowerDefence/Assets/Project/Dev/Scripts/Tank.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/alexy/Documents/TowerDefence/Assets/Project/Dev/Scripts/TargetFinder.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/alexy/Documents/TowerDefence/Assets/Project/Dev/Scripts/Tower.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/alexy/Documents/TowerDefence/Assets/Project/Dev/Scripts/Weapon.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -54,10 +68,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="9136">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="9136" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -86,7 +100,10 @@
       <workItem from="1672758897258" duration="10112000" />
       <workItem from="1672933271299" duration="3121000" />
       <workItem from="1672940341538" duration="4836000" />
-      <workItem from="1673177975200" duration="5582000" />
+      <workItem from="1673177975200" duration="6462000" />
+      <workItem from="1673248103593" duration="3716000" />
+      <workItem from="1673251887733" duration="7573000" />
+      <workItem from="1673261758561" duration="193000" />
     </task>
     <servers />
   </component>

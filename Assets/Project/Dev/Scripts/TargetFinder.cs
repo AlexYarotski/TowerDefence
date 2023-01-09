@@ -1,51 +1,24 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class TargetFinder : MonoBehaviour
 {
-    public static event Action<DamageableObject> ShotTank = delegate {  };
-    
-    [SerializeField] 
-    private Weapon _weapon = null;
+    private List<DamageableObject> _targetList = new List<DamageableObject>();
 
-    [SerializeField] 
-    private Animator _animator = null;
-
-    private List<DamageableObject> targetList = new List<DamageableObject>();
-    
-    public void Shot()
+    public DamageableObject SearchNearestTank()
     {
-        if (CanShot())
-        {
-            var searchNearestTank = SearchNearestTank();
-            
-            ShotTank(searchNearestTank);
-
-            _animator.SetBool("IsShot", true);
-            
-            targetList.Remove(searchNearestTank);
-        }
-    }
-    
-    private void Start()
-    {
-        targetList = _weapon.GetTarget();
-    }
-    
-    private DamageableObject SearchNearestTank()
-    {
+        
         int minTankDistanceIndex = 0;
-        float minDistanceTank = (targetList[0].transform.position - transform.position).sqrMagnitude;
+        float minDistanceTank = (_targetList[0].transform.position - transform.position).sqrMagnitude;
 
-        if (targetList.Count == 1)
+        if (_targetList.Count == 1)
         {
-            return targetList[0];
+            return _targetList[0];
         }
 
-        for (int i = 1; i < targetList.Count; i++)
+        for (int i = 1; i < _targetList.Count; i++)
         {
-            float distanceTank = (targetList[i].transform.position - transform.position).sqrMagnitude;
+            float distanceTank = (_targetList[i].transform.position - transform.position).sqrMagnitude;
 
             if (minDistanceTank > distanceTank);
             {
@@ -54,22 +27,40 @@ public class TargetFinder : MonoBehaviour
             }
         }
         
-        return targetList[minTankDistanceIndex]; 
+        return _targetList[minTankDistanceIndex]; 
     }
 
-    private bool CanShot()
+    public bool HasTank()
     {
-        if (targetList.Count != 0)
-        {
-            var distation = (transform.position + new Vector3 (10, 0, 10)).sqrMagnitude;
-            var targetPosition = (SearchNearestTank().transform.position).sqrMagnitude;
+        return _targetList.Count != 0;
+    }
+    
+    private void OnEnable()
+    {
+        TatnkPoinSpawner.Spawn += Spawn_Tank;
+        Weapon.ShotTank += Shot_Tank;
+        Tank.Dead += Tank_Dead;
+    }
+    
+    private void OnDisable()
+    {
+        TatnkPoinSpawner.Spawn -= Spawn_Tank;
+        Weapon.ShotTank -= Shot_Tank;
+        Tank.Dead -= Tank_Dead;
+    }
 
-            if (targetPosition <= distation)
-            {
-                return true;
-            }
-        }
+    private void Spawn_Tank(DamageableObject target)
+    {
+        _targetList.Add(target);
+    }
 
-        return false;
+    private void Shot_Tank(DamageableObject target)
+    {
+        _targetList.Remove(target);
+    }
+    
+    private void Tank_Dead(DamageableObject target)
+    {
+        _targetList.Remove(target);
     }
 }

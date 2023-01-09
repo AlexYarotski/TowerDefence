@@ -58,8 +58,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _attackRadius: 5
-  _firingDelay: 1
-  _numberShellsPerTank: 3
   _arrowPrefab: {fileID: 3462531660236727197, guid: 4a5f8bd27eaf98149a15a11d3f49bfef, type: 3}
   _targetFinder: {fileID: 4665508662327729172}
   _arrowSpawnPoint: {fileID: 6317634286871179335}
@@ -75,7 +73,6 @@ GameObject:
   - component: {fileID: 1091063061265685630}
   - component: {fileID: 7028997135871593162}
   - component: {fileID: 5527937848270451371}
-  - component: {fileID: 5442689640749062597}
   m_Layer: 0
   m_Name: Head
   m_TagString: Untagged
@@ -146,19 +143,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &5442689640749062597
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2338055267711475675}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3906945028617461771
 GameObject:
   m_ObjectHideFlags: 0
@@ -170,7 +154,6 @@ GameObject:
   - component: {fileID: 3617100137545479963}
   - component: {fileID: 6604578411680380628}
   - component: {fileID: 131719970433256275}
-  - component: {fileID: 7288435063815530997}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -242,19 +225,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &7288435063815530997
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3906945028617461771}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4349925726912280514
 GameObject:
   m_ObjectHideFlags: 0
@@ -298,8 +268,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17bf74667f68e56478015acbac69664d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _weapon: {fileID: 8926242827727764065}
-  _animator: {fileID: 8417149508269420053}
 --- !u!1 &8431261200773087082
 GameObject:
   m_ObjectHideFlags: 0
@@ -348,6 +316,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 4976220885302181644, guid: be23ec72cb0d637448c8d4abefc9c4da, type: 3}
   _weapon: {fileID: 8926242827727764065}
+  _numberShellsPerTank: 0
 --- !u!95 &8417149508269420053
 Animator:
   serializedVersion: 3
@@ -377,6 +346,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6317634286871179335}
   - component: {fileID: 1665400227601719968}
+  - component: {fileID: 8348225360061247542}
   m_Layer: 0
   m_Name: Catapult
   m_TagString: Untagged
@@ -413,3 +383,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 3
+--- !u!65 &8348225360061247542
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9144292984248854545}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.3, z: 2.8}
+  m_Center: {x: 0, y: 0.08, z: 1.32}

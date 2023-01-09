@@ -10,14 +10,17 @@ namespace Project.Dev.Scripts
         [SerializeField]
         private Weapon _weapon = null;
         
+        [SerializeField]
+        private int _numberShellsPerTank = 0;
+        
         private void OnEnable()
         {
-            TargetFinder.ShotTank += Shot_Tank;
+            Weapon.ShotTank += Shot_Tank;
         }
 
         private void OnDisable()
         {
-            TargetFinder.ShotTank -= Shot_Tank;
+            Weapon.ShotTank -= Shot_Tank;
         }
         
         private void Shot_Tank(DamageableObject target)
@@ -27,7 +30,7 @@ namespace Project.Dev.Scripts
 
         public void EventFire()
         {
-            StartCoroutine(_weapon.Fire(_target));
+            _weapon.Fire(_target);
         }
     }
 }

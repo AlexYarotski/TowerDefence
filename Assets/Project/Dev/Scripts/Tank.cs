@@ -19,12 +19,13 @@ public class Tank : DamageableObject
     private void Start()
     {
         _tankHeightFromZeroPoint = 1.5f;
+        
         StartCoroutine(MovementToTower());
     }
     
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.TryGetComponent(out Tower tower))
+        if (collision.gameObject.TryGetComponent(out DamageableObject tower))
         {
             tower.GetDamage(_damage);
 
