@@ -369,6 +369,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4665508662327729172, guid: 6ade6d35c92e53a43870b453819f3f25, type: 3}
+      propertyPath: _weapon
+      value: 
+      objectReference: {fileID: 424678615}
     - target: {fileID: 6317634286871179335, guid: 6ade6d35c92e53a43870b453819f3f25, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -431,7 +435,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8926242827727764065, guid: 6ade6d35c92e53a43870b453819f3f25, type: 3}
       propertyPath: _attackRadius
-      value: 8
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 8926242827727764065, guid: 6ade6d35c92e53a43870b453819f3f25, type: 3}
       propertyPath: _arrowSpawnPoint

@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using System;
 
-[RequireComponent(typeof(SphereCollider))]
 public class Weapon : MonoBehaviour
 {
     public static event Action<DamageableObject> ShotTank = delegate { };
@@ -24,7 +23,6 @@ public class Weapon : MonoBehaviour
     [SerializeField] 
     private Animator _animator = null;
 
-    private SphereCollider _sphereCollider = null;
     private DamageableObject _target = null;
 
     public float GetRadius()
@@ -34,9 +32,6 @@ public class Weapon : MonoBehaviour
 
     private void Awake()
     {
-        _sphereCollider = GetComponent<SphereCollider>();
-        _sphereCollider.radius = _attackRadius;
-
         _animator.speed = _speedAtack;
     }
 
@@ -58,29 +53,17 @@ public class Weapon : MonoBehaviour
     private void Tank_Dead(Tank tank)
     {
         _animator.SetBool("IsShot", false);
-    }
 
-    private bool CanShot()
-    {
-        if (_targetFinder.HasTank())
+        if (_target == tank)
         {
-            var radius = new Vector3(_attackRadius, 0, _attackRadius);
-
-            float distation = (transform.position + radius).sqrMagnitude;
-            float targetPosition = (_targetFinder.SearchNearestTank().transform.position).sqrMagnitude;
-
-            if (targetPosition <= distation)
-            {
-                return true;
-            }
+            _target = null;
         }
-        
-        return false;
     }
+    
 
     public void Shot()
     {
-        if (CanShot())
+        if (_targetFinder.CanShot())
         {
             if (_target == null || _target.IsDead)
             {

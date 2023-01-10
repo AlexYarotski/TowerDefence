@@ -27,7 +27,7 @@ public class Arrow : Ammunition
     
     private void Tank_Dead(DamageableObject target)
     {
-        if (_target == target)
+        if (_target == target || _target == null)
         {
             OnDie();
         }

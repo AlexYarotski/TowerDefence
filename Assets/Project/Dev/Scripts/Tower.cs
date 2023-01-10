@@ -19,15 +19,15 @@ public class Tower : DamageableObject
 
     private void Shot_Tank(DamageableObject tank)
     {
-        SetTargetPosition(tank.transform);
+        _target = tank.transform;
+        SetTargetPosition();
     }
-    
-    public void SetTargetPosition(Transform targetTransform)
+
+    public void SetTargetPosition()
     {
-        _target = targetTransform;
-        var rotation = Quaternion.LookRotation((transform.position - _target.position).normalized, 
+        var rotation = Quaternion.LookRotation((transform.position - _target.position).normalized,
             Vector3.up).normalized;
-        
+
         transform.Rotate(0, rotation.eulerAngles.y, 0);
     }
 

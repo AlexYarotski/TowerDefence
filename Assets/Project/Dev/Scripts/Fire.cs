@@ -10,9 +10,6 @@ namespace Project.Dev.Scripts
         [SerializeField]
         private Weapon _weapon = null;
         
-        [SerializeField]
-        private int _numberShellsPerTank = 0;
-        
         private void OnEnable()
         {
             Weapon.ShotTank += Shot_Tank;

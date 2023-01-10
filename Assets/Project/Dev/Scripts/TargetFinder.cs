@@ -3,11 +3,27 @@ using UnityEngine;
 
 public class TargetFinder : MonoBehaviour
 {
+    [SerializeField]
+    private Weapon _weapon = null;
+    
     private List<DamageableObject> _targetList = new List<DamageableObject>();
 
+    private void OnEnable()
+    {
+        TatnkPoinSpawner.Spawn += Spawn_Tank;
+        Weapon.ShotTank += Shot_Tank;
+        Tank.Dead += Tank_Dead;
+    }
+    
+    private void OnDisable()
+    {
+        TatnkPoinSpawner.Spawn -= Spawn_Tank;
+        Weapon.ShotTank -= Shot_Tank;
+        Tank.Dead -= Tank_Dead;
+    }
+    
     public DamageableObject SearchNearestTank()
     {
-        
         int minTankDistanceIndex = 0;
         float minDistanceTank = (_targetList[0].transform.position - transform.position).sqrMagnitude;
 
@@ -35,18 +51,19 @@ public class TargetFinder : MonoBehaviour
         return _targetList.Count != 0;
     }
     
-    private void OnEnable()
+    public bool CanShot()
     {
-        TatnkPoinSpawner.Spawn += Spawn_Tank;
-        Weapon.ShotTank += Shot_Tank;
-        Tank.Dead += Tank_Dead;
-    }
-    
-    private void OnDisable()
-    {
-        TatnkPoinSpawner.Spawn -= Spawn_Tank;
-        Weapon.ShotTank -= Shot_Tank;
-        Tank.Dead -= Tank_Dead;
+        if (HasTank())
+        {
+            var distation = (SearchNearestTank().transform.position - transform.position).sqrMagnitude;
+            
+            if (distation <= _weapon.GetRadius())
+            {
+                return true;
+            }
+        }
+        
+        return false;
     }
 
     private void Spawn_Tank(DamageableObject target)
