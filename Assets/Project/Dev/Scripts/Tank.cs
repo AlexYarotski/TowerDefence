@@ -1,72 +1,74 @@
+﻿using UnityEngine;
 using System;
 using System.Collections;
-using UnityEngine;
 
-public class Tank : DamageableObject
+namespace Project.Dev.Scripts
 {
-    public static event Action<Tank> Dead = delegate { };
-
-    [SerializeField]
-    private float _speed = 0;
-
-    [SerializeField] 
-    private float _damage = 0;
-
-    private const float _tankHeightFromZeroPoint = 1.5f;
-
-    private Transform _target = null;
-
-    private void Start()
+    public class Tank : DamageableObject
     {
-        StartCoroutine(MovementToTower());
-    }
+        public static event Action<Tank> Dead = delegate { };
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.TryGetComponent(out DamageableObject tower))
+        [SerializeField]
+        private float _speed = 0;
+
+        [SerializeField] 
+        private float _damage = 0;
+
+        private const float _tankHeightFromZeroPoint = 1.5f;
+        private Transform _target = null;
+
+        private void Start()
         {
-            tower.GetDamage(_damage);
-
-            OnDie();
+            StartCoroutine(MovementToTower());
         }
-    }
 
-    public void SetTargetPosition(Transform targetTransform)
-    {
-        _target = targetTransform;
-
-        var rotation = Quaternion.LookRotation((_target.position - transform.position).normalized, Vector3.up)
-            .normalized;
-        transform.Rotate(0, rotation.eulerAngles.y, 0);
-    }
-
-    private IEnumerator MovementToTower()
-    {
-        var finalPos = new Vector3(_target.transform.position.x, _tankHeightFromZeroPoint,
-            _target.transform.position.z);
-
-        float currentTime = 0;
-        float towerDistance = (finalPos - transform.position).magnitude;
-        float towerMoveTime = towerDistance / _speed;
-        var position = transform.position;
-
-        while (currentTime < towerMoveTime)
+        private void OnCollisionEnter(Collision collision)
         {
-            float progress = currentTime / towerMoveTime;
+            if (collision.gameObject.TryGetComponent(out DamageableObject tower))
+            {
+                tower.GetDamage(_damage);
 
-            transform.position = Vector3.Lerp(position, finalPos, progress);
-
-            yield return null;
-
-            currentTime += Time.deltaTime;
+                OnDie();
+            }
         }
-    }
+
+        public void SetTargetPosition(Transform targetTransform)
+        {
+            _target = targetTransform;
+
+            var rotation = Quaternion.LookRotation((_target.position - transform.position).normalized, Vector3.up)
+                .normalized;
+            transform.Rotate(0, rotation.eulerAngles.y, 0);
+        }
+
+        private IEnumerator MovementToTower()
+        {
+            var finalPos = new Vector3(_target.transform.position.x, _tankHeightFromZeroPoint,
+                _target.transform.position.z);
+
+            float currentTime = 0;
+            float towerDistance = (finalPos - transform.position).magnitude;
+            float towerMoveTime = towerDistance / _speed;
+            var position = transform.position;
+
+            while (currentTime < towerMoveTime)
+            {
+                float progress = currentTime / towerMoveTime;
+
+                transform.position = Vector3.Lerp(position, finalPos, progress);
+
+                yield return null;
+
+                currentTime += Time.deltaTime;
+            }
+        }
 
 
-    protected override void OnDie()
-    {
-        base.OnDie();
+        protected override void OnDie()
+        {
+            base.OnDie();
 
-        Dead(this);
+            Dead(this);
+        }
     }
 }

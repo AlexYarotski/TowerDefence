@@ -1,4 +1,5 @@
 using System;
+using Project.Dev.Scripts;
 using UnityEngine;
 
 public class TatnkPoinSpawner : MonoBehaviour

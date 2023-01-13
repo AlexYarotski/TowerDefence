@@ -1,4 +1,5 @@
 using System.Collections;
+using Project.Dev.Scripts;
 using UnityEngine;
 
 public class BitcoinSpawner : MonoBehaviour

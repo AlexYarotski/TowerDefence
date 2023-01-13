@@ -1,4 +1,5 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Project.Dev.Scripts;
 using UnityEngine;
 
 public class TargetFinder : MonoBehaviour
