@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c4afff80-7dce-403b-9561-defff42f18d7" name="Changes" comment="">
+    <list default="true" id="8efab290-b16f-4025-9ac5-572a7c62df93" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TowerDefence/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TowerDefence/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/Arrow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/Arrow.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/Fire.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/Fire.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/GameWindow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/GameWindow.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/GameWindow.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/GameWindow.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/Tank.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/Tank.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/Tank.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/Tank.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/TargetFinder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/TargetFinder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/TargetFinder.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/TargetFinder.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/Tower.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/Tower.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/Tower.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/Tower.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/Weapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/Weapon.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/AC.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/AC/Catapult.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/AC/Catapult.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/AC/CatapultAC.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/AC/CatapultAC.controller.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Prefabs/Catapult.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Prefabs/Catapult.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/SampleScene.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/SampleScene.unity.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,12 +22,16 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d95181a5c71a4ad88c81e8fccee6b47113ce00/5c/f3cca287/MonoBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Project/Dev/Scripts/Tank.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Project/Dev/Scripts/Tower.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/alexy/Documents/TowerDefence/Assets/Project/Scenes/SampleScene.unity.meta" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/alexy/Documents/TowerDefence/Assets/Project/Scenes/SampleScene.unity.meta" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/alexy/Documents/TowerDefence/Assets/Project/Scenes/SampleScene.unity.meta" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2J97PcvmT8BBYBAk8BUvhLESQcG" />
+  <component name="ProjectId" id="2KDlP6dZBbxrpIHi5MCR2Q0jGnz" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -38,7 +42,6 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.4905983&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -61,10 +64,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="16576">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="16576" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -75,29 +78,14 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="c4afff80-7dce-403b-9561-defff42f18d7" name="Changes" comment="" />
-      <created>1671478429645</created>
+      <changelist id="8efab290-b16f-4025-9ac5-572a7c62df93" name="Changes" comment="" />
+      <created>1673517016991</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1671478429645</updated>
-      <workItem from="1671478430380" duration="414000" />
-      <workItem from="1671480601173" duration="1010000" />
-      <workItem from="1671481822150" duration="4849000" />
-      <workItem from="1671540457311" duration="15276000" />
-      <workItem from="1671633146488" duration="547000" />
-      <workItem from="1671817648257" duration="3500000" />
-      <workItem from="1671899977721" duration="2355000" />
-      <workItem from="1672490811213" duration="7521000" />
-      <workItem from="1672652822291" duration="3507000" />
-      <workItem from="1672756625925" duration="2209000" />
-      <workItem from="1672758897258" duration="10112000" />
-      <workItem from="1672933271299" duration="3121000" />
-      <workItem from="1672940341538" duration="4836000" />
-      <workItem from="1673177975200" duration="6462000" />
-      <workItem from="1673248103593" duration="3716000" />
-      <workItem from="1673251887733" duration="7573000" />
-      <workItem from="1673261758561" duration="193000" />
-      <workItem from="1673339128534" duration="6543000" />
+      <updated>1673517016991</updated>
+      <workItem from="1673517023600" duration="4000" />
+      <workItem from="1673602911812" duration="401000" />
+      <workItem from="1673603449845" duration="1156000" />
     </task>
     <servers />
   </component>
@@ -117,37 +105,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Project/Dev/Scripts/TargetFinder.cs</url>
-          <line>26</line>
-          <properties documentPath="C:\Users\Alex\Documents\TowerDefence\Assets\Project\Dev\Scripts\TargetFinder.cs" initialLine="23" containingFunctionPresentation="method 'SearchNearestTank'">
-            <startOffsets>
-              <option value="624" />
-            </startOffsets>
-            <endOffsets>
-              <option value="653" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Project/Dev/Scripts/Weapon.cs</url>
-          <line>65</line>
-          <properties documentPath="C:\Users\Alex\Documents\TowerDefence\Assets\Project\Dev\Scripts\Weapon.cs" initialLine="77" containingFunctionPresentation="method 'Shot'">
-            <startOffsets>
-              <option value="1149" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1177" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

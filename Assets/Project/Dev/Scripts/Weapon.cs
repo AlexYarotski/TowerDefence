@@ -59,9 +59,8 @@ public class Weapon : MonoBehaviour
             _target = null;
         }
     }
-    
 
-    public void Shot()
+    private void Shot()
     {
         if (_targetFinder.CanShot())
         {

@@ -51,15 +51,13 @@ public class GameWindow : MonoBehaviour
 
     private void Tank_Dead(Tank tank)
     {
-        _numberDead++;
-        _text = "Kill ";
-        _counter.text = _text + _numberDead;
+        _text = string.Format("Kill {0}", ++_numberDead);
+        _counter.text = _text;
     }
 
     private void Bitcoin_Mining(Bitcoin obj)
     {
-        _numberMining++;
-        _text = "Mining ";
-        _mining.text = _text + _numberMining;
+        _text = string.Format("Mining {0}", ++_numberMining);
+        _mining.text = _text;
     }
 }

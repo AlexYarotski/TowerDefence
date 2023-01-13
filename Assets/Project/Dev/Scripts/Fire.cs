@@ -5,10 +5,9 @@ namespace Project.Dev.Scripts
     public class Fire : MonoBehaviour
     {
         [SerializeField]
-        private DamageableObject _target = null;
-
-        [SerializeField]
         private Weapon _weapon = null;
+        
+        private DamageableObject _target = null;
         
         private void OnEnable()
         {
@@ -25,6 +24,7 @@ namespace Project.Dev.Scripts
             _target = target;
         }
 
+        //NOTE: used as event in "IsShot" animation
         public void EventFire()
         {
             _weapon.Fire(_target);

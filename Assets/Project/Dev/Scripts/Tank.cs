@@ -9,20 +9,18 @@ public class Tank : DamageableObject
     [SerializeField]
     private float _speed = 0;
 
-    [SerializeField]
+    [SerializeField] 
     private float _damage = 0;
 
-    [SerializeField] private float _tankHeightFromZeroPoint = 0;
+    private const float _tankHeightFromZeroPoint = 1.5f;
 
     private Transform _target = null;
 
     private void Start()
     {
-        _tankHeightFromZeroPoint = 1.5f;
-        
         StartCoroutine(MovementToTower());
     }
-    
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.TryGetComponent(out DamageableObject tower))
@@ -37,16 +35,18 @@ public class Tank : DamageableObject
     {
         _target = targetTransform;
 
-        var rotation = Quaternion.LookRotation((_target.position - transform.position).normalized, Vector3.up).normalized;
+        var rotation = Quaternion.LookRotation((_target.position - transform.position).normalized, Vector3.up)
+            .normalized;
         transform.Rotate(0, rotation.eulerAngles.y, 0);
     }
-    
+
     private IEnumerator MovementToTower()
     {
-        var finalPos = new Vector3(_target.transform.position.x, _tankHeightFromZeroPoint, _target.transform.position.z);
-        
+        var finalPos = new Vector3(_target.transform.position.x, _tankHeightFromZeroPoint,
+            _target.transform.position.z);
+
         float currentTime = 0;
-        float towerDistance = (finalPos  - transform.position).magnitude;
+        float towerDistance = (finalPos - transform.position).magnitude;
         float towerMoveTime = towerDistance / _speed;
         var position = transform.position;
 
@@ -63,10 +63,10 @@ public class Tank : DamageableObject
     }
 
 
-protected override void OnDie()
+    protected override void OnDie()
     {
         base.OnDie();
-        
+
         Dead(this);
     }
 }

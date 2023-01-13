@@ -6,7 +6,7 @@ public class TargetFinder : MonoBehaviour
     [SerializeField]
     private Weapon _weapon = null;
     
-    private List<DamageableObject> _targetList = new List<DamageableObject>();
+    private readonly List<DamageableObject> _targetList = new List<DamageableObject>();
 
     private void OnEnable()
     {
@@ -46,7 +46,7 @@ public class TargetFinder : MonoBehaviour
         return _targetList[minTankDistanceIndex]; 
     }
 
-    public bool HasTank()
+    private bool HasTank()
     {
         return _targetList.Count != 0;
     }
@@ -55,9 +55,9 @@ public class TargetFinder : MonoBehaviour
     {
         if (HasTank())
         {
-            var distation = (SearchNearestTank().transform.position - transform.position).sqrMagnitude;
+            var distationToTower = (SearchNearestTank().transform.position - transform.position).sqrMagnitude;
             
-            if (distation <= _weapon.GetRadius())
+            if (distationToTower <= _weapon.GetRadius())
             {
                 return true;
             }
