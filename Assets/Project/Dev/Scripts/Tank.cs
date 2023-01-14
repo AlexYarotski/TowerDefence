@@ -13,10 +13,10 @@ namespace Project.Dev.Scripts
 
         [SerializeField] 
         private float _damage = 0;
-
-        private const float _tankHeightFromZeroPoint = 1.5f;
+        
         private Transform _target = null;
-
+        private const float _tankHeightFromZeroPoint = 1.5f;
+        
         private void Start()
         {
             StartCoroutine(MovementToTower());
@@ -62,8 +62,7 @@ namespace Project.Dev.Scripts
                 currentTime += Time.deltaTime;
             }
         }
-
-
+        
         protected override void OnDie()
         {
             base.OnDie();

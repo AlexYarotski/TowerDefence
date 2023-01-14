@@ -1,27 +1,20 @@
+using System;
 using System.Collections;
 using Project.Dev.Scripts;
 using UnityEngine;
 
 public class BitcoinSpawner : MonoBehaviour
 {
+    public static event Action<BitcoinSpawner> SpawnBitcoin = delegate { };
+
     [SerializeField]
     private Bitcoin _btc = null;
     
     [SerializeField] 
     private Tower _tower = null;
-    
-    [SerializeField] 
-    private ParticleSystem _onSpawmCoinsParticlePrefab = null;
-    
+
     [SerializeField] 
     private float _spawnCoinsDelay = 0;
-    
-    private ParticleSystem _onSpawnCoins = null;
-
-    private void Start()
-    {
-        _onSpawnCoins = Instantiate(_onSpawmCoinsParticlePrefab, transform);
-    }
 
     private void OnEnable()
     {
@@ -42,12 +35,10 @@ public class BitcoinSpawner : MonoBehaviour
     {
         var spawnDelay = new WaitForSeconds(_spawnCoinsDelay);
         
-        _onSpawnCoins.transform.position = tank.transform.position;
-        _onSpawnCoins.Play();
-
         yield return spawnDelay;
         
         Bitcoin createBtc = Instantiate(_btc, transform);
+        SpawnBitcoin(this);
         createBtc.transform.position = tank.transform.position;
         createBtc.SetTargetPosition(_tower.transform);
     }

@@ -22,6 +22,21 @@ public class TargetFinder : MonoBehaviour
         Weapon.ShotTank -= Shot_Tank;
         Tank.Dead -= Tank_Dead;
     }
+
+    public bool CanShot()
+    {
+        if (HasTank())
+        {
+            var distationToTower = (SearchNearestTank().transform.position - transform.position).sqrMagnitude;
+            
+            if (distationToTower <= _weapon.GetRadius())
+            {
+                return true;
+            }
+        }
+        
+        return false;
+    }
     
     public DamageableObject SearchNearestTank()
     {
@@ -52,21 +67,6 @@ public class TargetFinder : MonoBehaviour
         return _targetList.Count != 0;
     }
     
-    public bool CanShot()
-    {
-        if (HasTank())
-        {
-            var distationToTower = (SearchNearestTank().transform.position - transform.position).sqrMagnitude;
-            
-            if (distationToTower <= _weapon.GetRadius())
-            {
-                return true;
-            }
-        }
-        
-        return false;
-    }
-
     private void Spawn_Tank(DamageableObject target)
     {
         _targetList.Add(target);

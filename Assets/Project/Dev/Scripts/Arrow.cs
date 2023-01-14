@@ -1,11 +1,9 @@
-using System;
+using System.Collections;
 using Project.Dev.Scripts;
 using UnityEngine;
 
 public class Arrow : Ammunition
 {
-    public static Action<bool> _callback = delegate {  };
-
     private DamageableObject _target = null;
     
     private void OnEnable()
@@ -17,13 +15,15 @@ public class Arrow : Ammunition
     {
         Tank.Dead -= Tank_Dead;
     }
-    
-    private void FixedUpdate()
+
+    private void Start()
     {
-        float step = Time.deltaTime * _speed;
-        
-        var moveDirection = (_target.transform.position - transform.position).normalized;
-        transform.position += moveDirection * step;
+        StartCoroutine(MovementToTarget());
+    }
+
+    public void SetTarget(DamageableObject tank)
+    {
+        _target = tank;
     }
     
     private void Tank_Dead(DamageableObject target)
@@ -39,16 +39,29 @@ public class Arrow : Ammunition
         if (collision.gameObject.TryGetComponent(out DamageableObject target))
         {
             target.GetDamage(_damage);
-            
-            _callback.Invoke(target.IsDead);
 
             OnDie();
         }
     }
     
-    public void SetTarget(DamageableObject tank, Action<bool> callback)
+    private IEnumerator MovementToTarget()
     {
-      _target = tank;
-      _callback = callback;
+        var finalPos = _target.transform.position;
+
+        float currentTime = 0;
+        float towerDistance = (finalPos - transform.position).magnitude;
+        float towerMoveTime = towerDistance / _speed;
+        var position = transform.position;
+
+        while (currentTime < towerMoveTime)
+        {
+            float progress = currentTime / towerMoveTime;
+
+            transform.position = Vector3.Lerp(position, finalPos, progress);
+
+            yield return null;
+
+            currentTime += Time.deltaTime;
+        }
     }
 }

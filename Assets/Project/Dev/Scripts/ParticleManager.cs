@@ -9,27 +9,33 @@ namespace Project.Dev.Scripts
         
         [SerializeField]
         private ParticleSystem _onDieTowerParticlePrefab = null;
-        
+
+        [SerializeField]
+        private ParticleSystem _onSpawnBitcoinParticlePrefab = null;
+
         private ParticleSystem _onDieTower = null;
         private ParticleSystem _onDieTank = null;
-        
+        private ParticleSystem _onSpawnBitcoin = null;
         
         private void Start()
         {
             _onDieTank = Instantiate(_onDieTankParticlePrefab, transform);
             _onDieTower = Instantiate(_onDieTowerParticlePrefab, transform);
+            _onSpawnBitcoin = Instantiate(_onSpawnBitcoinParticlePrefab, transform);
         }
 
         private void OnEnable()
         {
             Tank.Dead += Tank_Dead;
             Tower.Dead += Tower_Dead;
+            BitcoinSpawner.SpawnBitcoin += Spawn_Bitcoin;
         }
 
         private void OnDisable()
         {
             Tank.Dead -= Tank_Dead;
             Tower.Dead -= Tower_Dead;
+            BitcoinSpawner.SpawnBitcoin -= Spawn_Bitcoin;
         }
 
         private void Tank_Dead(Tank tank)
@@ -42,6 +48,12 @@ namespace Project.Dev.Scripts
         {
             _onDieTower.transform.position = tower.transform.position;
             _onDieTower.Play();
+        }
+
+        private void Spawn_Bitcoin(BitcoinSpawner bitcoin)
+        {
+            _onSpawnBitcoin.transform.position = bitcoin.transform.position;
+            _onSpawnBitcoinParticlePrefab.Play();
         }
     }
 }

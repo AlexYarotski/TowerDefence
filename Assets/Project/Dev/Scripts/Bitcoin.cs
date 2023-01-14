@@ -7,28 +7,24 @@ public class Bitcoin : DamageableObject
     public static event Action<Bitcoin> Mining = delegate {  }; 
     
     [SerializeField] 
-    private float _angle = 0;
-    
-    [SerializeField] 
     private float _flightSpeed = 0;
 
+    [SerializeField] 
+    private Animator _animator = null;
+
+    private readonly int _isRotate = Animator.StringToHash("IsRotate");
     private Transform _tower = null;
 
     private void Start()
     {
         StartCoroutine(MovementToTower());
+        _animator.SetBool(_isRotate, true);
     }
 
-    private void Rotation()
-    {
-        Quaternion rotationZ = Quaternion.AngleAxis(_angle, new Vector3(0, 0, 1));
-        transform.rotation *= rotationZ;
-    }
-    
     public void SetTargetPosition(Transform targetTransform)
     {
         _tower = targetTransform;
-    } 
+    }
 
     protected override void OnDie()
     {
@@ -47,8 +43,6 @@ public class Bitcoin : DamageableObject
 
         while (currentTime < towerMoveTime)
         {
-            Rotation();
-
             float progress = currentTime / towerMoveTime;
 
             transform.position = Vector3.Lerp(position, finalPos, progress);

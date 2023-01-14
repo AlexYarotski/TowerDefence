@@ -1,3 +1,4 @@
+using System;
 using Project.Dev.Scripts;
 using TMPro;
 using UnityEngine;
@@ -15,9 +16,10 @@ public class GameWindow : MonoBehaviour
     [SerializeField]
     private Button _button = null;
 
+    private readonly string _counterKillText = "Kill {0}";
+    private readonly string _counterCoinText = "Coin {0}";
     private int _numberDead = 0;
     private int _numberMining = 0;
-    private string _text = string.Empty;
 
     private void OnEnable()
     {
@@ -52,13 +54,13 @@ public class GameWindow : MonoBehaviour
 
     private void Tank_Dead(Tank tank)
     {
-        _text = string.Format("Kill {0}", ++_numberDead);
-        _counter.text = _text;
+        _numberDead++;
+        _counter.text = String.Format(_counterKillText, _numberDead);
     }
 
     private void Bitcoin_Mining(Bitcoin obj)
     {
-        _text = string.Format("Mining {0}", ++_numberMining);
-        _mining.text = _text;
+        _numberMining++;
+        _mining.text = String.Format(_counterCoinText, _numberMining);
     }
 }

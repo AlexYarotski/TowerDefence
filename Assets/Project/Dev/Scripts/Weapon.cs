@@ -24,13 +24,9 @@ public class Weapon : MonoBehaviour
     [SerializeField] 
     private Animator _animator = null;
 
+    private readonly int _isShot = Animator.StringToHash("IsShot");
     private DamageableObject _target = null;
-
-    public float GetRadius()
-    {
-        return _attackRadius;
-    }
-
+    
     private void Awake()
     {
         _animator.speed = _speedAtack;
@@ -50,10 +46,15 @@ public class Weapon : MonoBehaviour
     {
         Shot();
     }
+    
+    public float GetRadius()
+    {
+        return _attackRadius;
+    }
 
     private void Tank_Dead(Tank tank)
     {
-        _animator.SetBool("IsShot", false);
+        _animator.SetBool(_isShot, false);
 
         if (_target == tank)
         {
@@ -71,7 +72,7 @@ public class Weapon : MonoBehaviour
 
                 ShotTank(_target);
 
-                _animator.SetBool("IsShot", true);
+                _animator.SetBool(_isShot, true);
             }
             
         }
@@ -81,12 +82,6 @@ public class Weapon : MonoBehaviour
     {
         Arrow createdArrow = Instantiate(_arrowPrefab, _arrowSpawnPoint.position, Quaternion.identity, transform);
 
-        createdArrow.SetTarget(tank, isTankDead =>
-        {
-            if (isTankDead)
-            {
-                return;
-            }
-        });
+        createdArrow.SetTarget(tank);
     }
 }
