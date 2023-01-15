@@ -4,6 +4,8 @@ using Project.Dev.Scripts;
 
 public class Weapon : MonoBehaviour
 {
+    private readonly int IsShot = Animator.StringToHash("IsShot");
+    
     public static event Action<DamageableObject> ShotTank = delegate { };
 
     [SerializeField] 
@@ -24,7 +26,6 @@ public class Weapon : MonoBehaviour
     [SerializeField] 
     private Animator _animator = null;
 
-    private readonly int _isShot = Animator.StringToHash("IsShot");
     private DamageableObject _target = null;
     
     private void Awake()
@@ -52,9 +53,16 @@ public class Weapon : MonoBehaviour
         return _attackRadius;
     }
 
+    public void Fire(DamageableObject tank)
+    {
+        Arrow createdArrow = Instantiate(_arrowPrefab, _arrowSpawnPoint.position, Quaternion.identity, transform);
+
+        createdArrow.SetTarget(tank);
+    }
+    
     private void Tank_Dead(Tank tank)
     {
-        _animator.SetBool(_isShot, false);
+        _animator.SetBool(IsShot, false);
 
         if (_target == tank)
         {
@@ -72,16 +80,9 @@ public class Weapon : MonoBehaviour
 
                 ShotTank(_target);
 
-                _animator.SetBool(_isShot, true);
+                _animator.SetBool(IsShot, true);
             }
             
         }
-    }
-
-    public void Fire(DamageableObject tank)
-    {
-        Arrow createdArrow = Instantiate(_arrowPrefab, _arrowSpawnPoint.position, Quaternion.identity, transform);
-
-        createdArrow.SetTarget(tank);
     }
 }

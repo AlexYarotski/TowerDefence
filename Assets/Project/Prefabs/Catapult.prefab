@@ -331,8 +331,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6317634286871179335}
-  - component: {fileID: 8348225360061247542}
-  - component: {fileID: 1610979665599747322}
+  - component: {fileID: 7986459754356149314}
+  - component: {fileID: 4457565490673752399}
   m_Layer: 0
   m_Name: Catapult
   m_TagString: Untagged
@@ -356,7 +356,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &8348225360061247542
+--- !u!65 &7986459754356149314
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -367,9 +367,9 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.3, z: 2.8}
-  m_Center: {x: 0, y: 0.1, z: -1.1}
---- !u!114 &1610979665599747322
+  m_Size: {x: 1.03, y: 0.32, z: 2.7}
+  m_Center: {x: 0, y: 0.09, z: -1.11}
+--- !u!114 &4457565490673752399
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -381,4 +381,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c343f210e5c4e399ae2f519506dfc4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 5
+  _health: 3
+  _weapon: {fileID: 8926242827727764065}

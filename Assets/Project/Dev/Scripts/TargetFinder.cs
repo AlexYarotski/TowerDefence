@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class TargetFinder : MonoBehaviour
 {
+    private readonly List<DamageableObject> _targetList = new List<DamageableObject>();
+    
     [SerializeField]
     private Weapon _weapon = null;
-    
-    private readonly List<DamageableObject> _targetList = new List<DamageableObject>();
 
     private void OnEnable()
     {
@@ -27,9 +27,9 @@ public class TargetFinder : MonoBehaviour
     {
         if (HasTank())
         {
-            var distationToTower = (SearchNearestTank().transform.position - transform.position).sqrMagnitude;
+            var distanceToTower = (SearchNearestTank().transform.position - transform.position).sqrMagnitude;
             
-            if (distationToTower <= _weapon.GetRadius())
+            if (distanceToTower <= _weapon.GetRadius())
             {
                 return true;
             }
@@ -52,7 +52,7 @@ public class TargetFinder : MonoBehaviour
         {
             float distanceTank = (_targetList[i].transform.position - transform.position).sqrMagnitude;
 
-            if (minDistanceTank > distanceTank);
+            if (minDistanceTank > distanceTank)
             {
                 minDistanceTank = distanceTank;
                 minTankDistanceIndex = i;

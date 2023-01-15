@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class BitcoinSpawner : MonoBehaviour
 {
-    public static event Action<BitcoinSpawner> SpawnBitcoin = delegate { };
+    public static event Action<BitcoinSpawner> BitcoinSpawned = delegate { };
 
     [SerializeField]
     private Bitcoin _btc = null;
@@ -38,7 +38,7 @@ public class BitcoinSpawner : MonoBehaviour
         yield return spawnDelay;
         
         Bitcoin createBtc = Instantiate(_btc, transform);
-        SpawnBitcoin(this);
+        BitcoinSpawned(this);
         createBtc.transform.position = tank.transform.position;
         createBtc.SetTargetPosition(_tower.transform);
     }

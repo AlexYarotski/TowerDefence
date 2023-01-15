@@ -5,6 +5,9 @@ public class Tower : DamageableObject
 {
     public static event Action<Tower> Dead = delegate { };
 
+    [SerializeField] 
+    private Weapon _weapon = null;
+
     private Transform _target = null;
 
     private void OnEnable()
@@ -16,7 +19,14 @@ public class Tower : DamageableObject
     {
         Weapon.ShotTank -= Shot_Tank;
     }
-
+    
+    protected override void OnDie()
+    {
+        base.OnDie();
+        
+        Dead(this);
+    }
+    
     private void Shot_Tank(DamageableObject tank)
     {
         _target = tank.transform;
@@ -25,16 +35,23 @@ public class Tower : DamageableObject
 
     private void SetTargetPosition()
     {
-        var rotation = Quaternion.LookRotation((_target.position - transform.position).normalized, Vector3.up)
+        var rotation = Quaternion.LookRotation((transform.position - _target.position).normalized, Vector3.up)
             .normalized;
         transform.rotation = rotation;
-        transform.Rotate(0, 180, 0);
     }
-  
-    protected override void OnDie()
+
+    private void OnCollisionEnter(Collision collision)
     {
-        base.OnDie();
-        
-        Dead(this);
+        if (collision.gameObject.TryGetComponent(out DamageableObject target))
+        {
+            var zeroPointRotation = Quaternion.Euler(0, transform.rotation.y, 0);
+            transform.rotation =  zeroPointRotation;
+        }
+    }
+    
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawSphere(transform.position, _weapon.GetRadius());
     }
 }

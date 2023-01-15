@@ -16,26 +16,26 @@ namespace Project.Dev.Scripts
         private ParticleSystem _onDieTower = null;
         private ParticleSystem _onDieTank = null;
         private ParticleSystem _onSpawnBitcoin = null;
-        
-        private void Start()
-        {
-            _onDieTank = Instantiate(_onDieTankParticlePrefab, transform);
-            _onDieTower = Instantiate(_onDieTowerParticlePrefab, transform);
-            _onSpawnBitcoin = Instantiate(_onSpawnBitcoinParticlePrefab, transform);
-        }
 
         private void OnEnable()
         {
             Tank.Dead += Tank_Dead;
             Tower.Dead += Tower_Dead;
-            BitcoinSpawner.SpawnBitcoin += Spawn_Bitcoin;
+            BitcoinSpawner.BitcoinSpawned += Spawn_Bitcoin;
         }
 
         private void OnDisable()
         {
             Tank.Dead -= Tank_Dead;
             Tower.Dead -= Tower_Dead;
-            BitcoinSpawner.SpawnBitcoin -= Spawn_Bitcoin;
+            BitcoinSpawner.BitcoinSpawned -= Spawn_Bitcoin;
+        }
+        
+        private void Start()
+        {
+            _onDieTank = Instantiate(_onDieTankParticlePrefab, transform);
+            _onDieTower = Instantiate(_onDieTowerParticlePrefab, transform);
+            _onSpawnBitcoin = Instantiate(_onSpawnBitcoinParticlePrefab, transform);
         }
 
         private void Tank_Dead(Tank tank)

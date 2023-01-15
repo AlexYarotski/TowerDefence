@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2634608748901994015}
   - component: {fileID: 2634608748901994000}
   - component: {fileID: 2634608748901994001}
-  - component: {fileID: 2634608748901994002}
+  - component: {fileID: 3969882871509664738}
   m_Layer: 5
   m_Name: Restart
   m_TagString: Untagged
@@ -121,7 +121,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2634608748901994002}
+      - m_Target: {fileID: 3969882871509664738}
         m_TargetAssemblyTypeName: GameWindow, Assembly-CSharp
         m_MethodName: RestartGame
         m_Mode: 1
@@ -133,7 +133,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &2634608748901994002
+--- !u!114 &3969882871509664738
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -142,8 +142,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2634608748901994004}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1249ef4abbc71ca4b9814cf71755da99, type: 3}
+  m_Script: {fileID: 11500000, guid: 9c9e56e89ec0be145a3dfcb843e8431d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _counter: {fileID: 0}
-  _button: {fileID: 0}
+  _counter: {fileID: 4213681262866954720, guid: caef84bc891d77140b100c65d7267fa4, type: 3}
+  _mining: {fileID: 2631954619792166653, guid: 0085166cc57648747885975e51443ac3, type: 3}
+  _button: {fileID: 2634608748901994001}

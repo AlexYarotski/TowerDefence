@@ -6,6 +6,8 @@ namespace Project.Dev.Scripts
 {
     public class Tank : DamageableObject
     {
+        private const float TankHeightFromZeroPoint = 1.5f;
+        
         public static event Action<Tank> Dead = delegate { };
 
         [SerializeField]
@@ -15,8 +17,7 @@ namespace Project.Dev.Scripts
         private float _damage = 0;
         
         private Transform _target = null;
-        private const float _tankHeightFromZeroPoint = 1.5f;
-        
+
         private void Start()
         {
             StartCoroutine(MovementToTower());
@@ -24,7 +25,7 @@ namespace Project.Dev.Scripts
 
         private void OnCollisionEnter(Collision collision)
         {
-            if (collision.gameObject.TryGetComponent(out DamageableObject tower))
+            if (collision.gameObject.TryGetComponent(out Tower tower))
             {
                 tower.GetDamage(_damage);
 
@@ -43,7 +44,7 @@ namespace Project.Dev.Scripts
 
         private IEnumerator MovementToTower()
         {
-            var finalPos = new Vector3(_target.transform.position.x, _tankHeightFromZeroPoint,
+            var finalPos = new Vector3(_target.transform.position.x, TankHeightFromZeroPoint,
                 _target.transform.position.z);
 
             float currentTime = 0;

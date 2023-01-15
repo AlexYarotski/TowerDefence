@@ -34,16 +34,6 @@ public class Arrow : Ammunition
         }
     }
     
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.TryGetComponent(out DamageableObject target))
-        {
-            target.GetDamage(_damage);
-
-            OnDie();
-        }
-    }
-    
     private IEnumerator MovementToTarget()
     {
         var finalPos = _target.transform.position;
@@ -57,11 +47,20 @@ public class Arrow : Ammunition
         {
             float progress = currentTime / towerMoveTime;
 
-            transform.position = Vector3.Lerp(position, finalPos, progress);
+            transform.position = Vector3.Lerp(position, _target.transform.position, progress);
 
             yield return null;
 
             currentTime += Time.deltaTime;
         }
+
+        Damage();
+    }
+
+    private void Damage()
+    {
+        _target.GetDamage(_damage);
+
+        OnDie();
     }
 }
