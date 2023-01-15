@@ -85,4 +85,10 @@ public class Weapon : MonoBehaviour
             
         }
     }
+    
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, Mathf.Sqrt(_attackRadius));
+    }
 }

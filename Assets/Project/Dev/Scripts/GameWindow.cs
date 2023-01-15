@@ -1,4 +1,3 @@
-using System;
 using Project.Dev.Scripts;
 using TMPro;
 using UnityEngine;
@@ -17,7 +16,7 @@ public class GameWindow : MonoBehaviour
     private TextMeshProUGUI _mining = null;
     
     [SerializeField]
-    private Button _button = null;
+    private Button _restartButton = null;
     
     private int _numberDead = 0;
     private int _numberMining = 0;
@@ -38,7 +37,7 @@ public class GameWindow : MonoBehaviour
 
     private void Start()
     {
-        _button.onClick.AddListener(RestartGame);
+        _restartButton.onClick.AddListener(RestartGame);
     }
     
     private void Tower_Dead(Tower tower)
@@ -56,12 +55,12 @@ public class GameWindow : MonoBehaviour
     private void Tank_Dead(Tank tank)
     {
         _numberDead++;
-        _counter.text = String.Format(СounterKillText, _numberDead);
+        _counter.text = string.Format(СounterKillText, _numberDead);
     }
 
     private void Bitcoin_Mining(Bitcoin obj)
     {
         _numberMining++;
-        _mining.text = String.Format(СounterCoinText, _numberMining);
+        _mining.text = string.Format(СounterCoinText, _numberMining);
     }
 }
