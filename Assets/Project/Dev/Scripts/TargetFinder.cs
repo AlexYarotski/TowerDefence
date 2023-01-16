@@ -4,21 +4,21 @@ using UnityEngine;
 
 public class TargetFinder : MonoBehaviour
 {
-    private readonly List<DamageableObject> _targetList = new List<DamageableObject>();
+    private readonly List<DamageableObject> TargetList = new List<DamageableObject>();
     
     [SerializeField]
     private Weapon _weapon = null;
 
     private void OnEnable()
     {
-        TatnkPoinSpawner.Spawn += Spawn_Tank;
+        TatnkPoinSpawner.Spawned += SpawnedTank;
         Weapon.ShotTank += Shot_Tank;
         Tank.Dead += Tank_Dead;
     }
     
     private void OnDisable()
     {
-        TatnkPoinSpawner.Spawn -= Spawn_Tank;
+        TatnkPoinSpawner.Spawned -= SpawnedTank;
         Weapon.ShotTank -= Shot_Tank;
         Tank.Dead -= Tank_Dead;
     }
@@ -40,17 +40,17 @@ public class TargetFinder : MonoBehaviour
     
     public DamageableObject SearchNearestTank()
     {
-        int minTankDistanceIndex = 0;
-        float minDistanceTank = (_targetList[0].transform.position - transform.position).sqrMagnitude;
+        var minTankDistanceIndex = 0;
+        var minDistanceTank = (TargetList[0].transform.position - transform.position).sqrMagnitude;
 
-        if (_targetList.Count == 1)
+        if (TargetList.Count == 1)
         {
-            return _targetList[0];
+            return TargetList[0];
         }
 
-        for (int i = 1; i < _targetList.Count; i++)
+        for (int i = 1; i < TargetList.Count; i++)
         {
-            float distanceTank = (_targetList[i].transform.position - transform.position).sqrMagnitude;
+            float distanceTank = (TargetList[i].transform.position - transform.position).sqrMagnitude;
 
             if (minDistanceTank > distanceTank)
             {
@@ -59,26 +59,26 @@ public class TargetFinder : MonoBehaviour
             }
         }
         
-        return _targetList[minTankDistanceIndex]; 
+        return TargetList[minTankDistanceIndex]; 
     }
 
     private bool HasTank()
     {
-        return _targetList.Count != 0;
+        return TargetList.Count != 0;
     }
     
-    private void Spawn_Tank(DamageableObject target)
+    private void SpawnedTank(DamageableObject target)
     {
-        _targetList.Add(target);
+        TargetList.Add(target);
     }
 
     private void Shot_Tank(DamageableObject target)
     {
-        _targetList.Remove(target);
+        TargetList.Remove(target);
     }
     
     private void Tank_Dead(DamageableObject target)
     {
-        _targetList.Remove(target);
+        TargetList.Remove(target);
     }
 }

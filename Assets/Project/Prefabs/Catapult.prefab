@@ -47,7 +47,7 @@ MonoBehaviour:
   _speedAtack: 0
   _arrowPrefab: {fileID: 3462531660236727197, guid: 4a5f8bd27eaf98149a15a11d3f49bfef, type: 3}
   _targetFinder: {fileID: 7692172526194284430}
-  _arrowSpawnPoint: {fileID: 6317634286871179335}
+  _arrowSpawnPoint: {fileID: 1091063061265685630}
   _animator: {fileID: 8417149508269420053}
 --- !u!1 &2338055267711475675
 GameObject:

@@ -38,7 +38,9 @@ public class BitcoinSpawner : MonoBehaviour
         yield return spawnDelay;
         
         Bitcoin createBtc = Instantiate(_btc, transform);
+        
         BitcoinSpawned(this);
+        
         createBtc.transform.position = tank.transform.position;
         createBtc.SetTargetPosition(_tower.transform);
     }

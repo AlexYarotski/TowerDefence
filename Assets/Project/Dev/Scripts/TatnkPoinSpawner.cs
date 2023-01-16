@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TatnkPoinSpawner : MonoBehaviour
 {
-    public static event Action<Tank> Spawn = delegate { };
+    public static event Action<Tank> Spawned = delegate { };
     
     [SerializeField]
     private LayerMask _layerMask = default;
@@ -30,7 +30,7 @@ public class TatnkPoinSpawner : MonoBehaviour
 
                 Tank createTank = Instantiate(_tank, startPosition, Quaternion.identity, transform);
 
-                Spawn(createTank);
+                Spawned(createTank);
                 
                 createTank.SetTargetPosition(_weapon.transform);
             }

@@ -19,15 +19,15 @@ namespace Project.Dev.Scripts
             Weapon.ShotTank -= Shot_Tank;
         }
         
-        private void Shot_Tank(DamageableObject target)
-        {
-            _target = target;
-        }
-
         //NOTE: used as event in "IsShot" animation
         public void EventFire()
         {
             _weapon.Fire(_target);
+        }
+        
+        private void Shot_Tank(DamageableObject target)
+        {
+            _target = target;
         }
     }
 }

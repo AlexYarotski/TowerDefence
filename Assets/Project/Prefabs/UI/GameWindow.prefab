@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3018076445919193204}
   - component: {fileID: 3018076445919193162}
   - component: {fileID: 7799420614146953789}
+  - component: {fileID: 8276687502235634319}
   m_Layer: 5
   m_Name: GameWindow
   m_TagString: Untagged
@@ -37,7 +38,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.0010070801, y: 0.0025024414}
+  m_AnchoredPosition: {x: 0.0009765625, y: 0.0025024414}
   m_SizeDelta: {x: -0.0020142, y: 0.005}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &3018076445919193162
@@ -76,6 +77,23 @@ MonoBehaviour:
   _counter: {fileID: 3352984094563395110}
   _mining: {fileID: 6886758252272778142}
   _restartButton: {fileID: 2593251994810880216}
+--- !u!114 &8276687502235634319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3018076445919193207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!1001 &535108402707570377
 PrefabInstance:
   m_ObjectHideFlags: 0

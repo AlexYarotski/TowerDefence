@@ -19,6 +19,7 @@ public class Bitcoin : DamageableObject
     private void Start()
     {
         StartCoroutine(MovementToTower());
+        
         _animator.SetBool(IsRotate, true);
     }
 
@@ -30,6 +31,7 @@ public class Bitcoin : DamageableObject
     protected override void OnDie()
     {
         base.OnDie();
+        
         Mining(this);
     }
 

@@ -23,6 +23,22 @@ namespace Project.Dev.Scripts
             StartCoroutine(MovementToTower());
         }
 
+        public void SetTargetPosition(Transform targetTransform)
+        {
+            _target = targetTransform;
+
+            var rotation = Quaternion.LookRotation((_target.position - transform.position).normalized, Vector3.up)
+                .normalized;
+            transform.Rotate(0, rotation.eulerAngles.y, 0);
+        }
+        
+        protected override void OnDie()
+        {
+            base.OnDie();
+
+            Dead(this);
+        }
+        
         private void OnCollisionEnter(Collision collision)
         {
             if (collision.gameObject.TryGetComponent(out Tower tower))
@@ -32,16 +48,7 @@ namespace Project.Dev.Scripts
                 OnDie();
             }
         }
-
-        public void SetTargetPosition(Transform targetTransform)
-        {
-            _target = targetTransform;
-
-            var rotation = Quaternion.LookRotation((_target.position - transform.position).normalized, Vector3.up)
-                .normalized;
-            transform.Rotate(0, rotation.eulerAngles.y, 0);
-        }
-
+        
         private IEnumerator MovementToTower()
         {
             var finalPos = new Vector3(_target.transform.position.x, TankHeightFromZeroPoint,
@@ -62,13 +69,6 @@ namespace Project.Dev.Scripts
 
                 currentTime += Time.deltaTime;
             }
-        }
-        
-        protected override void OnDie()
-        {
-            base.OnDie();
-
-            Dead(this);
         }
     }
 }
