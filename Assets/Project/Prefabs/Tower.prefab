@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 3405535167029965514}
   - component: {fileID: 3405535167029965517}
   - component: {fileID: 6455166023702341823}
+  - component: {fileID: 1762679219185198445}
+  - component: {fileID: -6494350497065548072}
   m_Layer: 0
   m_Name: Tower
   m_TagString: Untagged
@@ -95,3 +97,34 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.4849606, y: 8.348681, z: 2.5912144}
   m_Center: {x: -0.01540947, y: -0.80129004, z: -0.00000011920929}
+--- !u!114 &1762679219185198445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3405535167029965518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c343f210e5c4e399ae2f519506dfc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _health: 0
+--- !u!114 &-6494350497065548072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3405535167029965518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c573b50ca2c04ddead53a88c342e878c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _attackRadius: 0
+  _speedAtack: 0
+  _arrowPrefab: {fileID: 3462531660236727197, guid: 4a5f8bd27eaf98149a15a11d3f49bfef, type: 3}
+  _targetFinder: {fileID: 0}
+  _arrowSpawnPoint: {fileID: 3405535167029965515}
+  _animator: {fileID: 0}
