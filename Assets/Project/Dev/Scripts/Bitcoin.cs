@@ -4,8 +4,9 @@ using System.Collections;
 
 public class Bitcoin : DamageableObject
 {
+    private readonly int IsSkale = Animator.StringToHash("IsScale");
     private readonly int IsRotate = Animator.StringToHash("IsRotate");
-    
+
     public static event Action<Bitcoin> Mining = delegate {  }; 
     
     [SerializeField] 
@@ -18,9 +19,9 @@ public class Bitcoin : DamageableObject
 
     private void Start()
     {
-        StartCoroutine(MovementToTower());
+        _animator.SetBool(IsSkale, true);
         
-        _animator.SetBool(IsRotate, true);
+        StartCoroutine(MovementToTower());
     }
 
     public void SetTargetPosition(Transform targetTransform)
@@ -37,6 +38,8 @@ public class Bitcoin : DamageableObject
 
     private IEnumerator MovementToTower()
     {
+        _animator.SetBool(IsRotate, true);
+        
         var finalPos = new Vector3(_tower.transform.position.x, 1.5f, _tower.transform.position.z);
         
         float currentTime = 0;

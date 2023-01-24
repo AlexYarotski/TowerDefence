@@ -11,15 +11,15 @@ public class TargetFinder : MonoBehaviour
 
     private void OnEnable()
     {
-        TatnkPoinSpawner.Spawned += SpawnedTank;
-        Weapon.ShotTank += Shot_Tank;
+        TatnkPoinSpawner.Spawned += TatnkPoinSpawner_Spawned;
+        Weapon.ShotTank += Weapon_ShotTank;
         Tank.Dead += Tank_Dead;
     }
     
     private void OnDisable()
     {
-        TatnkPoinSpawner.Spawned -= SpawnedTank;
-        Weapon.ShotTank -= Shot_Tank;
+        TatnkPoinSpawner.Spawned -= TatnkPoinSpawner_Spawned;
+        Weapon.ShotTank -= Weapon_ShotTank;
         Tank.Dead -= Tank_Dead;
     }
 
@@ -67,12 +67,12 @@ public class TargetFinder : MonoBehaviour
         return TargetList.Count != 0;
     }
     
-    private void SpawnedTank(DamageableObject target)
+    private void TatnkPoinSpawner_Spawned(DamageableObject target)
     {
         TargetList.Add(target);
     }
 
-    private void Shot_Tank(DamageableObject target)
+    private void Weapon_ShotTank(DamageableObject target)
     {
         TargetList.Remove(target);
     }

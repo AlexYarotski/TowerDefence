@@ -21,14 +21,14 @@ namespace Project.Dev.Scripts
         {
             Tank.Dead += Tank_Dead;
             Tower.Dead += Tower_Dead;
-            BitcoinSpawner.BitcoinSpawned += Spawn_Bitcoin;
+            BitcoinSpawner.BitcoinSpawned += BitcoinSpawner_BitcoinSpawned;
         }
 
         private void OnDisable()
         {
             Tank.Dead -= Tank_Dead;
             Tower.Dead -= Tower_Dead;
-            BitcoinSpawner.BitcoinSpawned -= Spawn_Bitcoin;
+            BitcoinSpawner.BitcoinSpawned -= BitcoinSpawner_BitcoinSpawned;
         }
         
         private void Start()
@@ -50,7 +50,7 @@ namespace Project.Dev.Scripts
             _onDieTower.Play();
         }
 
-        private void Spawn_Bitcoin(BitcoinSpawner bitcoin)
+        private void BitcoinSpawner_BitcoinSpawned(BitcoinSpawner bitcoin)
         {
             _onSpawnBitcoin.transform.position = bitcoin.transform.position;
             _onSpawnBitcoinParticlePrefab.Play();

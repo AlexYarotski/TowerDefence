@@ -11,12 +11,12 @@ namespace Project.Dev.Scripts
         
         private void OnEnable()
         {
-            Weapon.ShotTank += Shot_Tank;
+            Weapon.ShotTank += Weapon_ShotTank;
         }
 
         private void OnDisable()
         {
-            Weapon.ShotTank -= Shot_Tank;
+            Weapon.ShotTank -= Weapon_ShotTank;
         }
         
         //NOTE: used as event in "IsShot" animation
@@ -25,7 +25,7 @@ namespace Project.Dev.Scripts
             _weapon.Fire(_target);
         }
         
-        private void Shot_Tank(DamageableObject target)
+        private void Weapon_ShotTank(DamageableObject target)
         {
             _target = target;
         }

@@ -9,12 +9,12 @@ public class Tower : DamageableObject
 
     private void OnEnable()
     {
-        Weapon.ShotTank += Shot_Tank;
+        Weapon.ShotTank += Weapon_ShotTank;
     }
 
     private void OnDisable()
     {
-        Weapon.ShotTank -= Shot_Tank;
+        Weapon.ShotTank -= Weapon_ShotTank;
     }
     
     protected override void OnDie()
@@ -24,7 +24,7 @@ public class Tower : DamageableObject
         Dead(this);
     }
     
-    private void Shot_Tank(DamageableObject tank)
+    private void Weapon_ShotTank(DamageableObject tank)
     {
         _target = tank.transform;
         SetTargetPosition();

@@ -43,8 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c573b50ca2c04ddead53a88c342e878c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _attackRadius: 5
-  _speedAtack: 0
+  _attackRadius: 100
+  _speedAtack: 2
   _arrowPrefab: {fileID: 3462531660236727197, guid: 4a5f8bd27eaf98149a15a11d3f49bfef, type: 3}
   _targetFinder: {fileID: 7692172526194284430}
   _arrowSpawnPoint: {fileID: 1091063061265685630}

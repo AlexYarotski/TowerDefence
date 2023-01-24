@@ -12,11 +12,21 @@ public class TatnkPoinSpawner : MonoBehaviour
     [SerializeField]
     private Camera _camera = null;
 
+    [SerializeField] 
+    private PoolManager _poolManager = null;
+
     [SerializeField]
     private Tank _tank = null;
     
     [SerializeField]
     private Weapon _weapon = null;
+
+    private PooledType _pooledType = default;
+
+    private void Awake()
+    {
+        _pooledType = PooledType.Tank;
+    }
 
     private void Update()
     {
@@ -28,8 +38,10 @@ public class TatnkPoinSpawner : MonoBehaviour
             {
                 Vector3 startPosition = new Vector3(hitInfo.point.x, 1.5f, hitInfo.point.z);
 
-                Tank createTank = Instantiate(_tank, startPosition, Quaternion.identity, transform);
+                //Tank createTank = Instantiate(_tank, startPosition, Quaternion.identity, transform);
 
+                var createTank = _poolManager.GetObject<Tank>(_pooledType, startPosition);
+                
                 Spawned(createTank);
                 
                 createTank.SetTargetPosition(_weapon.transform);

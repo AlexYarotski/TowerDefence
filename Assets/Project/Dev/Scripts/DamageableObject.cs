@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public abstract class DamageableObject : MonoBehaviour
+public abstract class DamageableObject : PooledBehaviour
 {
     [SerializeField]
     private float _health = 0;
