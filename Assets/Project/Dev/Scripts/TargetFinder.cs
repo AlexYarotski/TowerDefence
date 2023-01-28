@@ -9,24 +9,24 @@ public class TargetFinder : MonoBehaviour
     [SerializeField]
     private Weapon _weapon = null;
 
+    private DamageableObject _target = null;
     private void OnEnable()
     {
         TankPointSpawner.Spawned += TatnkPoinSpawner_Spawned;
         Weapon.ShotTank += Weapon_ShotTank;
-        Tank.Dead += Tank_Dead;
     }
     
     private void OnDisable()
     {
         TankPointSpawner.Spawned -= TatnkPoinSpawner_Spawned;
         Weapon.ShotTank -= Weapon_ShotTank;
-        Tank.Dead -= Tank_Dead;
     }
 
     public bool CanShot()
     {
         if (HasTank())
         {
+            _target = SearchNearestTank();
             var distanceToTower = (SearchNearestTank().transform.position - transform.position).sqrMagnitude;
             
             if (distanceToTower <= _weapon.GetRadius())
@@ -73,11 +73,6 @@ public class TargetFinder : MonoBehaviour
     }
 
     private void Weapon_ShotTank(DamageableObject target)
-    {
-        TargetList.Remove(target);
-    }
-    
-    private void Tank_Dead(DamageableObject target)
     {
         TargetList.Remove(target);
     }

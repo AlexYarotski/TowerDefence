@@ -77,7 +77,7 @@ namespace Project.Dev.Scripts
         {
             if (_targetFinder.CanShot())
             {
-                if (_target == null || _target.IsDead)
+                if (_target == null)
                 {
                     _target = _targetFinder.SearchNearestTank();
 
@@ -85,7 +85,6 @@ namespace Project.Dev.Scripts
 
                     _animator.SetBool(IsShot, true);
                 }
-            
             }
         }
     
