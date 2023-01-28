@@ -7,15 +7,17 @@ public class BitcoinSpawner : MonoBehaviour
 {
     public static event Action<BitcoinSpawner> BitcoinSpawned = delegate { };
 
-    [SerializeField]
-    private Bitcoin _btc = null;
-    
     [SerializeField] 
     private Tower _tower = null;
 
     [SerializeField] 
     private float _spawnCoinsDelay = 0;
 
+    [SerializeField]
+    private PoolManager _poolManager = null;
+
+    private PooledType _pooledType = default;
+        
     private void OnEnable()
     {
         Tank.Dead += Tank_Dead;
@@ -26,6 +28,11 @@ public class BitcoinSpawner : MonoBehaviour
         Tank.Dead -= Tank_Dead;
     }
 
+    private void Start()
+    {
+        _pooledType = PooledType.Bitcoin;
+    }
+
     private void Tank_Dead(Tank tank)
     {
         StartCoroutine(Spawn(tank));
@@ -34,14 +41,13 @@ public class BitcoinSpawner : MonoBehaviour
     private IEnumerator Spawn(Tank tank)
     {
         var spawnDelay = new WaitForSeconds(_spawnCoinsDelay);
-        
         yield return spawnDelay;
-        
-        Bitcoin createBtc = Instantiate(_btc, transform);
+
+        var position = tank.transform.position;
+        var createBtc = _poolManager.GetObject<Bitcoin>(_pooledType, position);
         
         BitcoinSpawned(this);
         
-        createBtc.transform.position = tank.transform.position;
         createBtc.SetTargetPosition(_tower.transform);
     }
 }

@@ -6,4 +6,9 @@ public class PooledBehaviour : MonoBehaviour
     {
         get => !gameObject.activeSelf;
     }
+
+    public void Free()
+    {
+        gameObject.SetActive(false);    
+    }
 }

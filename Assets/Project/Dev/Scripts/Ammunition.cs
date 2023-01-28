@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public abstract class Ammunition : MonoBehaviour
+public abstract class Ammunition : PooledBehaviour
 {
     [SerializeField]
     protected float _speed = 0;

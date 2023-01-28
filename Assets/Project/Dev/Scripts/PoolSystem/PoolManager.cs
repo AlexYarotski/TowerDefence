@@ -14,6 +14,28 @@ public class PoolManager : MonoBehaviour
         ReplenishmentPoolDictionary();
     }
 
+    public T GetObject<T>(PooledType pooledType, Vector3 position) where T : PooledBehaviour
+    {
+        List<PooledBehaviour> poolBehaviour = PooledDictionary[pooledType];
+
+        var freePoolObj = poolBehaviour.FirstOrDefault(pb => pb.IsFree);
+
+        if (freePoolObj == null)
+        {
+            AddItemToPoolDictionary(poolBehaviour);
+        }
+        
+        freePoolObj.transform.position = position;
+        freePoolObj.gameObject.SetActive(true);
+
+        return (T)freePoolObj;
+    }
+
+    private void AddItemToPoolDictionary(List<PooledBehaviour> poolBehaviour)
+    {
+        
+    }
+    
     private void ReplenishmentPoolDictionary()
     {
         for (int i = 0; i < _poolConfig.Length; i++)
@@ -28,25 +50,14 @@ public class PoolManager : MonoBehaviour
     {
         var poolList = new List<PooledBehaviour>(poolConfig.Count);
 
-        for (int i = 0; i < poolList.Count; i++)
+        for (int i = 0; i < poolConfig.Count; i++)
         {
             var poolObject = Instantiate(poolConfig.PooledPrefab, transform);
-            poolObject.gameObject.SetActive(false);
-            
+            poolObject.Free();
+
             poolList.Add(poolObject);
         }
 
         return poolList;
-    }
-
-    public T GetObject<T>(PooledType pooledType, Vector3 position) where T : PooledBehaviour
-    {
-        var poolBehaviour = PooledDictionary[pooledType];
-        var freePoolObj = poolBehaviour.FirstOrDefault(pb => pb.IsFree);
-
-        freePoolObj.transform.position = position;
-        freePoolObj.gameObject.SetActive(true);
-
-        return (T)freePoolObj;
     }
 }

@@ -11,14 +11,14 @@ public class TargetFinder : MonoBehaviour
 
     private void OnEnable()
     {
-        TatnkPoinSpawner.Spawned += TatnkPoinSpawner_Spawned;
+        TankPointSpawner.Spawned += TatnkPoinSpawner_Spawned;
         Weapon.ShotTank += Weapon_ShotTank;
         Tank.Dead += Tank_Dead;
     }
     
     private void OnDisable()
     {
-        TatnkPoinSpawner.Spawned -= TatnkPoinSpawner_Spawned;
+        TankPointSpawner.Spawned -= TatnkPoinSpawner_Spawned;
         Weapon.ShotTank -= Weapon_ShotTank;
         Tank.Dead -= Tank_Dead;
     }

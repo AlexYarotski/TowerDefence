@@ -205,7 +205,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8926242827727764065, guid: 6ade6d35c92e53a43870b453819f3f25, type: 3}
   m_PrefabInstance: {fileID: 765223567}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 984637999}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c573b50ca2c04ddead53a88c342e878c, type: 3}
@@ -444,6 +444,10 @@ PrefabInstance:
       propertyPath: _finder
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 8926242827727764065, guid: 6ade6d35c92e53a43870b453819f3f25, type: 3}
+      propertyPath: _poolManager
+      value: 
+      objectReference: {fileID: 2091719208}
     - target: {fileID: 9144292984248854545, guid: 6ade6d35c92e53a43870b453819f3f25, type: 3}
       propertyPath: m_Name
       value: Catapult
@@ -545,6 +549,26 @@ Transform:
   m_Father: {fileID: 1590071743}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &984637999 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1595466884704070932, guid: 6ade6d35c92e53a43870b453819f3f25, type: 3}
+  m_PrefabInstance: {fileID: 765223567}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &984638001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 984637999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac8049e77a4f6b74daaf46d7d3809038, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _count: 2
+  _pooledType: 2
+  _pooledPrefab: {fileID: 3462531660236727197, guid: 4a5f8bd27eaf98149a15a11d3f49bfef, type: 3}
 --- !u!1 &1067980561
 GameObject:
   m_ObjectHideFlags: 0
@@ -749,6 +773,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1236008396}
   - component: {fileID: 1236008397}
+  - component: {fileID: 1236008398}
   m_Layer: 0
   m_Name: SpawnBtc
   m_TagString: Untagged
@@ -782,9 +807,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a95b98b9a165114cbca44074b37ffbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _btc: {fileID: 2455803075149998521, guid: 6bcd1d50a1aa0b942adf651abe538b72, type: 3}
   _tower: {fileID: 290253734}
   _spawnCoinsDelay: 0.6
+  _poolManager: {fileID: 2091719208}
+--- !u!114 &1236008398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1236008395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac8049e77a4f6b74daaf46d7d3809038, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _count: 2
+  _pooledType: 3
+  _pooledPrefab: {fileID: 2455803075149998521, guid: 6bcd1d50a1aa0b942adf651abe538b72, type: 3}
 --- !u!1 &1370553576
 GameObject:
   m_ObjectHideFlags: 0
@@ -1162,6 +1202,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _poolConfig:
   - {fileID: 2104200996}
+  - {fileID: 1236008398}
 --- !u!1 &2104200995
 GameObject:
   m_ObjectHideFlags: 0
@@ -1192,7 +1233,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac8049e77a4f6b74daaf46d7d3809038, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _count: 50
+  _count: 2
   _pooledType: 1
   _pooledPrefab: {fileID: 178651256349657624, guid: be23ec72cb0d637448c8d4abefc9c4da, type: 3}
 --- !u!4 &2104200997
@@ -1225,6 +1266,5 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   _camera: {fileID: 519420031}
-  _poolManager: {fileID: 2091719208}
-  _tank: {fileID: 178651256349657624, guid: be23ec72cb0d637448c8d4abefc9c4da, type: 3}
   _weapon: {fileID: 424678615}
+  _poolManager: {fileID: 2091719208}
