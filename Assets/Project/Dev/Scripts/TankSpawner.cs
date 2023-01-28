@@ -9,6 +9,9 @@ public class TankSpawner : MonoBehaviour
 
     [SerializeField]
     private float _spawnDelay = 0;
+
+    [SerializeField] 
+    private Tower _tower = null;
     
     [SerializeField] 
     private Weapon _weapon = null;
@@ -28,7 +31,7 @@ public class TankSpawner : MonoBehaviour
             
             Tank createTank = Instantiate(_tankPrefab, spawnPosition, Quaternion.identity, transform);
             
-            createTank.SetTargetPosition(_weapon.transform);
+            createTank.SetTargetPosition(_tower);
             
             yield return waiter;
         }

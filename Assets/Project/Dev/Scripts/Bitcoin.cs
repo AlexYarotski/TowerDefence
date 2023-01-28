@@ -17,16 +17,11 @@ public class Bitcoin : DamageableObject
 
     private Transform _tower = null;
 
-    private void Start()
-    {
-        _animator.SetBool(IsSkale, true);
-        
-        StartCoroutine(MovementToTower());
-    }
-
     public void SetTargetPosition(Transform targetTransform)
     {
         _tower = targetTransform;
+
+        CoinMovement();
     }
 
     protected override void OnDie()
@@ -59,5 +54,12 @@ public class Bitcoin : DamageableObject
         }
         
         OnDie();
+    }
+
+    private void CoinMovement()
+    {
+        StartCoroutine(MovementToTower());
+        
+        _animator.SetBool(IsSkale, true);
     }
 }

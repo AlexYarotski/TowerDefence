@@ -16,14 +16,11 @@ public class Arrow : Ammunition
         Tank.Dead -= Tank_Dead;
     }
 
-    private void Start()
-    {
-        StartCoroutine(MovementToTarget());
-    }
-
     public void SetTarget(DamageableObject tank)
     {
         _target = tank;
+        
+        StartCoroutine(MovementToTarget());
     }
     
     private void Tank_Dead(DamageableObject target)
@@ -37,12 +34,12 @@ public class Arrow : Ammunition
     private IEnumerator MovementToTarget()
     {
         var finalPos = _target.transform.position;
-
+        var position = transform.position;
+        
         float currentTime = 0;
         float towerDistance = (finalPos - transform.position).magnitude;
         float towerMoveTime = towerDistance / _speed;
-        var position = transform.position;
-
+        
         while (currentTime < towerMoveTime)
         {
             float progress = currentTime / towerMoveTime;

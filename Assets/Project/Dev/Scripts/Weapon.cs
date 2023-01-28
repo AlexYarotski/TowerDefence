@@ -9,9 +9,6 @@ namespace Project.Dev.Scripts
     
         public static event Action<DamageableObject> ShotTank = delegate { };
 
-        [SerializeField]
-        private Arrow _arrowPrefab = null;
-        
         [SerializeField] 
         private float _attackRadius = 0;
 
@@ -61,8 +58,7 @@ namespace Project.Dev.Scripts
 
         public void Fire(DamageableObject tank)
         {
-            Arrow createdArrow = Instantiate(_arrowPrefab, _arrowSpawnPoint.position, Quaternion.identity, transform);
-            //var createdArrow = _poolManager.GetObject<Arrow>(_pooledType, _arrowSpawnPoint.position);
+            var createdArrow = _poolManager.GetObject<Arrow>(_pooledType, _arrowSpawnPoint.position);
         
             createdArrow.SetTarget(tank);
         }

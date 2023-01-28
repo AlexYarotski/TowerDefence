@@ -16,20 +16,17 @@ namespace Project.Dev.Scripts
         [SerializeField] 
         private float _damage = 0;
         
-        private Transform _target = null;
+        private Tower _target = null;
 
-        private void Start()
+        public void SetTargetPosition(Tower target)
         {
+            _target = target;
+
+            var rotation = Quaternion.LookRotation((_target.transform.position - transform.position).normalized, 
+                Vector3.up).normalized;
+            transform.rotation = rotation;
+            
             StartCoroutine(MovementToTower());
-        }
-
-        public void SetTargetPosition(Transform targetTransform)
-        {
-            _target = targetTransform;
-
-            var rotation = Quaternion.LookRotation((_target.position - transform.position).normalized, Vector3.up)
-                .normalized;
-            transform.Rotate(0, rotation.eulerAngles.y, 0);
         }
         
         protected override void OnDie()
@@ -39,25 +36,15 @@ namespace Project.Dev.Scripts
             Dead(this);
         }
         
-        private void OnCollisionEnter(Collision collision)
-        {
-            if (collision.gameObject.TryGetComponent(out Tower tower))
-            {
-                tower.GetDamage(_damage);
-
-                OnDie();
-            }
-        }
-        
         private IEnumerator MovementToTower()
         {
             var finalPos = new Vector3(_target.transform.position.x, TankHeightFromZeroPoint,
                 _target.transform.position.z);
-
+            var position = transform.position;
+            
             float currentTime = 0;
             float towerDistance = (finalPos - transform.position).magnitude;
             float towerMoveTime = towerDistance / _speed;
-            var position = transform.position;
 
             while (currentTime < towerMoveTime)
             {
@@ -69,6 +56,15 @@ namespace Project.Dev.Scripts
 
                 currentTime += Time.deltaTime;
             }
+
+            TargetDamage();
+        }
+
+        private void TargetDamage()
+        {
+            _target.GetDamage(_damage);
+
+            OnDie();
         }
     }
 }

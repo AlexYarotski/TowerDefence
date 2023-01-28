@@ -14,7 +14,7 @@ namespace Project.Dev.Scripts
         private Camera _camera = null;
 
         [SerializeField]
-        private Weapon _weapon = null;
+        private Tower _tower = null;
 
         [SerializeField] 
         private PoolManager _poolManager = null;
@@ -40,7 +40,7 @@ namespace Project.Dev.Scripts
                 
                     Spawned(createTank);
                 
-                    createTank.SetTargetPosition(_weapon.transform);
+                    createTank.SetTargetPosition(_tower);
                 }
             }
         }
