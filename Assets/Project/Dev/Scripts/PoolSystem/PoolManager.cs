@@ -16,13 +16,15 @@ public class PoolManager : MonoBehaviour
 
     public T GetObject<T>(PooledType pooledType, Vector3 position) where T : PooledBehaviour
     {
-        PooledDictionary.TryGetValue(pooledType, out value);
-
-            Debug.LogError("There is no such type!");
-
-
         List<PooledBehaviour> poolBehaviour = PooledDictionary[pooledType];
-
+        
+        if (PooledDictionary.TryGetValue(pooledType, out poolBehaviour))
+        {
+            Debug.LogError("There is no such type!");
+            
+            return null;
+        }
+        
         var freePoolObj = TryGetPooledBeh(poolBehaviour);
 
         if (freePoolObj == null)
@@ -55,6 +57,8 @@ public class PoolManager : MonoBehaviour
         if (typePoolConfig == default)
         {
             Debug.LogError("There is no such config!");
+
+            return null;
         }
         
         var createObject = Instantiate(typePoolConfig.PooledPrefab, transform);
