@@ -384,6 +384,10 @@ PrefabInstance:
       propertyPath: _weapon
       value: 
       objectReference: {fileID: 424678615}
+    - target: {fileID: 5274237028290644593, guid: 6ade6d35c92e53a43870b453819f3f25, type: 3}
+      propertyPath: _pooledType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6317634286871179335, guid: 6ade6d35c92e53a43870b453819f3f25, type: 3}
       propertyPath: m_RootOrder
       value: 0
