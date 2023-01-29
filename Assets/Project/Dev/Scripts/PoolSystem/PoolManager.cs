@@ -16,11 +16,11 @@ public class PoolManager : MonoBehaviour
 
     public T GetObject<T>(PooledType pooledType, Vector3 position) where T : PooledBehaviour
     {
-        if (PooledDictionary.ContainsKey(pooledType))
-        {
+        PooledDictionary.TryGetValue(pooledType, out value);
+
             Debug.LogError("There is no such type!");
-        }
-        
+
+
         List<PooledBehaviour> poolBehaviour = PooledDictionary[pooledType];
 
         var freePoolObj = TryGetPooledBeh(poolBehaviour);
@@ -29,7 +29,7 @@ public class PoolManager : MonoBehaviour
         {
             freePoolObj = AddItemToPoolDictionary(poolBehaviour, pooledType);
         }
-        
+
         freePoolObj.transform.position = position;
         freePoolObj.gameObject.SetActive(true);
 
