@@ -5,7 +5,7 @@ using UnityEngine;
 public class TargetFinder : MonoBehaviour
 {
     private readonly List<DamageableObject> TargetList = new List<DamageableObject>();
-    
+
     [SerializeField]
     private Weapon _weapon = null;
 

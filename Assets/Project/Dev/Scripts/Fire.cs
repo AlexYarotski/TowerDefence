@@ -6,7 +6,7 @@ namespace Project.Dev.Scripts
     {
         [SerializeField]
         private Weapon _weapon = null;
-        
+
         private DamageableObject _target = null;
         
         private void OnEnable()

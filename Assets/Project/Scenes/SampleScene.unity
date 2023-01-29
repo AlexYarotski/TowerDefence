@@ -405,6 +405,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6608044987251158718, guid: 6ade6d35c92e53a43870b453819f3f25, type: 3}
+      propertyPath: _tower
+      value: 
+      objectReference: {fileID: 290253734}
+    - target: {fileID: 6608044987251158718, guid: 6ade6d35c92e53a43870b453819f3f25, type: 3}
       propertyPath: _numberShellsPerTank
       value: 3
       objectReference: {fileID: 0}

@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="8efab290-b16f-4025-9ac5-572a7c62df93" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TowerDefence/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TowerDefence/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/Fire.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/Fire.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/PoolSystem/PoolManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/PoolSystem/PoolManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/TargetFinder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/TargetFinder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/Tower.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Dev/Scripts/Tower.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,6 +15,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/92e8e151ac2247a491cb6ca42a1bead976b800/f9/94d48a64/BuildPipelineInterfaces.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b70370f7c0e548a9ac87525f3abd0ef93ea30/27/5b4c6c3c/Enumerable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d95181a5c71a4ad88c81e8fccee6b47113ce00/5c/f3cca287/MonoBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/Dev/Scripts/GameWindow.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Project/Dev/Scripts/PoolSystem/PoolConfig.cs" root0="FORCE_HIGHLIGHTING" />
@@ -97,7 +101,7 @@
       <workItem from="1674916355966" duration="2809000" />
       <workItem from="1675002019584" duration="2644000" />
       <workItem from="1675007608038" duration="182000" />
-      <workItem from="1675009183344" duration="605000" />
+      <workItem from="1675009183344" duration="7013000" />
     </task>
     <servers />
   </component>
@@ -117,24 +121,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Project/Dev/Scripts/TargetFinder.cs</url>
-          <line>71</line>
-          <properties documentPath="C:\Users\alexy\Documents\TowerDefence\Assets\Project\Dev\Scripts\TargetFinder.cs" initialLine="73" containingFunctionPresentation="method 'TatnkPoinSpawner_Spawned'">
-            <startOffsets>
-              <option value="1867" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1890" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

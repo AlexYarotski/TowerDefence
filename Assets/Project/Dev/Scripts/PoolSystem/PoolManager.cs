@@ -16,9 +16,7 @@ public class PoolManager : MonoBehaviour
 
     public T GetObject<T>(PooledType pooledType, Vector3 position) where T : PooledBehaviour
     {
-        List<PooledBehaviour> poolBehaviour = PooledDictionary[pooledType];
-        
-        if (PooledDictionary.TryGetValue(pooledType, out poolBehaviour))
+        if (!PooledDictionary.TryGetValue(pooledType, out List<PooledBehaviour> poolBehaviour))
         {
             Debug.LogError("There is no such type!");
             

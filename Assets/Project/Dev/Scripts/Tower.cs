@@ -34,8 +34,11 @@ public class Tower : DamageableObject
 
     private void SetTargetPosition()
     {
-        var rotation = Quaternion.LookRotation((transform.position - _target.position).normalized, Vector3.up)
+        var vector = transform.position - _target.position;
+        var rotation = new Vector3(vector.x, 0, vector.z);
+        var finalRotation = Quaternion.LookRotation(rotation.normalized, Vector3.up)
             .normalized;
-        transform.rotation = rotation;
+        
+        transform.rotation = finalRotation;
     }
 }
