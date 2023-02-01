@@ -1,26 +1,62 @@
+using System;
 using Project.Dev.Settings;
 using UnityEngine;
 
 public class SceneContext : MonoBehaviour
 {
-    [SerializeField]
-    private DamObjSettings _damObjSettings = null;
-    
-    public static SceneContext Singleton
+    [field: SerializeField]
+    public TankSettings TankSettings
     {
         get;
         private set;
     }
 
-    private void Awake()
+    [field: SerializeField]
+    public BitcoinSettings BitcoinSettings
     {
-        Singleton = this;
+        get;
+        private set;
     }
 
-    public DamObjSettings GetSettings()
+    [field: SerializeField]
+    public TowerSettings TowerSettings
     {
-        return _damObjSettings;
+        get;
+        private set;
     }
+
+    [field: SerializeField]
+    public ArrowSettings ArrowSettings
+    {
+        get;
+        private set;
+    }
+    
+    [field: SerializeField]
+    public WeaponSettings WeaponSettings
+    {
+        get;
+        private set;
+    }
+
+    [field: SerializeField]
+    public PoolManagerSetting PoolManagerSetting
+    {
+        get;
+        private set;
+    }
+    
+    public static SceneContext Inctance
+    {
+        get; 
+        private set;
+    }
+
+    private void Awake()
+    {
+        Inctance = this;
+    }
+
 }
 
 

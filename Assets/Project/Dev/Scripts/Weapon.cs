@@ -10,12 +10,6 @@ namespace Project.Dev.Scripts
         public static event Action<DamageableObject> ShotTank = delegate { };
 
         [SerializeField] 
-        private float _attackRadius = 0;
-
-        [SerializeField] 
-        private float _speedAtack = 0;
-    
-        [SerializeField] 
         private TargetFinder _targetFinder = null;
 
         [SerializeField] 
@@ -26,12 +20,17 @@ namespace Project.Dev.Scripts
 
         [SerializeField]
         private PoolManager _poolManager = null;
-
+        
+        private float _attackRadius = 0;
         private DamageableObject _target = null;
     
         private void Awake()
         {
-            _animator.speed = _speedAtack;
+            var settings = SceneContext.Inctance.WeaponSettings;
+
+            _attackRadius = settings.AttackRadius;
+            
+            _animator.speed = settings.SpeedAtack;
         }
 
         private void OnEnable()

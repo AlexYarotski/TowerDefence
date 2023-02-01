@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using System;
 using System.Collections;
-using Project.Dev.Settings;
 
 namespace Project.Dev.Scripts
 {
@@ -17,11 +16,11 @@ namespace Project.Dev.Scripts
 
         private void Awake()
         {
-            SceneContext _sceneContext = SceneContext.Singleton;
-            DamObjSettings _settings = _sceneContext.GetSettings();
+            var settings = SceneContext.Inctance.TankSettings;
             
-            _speed = _settings.Speed;
-            _damage = _settings.Damage;
+            _speed = settings.Speed;
+            _damage = settings.Damage;
+            _health = settings.Health;
         }
 
         public void SetTargetPosition(Tower target)

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Project.Dev.Scripts;
 using UnityEngine;
@@ -5,7 +6,15 @@ using UnityEngine;
 public class Arrow : Ammunition
 {
     private DamageableObject _target = null;
-    
+
+    private void Awake()
+    {
+        var settings = SceneContext.Inctance.ArrowSettings;
+
+        _damage = settings.Damage;
+        _speed = settings.Speed;
+    }
+
     private void OnEnable()
     {
         Tank.Dead += Tank_Dead;

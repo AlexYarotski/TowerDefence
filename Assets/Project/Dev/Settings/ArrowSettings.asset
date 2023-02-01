@@ -9,10 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a8cd2e6dd7d4a69a912a607cc1a21fa, type: 3}
-  m_Name: Bitcoin
+  m_Script: {fileID: 11500000, guid: b2b8e5a3651940e46bf5aa1c79f099bf, type: 3}
+  m_Name: ArrowSettings
   m_EditorClassIdentifier: 
-  _health: 0
-  _damage: 0
-  _speed: 0
-  _animator: {fileID: 0}
+  _speed: 10
+  _damage: 5

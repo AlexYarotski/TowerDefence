@@ -189,6 +189,55 @@ Transform:
   m_Father: {fileID: 1736410536}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &223016139
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 223016140}
+  - component: {fileID: 223016141}
+  m_Layer: 0
+  m_Name: SceneContext
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &223016140
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 223016139}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.65021896, y: 1.0860357, z: -2.5588894}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1736410536}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &223016141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 223016139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b72b71b53d15734c8c805be82ed70e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <TankSettings>k__BackingField: {fileID: 11400000, guid: a4feff6c0c35f8543b92e5de05cc3542, type: 2}
+  <BitcoinSettings>k__BackingField: {fileID: 11400000, guid: 9dbf3038f2656bb45aa96ab70a01cc27, type: 2}
+  <TowerSettings>k__BackingField: {fileID: 11400000, guid: 957c196b5873f00479a3b0c3e683865d, type: 2}
+  <ArrowSettings>k__BackingField: {fileID: 11400000, guid: 69d5e21114cc33041b78493a17ffab94, type: 2}
+  <WeaponSettings>k__BackingField: {fileID: 11400000, guid: c211c59635dd3c44eab78f892ce2d212, type: 2}
+  <PoolManagerSetting>k__BackingField: {fileID: 11400000, guid: da668a3fee0fc2e4288cf88d2105717e, type: 2}
 --- !u!114 &290253734 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4457565490673752399, guid: 6ade6d35c92e53a43870b453819f3f25, type: 3}
@@ -1025,6 +1074,7 @@ Transform:
   - {fileID: 2104200997}
   - {fileID: 1431598094}
   - {fileID: 2091719207}
+  - {fileID: 223016140}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1076,16 +1126,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29408e08b8ac8314b8484a07545b69c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _poolConfig:
-  - _count: 10
-    _pooledType: 1
-    _pooledPrefab: {fileID: 178651256349657624, guid: be23ec72cb0d637448c8d4abefc9c4da, type: 3}
-  - _count: 10
-    _pooledType: 2
-    _pooledPrefab: {fileID: 3462531660236727197, guid: 4a5f8bd27eaf98149a15a11d3f49bfef, type: 3}
-  - _count: 10
-    _pooledType: 3
-    _pooledPrefab: {fileID: 2455803075149998521, guid: 6bcd1d50a1aa0b942adf651abe538b72, type: 3}
 --- !u!1 &2104200995
 GameObject:
   m_ObjectHideFlags: 0

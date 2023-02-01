@@ -8,6 +8,13 @@ public class Tower : DamageableObject
 
     private Transform _target = null;
 
+    private void Awake()
+    {
+        var settings = SceneContext.Inctance.TowerSettings;
+        
+        _health = settings.Health;
+    }
+
     private void OnEnable()
     {
         Weapon.ShotTank += Weapon_ShotTank;

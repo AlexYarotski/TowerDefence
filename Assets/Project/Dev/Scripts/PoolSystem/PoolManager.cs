@@ -6,11 +6,14 @@ public class PoolManager : MonoBehaviour
 {
     private readonly Dictionary<PooledType, List<PooledBehaviour>> PooledDictionary = new Dictionary<PooledType, List<PooledBehaviour>>();
 
-    [SerializeField] 
-    private PoolConfig[] _poolConfig = null;
+    private PoolConfig[] _poolConfigs = null;
     
     private void Awake()
     {
+        var settings = SceneContext.Inctance.PoolManagerSetting;
+
+        _poolConfigs = settings.PoolConfigs;
+        
         PreparePoolDictionary();
     }
 
@@ -50,7 +53,7 @@ public class PoolManager : MonoBehaviour
     
     private PooledBehaviour AddItemToPoolDictionary(List<PooledBehaviour> poolBehaviour, PooledType pooledType)
     {
-        var typePoolConfig = _poolConfig.FirstOrDefault(pt => pt.PooledType == pooledType);
+        var typePoolConfig = _poolConfigs.FirstOrDefault(pt => pt.PooledType == pooledType);
 
         if (typePoolConfig == default)
         {
@@ -67,9 +70,9 @@ public class PoolManager : MonoBehaviour
 
     private void PreparePoolDictionary()
     {
-        for (int i = 0; i < _poolConfig.Length; i++)
+        for (int i = 0; i < _poolConfigs.Length; i++)
         {
-            var poolConfig = _poolConfig[i];
+            var poolConfig = _poolConfigs[i];
             
             PooledDictionary.Add(poolConfig.PooledType,CreatePoolObjects(poolConfig));
         }
