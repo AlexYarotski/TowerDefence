@@ -1,22 +1,27 @@
 using UnityEngine;
 using System;
 using System.Collections;
+using Project.Dev.Settings;
 
 public class Bitcoin : DamageableObject
-{
+{                                                         
     private readonly int IsSkale = Animator.StringToHash("IsScale");
     private readonly int IsRotate = Animator.StringToHash("IsRotate");
 
     public static event Action<Bitcoin> Mining = delegate {  }; 
     
-    [SerializeField] 
     private float _flightSpeed = 0;
-
-    [SerializeField] 
     private Animator _animator = null;
-
     private Transform _tower = null;
+    private void Awake()
+    {
+        SceneContext _sceneContext = SceneContext.Singleton;
+        DamObjSettings _settings = _sceneContext.GetSettings();
 
+        _flightSpeed = _settings.Speed;
+        _animator = _settings.Animator;
+    }
+    
     public void SetTargetPosition(Transform targetTransform)
     {
         _tower = targetTransform;
@@ -31,7 +36,7 @@ public class Bitcoin : DamageableObject
         Mining(this);
     }
 
-    private IEnumerator MovementToTower()
+    private IEnumerator MovementToTower()   
     {
         _animator.SetBool(IsRotate, true);
         

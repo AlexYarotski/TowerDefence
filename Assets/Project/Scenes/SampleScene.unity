@@ -236,7 +236,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 446816220}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -402, y: 1723, z: 7424}
+  m_LocalPosition: {x: -8, y: -8, z: -942}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1067980565}
@@ -384,10 +384,6 @@ PrefabInstance:
       propertyPath: _weapon
       value: 
       objectReference: {fileID: 424678615}
-    - target: {fileID: 5274237028290644593, guid: 6ade6d35c92e53a43870b453819f3f25, type: 3}
-      propertyPath: _pooledType
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 6317634286871179335, guid: 6ade6d35c92e53a43870b453819f3f25, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -525,17 +521,6 @@ Transform:
   m_Father: {fileID: 1590071743}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &984638001 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5274237028290644593, guid: 6ade6d35c92e53a43870b453819f3f25, type: 3}
-  m_PrefabInstance: {fileID: 765223567}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac8049e77a4f6b74daaf46d7d3809038, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1067980561
 GameObject:
   m_ObjectHideFlags: 0
@@ -740,7 +725,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1236008396}
   - component: {fileID: 1236008397}
-  - component: {fileID: 1236008398}
   m_Layer: 0
   m_Name: SpawnBtc
   m_TagString: Untagged
@@ -777,21 +761,6 @@ MonoBehaviour:
   _tower: {fileID: 290253734}
   _spawnCoinsDelay: 0.6
   _poolManager: {fileID: 2091719208}
---- !u!114 &1236008398
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1236008395}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac8049e77a4f6b74daaf46d7d3809038, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _count: 2
-  _pooledType: 3
-  _pooledPrefab: {fileID: 2455803075149998521, guid: 6bcd1d50a1aa0b942adf651abe538b72, type: 3}
 --- !u!1 &1370553576
 GameObject:
   m_ObjectHideFlags: 0
@@ -1006,40 +975,8 @@ PrefabInstance:
       value: Kill 0
       objectReference: {fileID: 0}
     - target: {fileID: 3018076445919193204, guid: 77573dcf4ade72b439604325a7828e80, type: 3}
-      propertyPath: m_Pivot.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3018076445919193204, guid: 77573dcf4ade72b439604325a7828e80, type: 3}
-      propertyPath: m_Pivot.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3018076445919193204, guid: 77573dcf4ade72b439604325a7828e80, type: 3}
       propertyPath: m_RootOrder
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3018076445919193204, guid: 77573dcf4ade72b439604325a7828e80, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3018076445919193204, guid: 77573dcf4ade72b439604325a7828e80, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3018076445919193204, guid: 77573dcf4ade72b439604325a7828e80, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3018076445919193204, guid: 77573dcf4ade72b439604325a7828e80, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3018076445919193204, guid: 77573dcf4ade72b439604325a7828e80, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: -44.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 3018076445919193204, guid: 77573dcf4ade72b439604325a7828e80, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: -78.7
       objectReference: {fileID: 0}
     - target: {fileID: 3018076445919193204, guid: 77573dcf4ade72b439604325a7828e80, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1048,34 +985,6 @@ PrefabInstance:
     - target: {fileID: 3018076445919193204, guid: 77573dcf4ade72b439604325a7828e80, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3018076445919193204, guid: 77573dcf4ade72b439604325a7828e80, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 8378
-      objectReference: {fileID: 0}
-    - target: {fileID: 3018076445919193204, guid: 77573dcf4ade72b439604325a7828e80, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3018076445919193204, guid: 77573dcf4ade72b439604325a7828e80, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3018076445919193204, guid: 77573dcf4ade72b439604325a7828e80, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3018076445919193204, guid: 77573dcf4ade72b439604325a7828e80, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3018076445919193204, guid: 77573dcf4ade72b439604325a7828e80, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -385.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 3018076445919193204, guid: 77573dcf4ade72b439604325a7828e80, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 1749.8
       objectReference: {fileID: 0}
     - target: {fileID: 3018076445919193207, guid: 77573dcf4ade72b439604325a7828e80, type: 3}
       propertyPath: m_Name
@@ -1168,9 +1077,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _poolConfig:
-  - {fileID: 2104200996}
-  - {fileID: 1236008398}
-  - {fileID: 984638001}
+  - _count: 10
+    _pooledType: 1
+    _pooledPrefab: {fileID: 178651256349657624, guid: be23ec72cb0d637448c8d4abefc9c4da, type: 3}
+  - _count: 10
+    _pooledType: 2
+    _pooledPrefab: {fileID: 3462531660236727197, guid: 4a5f8bd27eaf98149a15a11d3f49bfef, type: 3}
+  - _count: 10
+    _pooledType: 3
+    _pooledPrefab: {fileID: 2455803075149998521, guid: 6bcd1d50a1aa0b942adf651abe538b72, type: 3}
 --- !u!1 &2104200995
 GameObject:
   m_ObjectHideFlags: 0
@@ -1181,7 +1096,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2104200997}
   - component: {fileID: 2104200998}
-  - component: {fileID: 2104200996}
   m_Layer: 0
   m_Name: SpawnTanks
   m_TagString: Untagged
@@ -1189,21 +1103,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2104200996
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2104200995}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac8049e77a4f6b74daaf46d7d3809038, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _count: 2
-  _pooledType: 1
-  _pooledPrefab: {fileID: 178651256349657624, guid: be23ec72cb0d637448c8d4abefc9c4da, type: 3}
 --- !u!4 &2104200997
 Transform:
   m_ObjectHideFlags: 0

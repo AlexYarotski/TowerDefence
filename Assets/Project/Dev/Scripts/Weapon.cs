@@ -28,12 +28,10 @@ namespace Project.Dev.Scripts
         private PoolManager _poolManager = null;
 
         private DamageableObject _target = null;
-        private PooledType _pooledType = PooledType.Arrow;
     
         private void Awake()
         {
             _animator.speed = _speedAtack;
-            _pooledType = PooledType.Arrow;
         }
 
         private void OnEnable()
@@ -58,7 +56,7 @@ namespace Project.Dev.Scripts
 
         public void Fire(DamageableObject tank)
         {
-            var createdArrow = _poolManager.GetObject<Arrow>(_pooledType, _arrowSpawnPoint.position);
+            var createdArrow = _poolManager.GetObject<Arrow>(PooledType.Arrow, _arrowSpawnPoint.position);
         
             createdArrow.SetTarget(tank);
         }

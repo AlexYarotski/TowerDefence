@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 
 [Serializable]
-public class PoolConfig : PooledBehaviour
+public class PoolConfig
 {
     [SerializeField]
     private int _count = 0;

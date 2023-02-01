@@ -18,13 +18,6 @@ namespace Project.Dev.Scripts
 
         [SerializeField] 
         private PoolManager _poolManager = null;
-        
-        private PooledType _pooledType = default;
-
-        private void Awake()
-        {
-            _pooledType = PooledType.Tank;
-        }
 
         private void Update()
         {
@@ -36,7 +29,7 @@ namespace Project.Dev.Scripts
                 {
                     Vector3 startPosition = new Vector3(hitInfo.point.x, 1.5f, hitInfo.point.z);
                 
-                    var createTank = _poolManager.GetObject<Tank>(_pooledType, startPosition);
+                    var createTank = _poolManager.GetObject<Tank>(PooledType.Tank, startPosition);
                 
                     Spawned(createTank);
                 

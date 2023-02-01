@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System;
 using System.Collections;
+using Project.Dev.Settings;
 
 namespace Project.Dev.Scripts
 {
@@ -10,13 +11,18 @@ namespace Project.Dev.Scripts
         
         public static event Action<Tank> Dead = delegate { };
 
-        [SerializeField]
         private float _speed = 0;
-
-        [SerializeField] 
         private float _damage = 0;
-        
         private Tower _target = null;
+
+        private void Awake()
+        {
+            SceneContext _sceneContext = SceneContext.Singleton;
+            DamObjSettings _settings = _sceneContext.GetSettings();
+            
+            _speed = _settings.Speed;
+            _damage = _settings.Damage;
+        }
 
         public void SetTargetPosition(Tower target)
         {
