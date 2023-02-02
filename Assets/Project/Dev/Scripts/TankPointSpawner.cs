@@ -30,7 +30,7 @@ namespace Project.Dev.Scripts
                     Vector3 startPosition = new Vector3(hitInfo.point.x, 1.5f, hitInfo.point.z);
                 
                     var createTank = _poolManager.GetObject<Tank>(PooledType.Tank, startPosition);
-                
+
                     Spawned(createTank);
                 
                     createTank.SetTargetPosition(_tower);

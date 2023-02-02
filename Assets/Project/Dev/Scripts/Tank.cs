@@ -24,7 +24,7 @@ namespace Project.Dev.Scripts
             _health = settings.Health;
             _startHealth = _health;
         }
-
+        
         public void SetTargetPosition(Tower target)
         {
             _target = target;
@@ -35,25 +35,25 @@ namespace Project.Dev.Scripts
             
             StartCoroutine(MovementToTower());
         }
-        
-        protected override void OnDie()
-        {
-            base.OnDie();
 
-            SpawnedFromPool();
-            
-            Dead(this);
-        }
-
-        protected override void SpawnedFromPool()
+        public override void SpawnedFromPool()
         {
             base.SpawnedFromPool();
 
             _health = _startHealth;
         }
+        
+        protected override void OnDie()
+        {
+            base.OnDie();
+
+            Dead(this);
+        }
 
         private IEnumerator MovementToTower()
         {
+            SpawnedFromPool();
+            
             var finalPos = new Vector3(_target.transform.position.x, TankHeightFromZeroPoint,
                 _target.transform.position.z);
             var position = transform.position;

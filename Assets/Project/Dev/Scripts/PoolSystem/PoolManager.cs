@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using Project.Dev.Scripts;
 using UnityEngine;
 
 public class PoolManager : MonoBehaviour
@@ -33,6 +34,8 @@ public class PoolManager : MonoBehaviour
             freePoolObj = AddItemToPoolDictionary(poolBehaviour, pooledType);
         }
 
+        freePoolObj.SpawnedFromPool();
+        
         freePoolObj.transform.position = position;
         freePoolObj.gameObject.SetActive(true);
 
