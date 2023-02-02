@@ -19,6 +19,6 @@ public abstract class DamageableObject : PooledBehaviour
 
     protected virtual void OnDie()
     {
-        gameObject.SetActive(false);
+        Free();
     }
 }

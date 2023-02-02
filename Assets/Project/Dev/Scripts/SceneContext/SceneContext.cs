@@ -54,7 +54,14 @@ public class SceneContext : MonoBehaviour
 
     private void Awake()
     {
-        Inctance = this;
+        if (Inctance == null)
+        {
+            Inctance = this;
+        }
+        else if(Inctance == this)
+        {
+            Destroy(gameObject);
+        }
     }
 
 }

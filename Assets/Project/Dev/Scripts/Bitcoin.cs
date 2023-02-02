@@ -4,13 +4,15 @@ using System.Collections;
 
 public class Bitcoin : DamageableObject
 {                                                         
-    private readonly int IsSkale = Animator.StringToHash("IsScale");
+    private readonly int IsScale = Animator.StringToHash("IsScale");
     private readonly int IsRotate = Animator.StringToHash("IsRotate");
 
     public static event Action<Bitcoin> Mining = delegate {  }; 
     
-    private float _flightSpeed = 0;
+    [SerializeField]
     private Animator _animator = null;
+    
+    private float _flightSpeed = 0;
     private Transform _tower = null;
     
     private void Awake()
@@ -18,7 +20,6 @@ public class Bitcoin : DamageableObject
         var settings = SceneContext.Inctance.BitcoinSettings;
             
         _flightSpeed = settings.FlightSpeed;
-        _animator = settings.Animator;
     }
     
     public void SetTargetPosition(Transform targetTransform)
@@ -64,6 +65,6 @@ public class Bitcoin : DamageableObject
     {
         StartCoroutine(MovementToTower());
         
-        _animator.SetBool(IsSkale, true);
+        _animator.SetBool(IsScale, true);
     }
 }

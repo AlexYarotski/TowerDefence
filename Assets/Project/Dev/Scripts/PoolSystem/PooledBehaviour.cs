@@ -11,4 +11,9 @@ public class PooledBehaviour : MonoBehaviour
     {
         gameObject.SetActive(false);    
     }
+
+    protected virtual void SpawnedFromPool()
+    {
+        
+    }
 }

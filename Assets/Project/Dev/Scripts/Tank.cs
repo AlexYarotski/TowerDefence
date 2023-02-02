@@ -13,6 +13,7 @@ namespace Project.Dev.Scripts
         private float _speed = 0;
         private float _damage = 0;
         private Tower _target = null;
+        private float _startHealth = 0;
 
         private void Awake()
         {
@@ -21,6 +22,7 @@ namespace Project.Dev.Scripts
             _speed = settings.Speed;
             _damage = settings.Damage;
             _health = settings.Health;
+            _startHealth = _health;
         }
 
         public void SetTargetPosition(Tower target)
@@ -38,9 +40,18 @@ namespace Project.Dev.Scripts
         {
             base.OnDie();
 
+            SpawnedFromPool();
+            
             Dead(this);
         }
-        
+
+        protected override void SpawnedFromPool()
+        {
+            base.SpawnedFromPool();
+
+            _health = _startHealth;
+        }
+
         private IEnumerator MovementToTower()
         {
             var finalPos = new Vector3(_target.transform.position.x, TankHeightFromZeroPoint,
