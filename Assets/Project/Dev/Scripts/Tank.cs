@@ -12,16 +12,18 @@ namespace Project.Dev.Scripts
 
         private float _speed = 0;
         private float _damage = 0;
-        private Tower _target = null;
+
         private float _startHealth = 0;
+        private Tower _target = null;
 
         private void Awake()
         {
             var settings = SceneContext.Inctance.TankSettings;
             
+            _health = settings.Health;
             _speed = settings.Speed;
             _damage = settings.Damage;
-            _health = settings.Health;
+            
             _startHealth = _health;
         }
         

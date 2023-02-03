@@ -30,7 +30,7 @@ namespace Project.Dev.Scripts
 
             _attackRadius = settings.AttackRadius;
             
-            _animator.speed = settings.SpeedAtack;
+            _animator.speed = settings.SpeedAttack;
         }
 
         private void OnEnable()
